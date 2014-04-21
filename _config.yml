@@ -6,8 +6,8 @@ pygments:         true
 permalink:        pretty
 
 # Setup
-title:            R
-tagline:          'for cats'
+title:            R for cats
+tagline:          'srsly'
 description:      'R for cats'
 url:              http://rforcats.net/
 

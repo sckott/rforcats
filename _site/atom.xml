@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>R</title>
+ <title>R for cats</title>
  <link href="http://rforcats.net//atom.xml" rel="self"/>
  <link href="http://rforcats.net//"/>
- <updated>2014-04-20T23:22:55-07:00</updated>
+ <updated>2014-04-21T06:54:50-07:00</updated>
  <id>http://rforcats.net/</id>
  <author>
    <name>Mark Otto</name>

@@ -10,63 +10,43 @@ This is an introduction to R. I promise, this will be fun.  Since you have never
 
 ## What will we do?
 
-* Using the R console - let's dig our claws in
-* vector's - the basic R data structure
-* data.frame's - weird but familiar
+* [Using the R console - let's dig our claws in](#rconsole)
+* [vector's - the basic R data structure](#vectors)
+* [data.frame's - weird but familiar](#dataframes)
 * [lists](#lists)
-* functions
-* Using packages
-* Data! Cat's love open data
+* [functions](#functions)
+* [Using packages](#packages)
+* [Data! Cat's love open data](#data)
 * [Reading](#reading)
 
-## <i class="fa fa-camera-retro"></i> R console
+## <a href="#reading" name="rconsole"/>#</a> R console
 
-asd
-fa
-f
-as
-f
-sf
-s
-f
-fa
+XXXX
 
-df
-sa
-f
-asfd
+## <a href="#vectors" name="vectors"/>#</a> Vectors
 
-## <a name="lists"/>Lists</a>
+XXXX
 
-asdf
-as
-f
-adf
-f
-d
-f
-as
-f
-dfadfadfadfsadfdsaf
+## <a href="#dataframes" name="dataframes"/>#</a> Data.frame's
 
+XXXX
 
-adfasdfasfasfasf
+## <a href="#lists" name="lists"/>#</a> Lists
 
+XXXX
 
-asdfdasfasfasdf
+## <a href="#functions" name="functions"/>#</a> Functions
 
+XXXX
 
-asdfadfas
-f
-s
+## <a href="#packages" name="packages"/>#</a> Using packages
 
-## <a name="reading"/>#</a>Reading
+XXXX
 
+## <a href="#data" name="data"/>#</a> Data
 
-dfadfadfadfsadfdsaf
+XXXX
 
+## <a href="#reading" name="reading"/>#</a> Reading
 
-adfasdfasfasfasf
-
-
-asdfdasfasfasdf
+XXXX
