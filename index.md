@@ -241,3 +241,5 @@ XXXX
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
 <img src="/assets/img/leo_giffed.gif" width="300">
+
+### License
