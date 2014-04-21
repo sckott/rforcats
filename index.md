@@ -21,7 +21,37 @@ This is an introduction to R. I promise, this will be fun.  Since you have never
 
 ## <a href="#reading" name="rconsole"/>#</a> R console
 
-XXXX
+Writing code is fun. Since you're a cat, not having opposable thumbs may be a bit of an issue, but surely you're clever enough to find a way around that. 
+
+So open up R, and you'll see something like this:
+
+<img src="/assets/img/console.png" width="550" border="1">
+
+You can do math:
+
+
+```r
+1 + 1
+```
+
+```
+## [1] 2
+```
+
+
+Type a set of letters together (also known as a _word_) within quotes and the console will print it back to you
+
+
+```r
+"Hello Mr Tickles"
+```
+
+```
+## [1] "Hello Mr Tickles"
+```
+
+
+
 
 ## <a href="#vectors" name="vectors"/>#</a> Vectors
 
@@ -67,7 +97,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  The Maine Coon cat is America's only natural breed of domestic feline. It is 4 to 5 times larger than the Singapura, the smallest breed of cat. 
+##  Cats can be taught to walk on a leash, but a lot of time and patience is required to teach them. The younger the cat is, the easier it will be for them to learn. 
 ##  ------ 
 ##     \   
 ##      \  
