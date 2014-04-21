@@ -1,155 +1,38 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+---
+layout: default
+title: Home
+---
 
-  <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
-  <title>
-    
-      taxize &middot; taxize
-    
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-</head>
-
-
-  <body class="theme-base-0d">
-
-    <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>taxize</h1>
-      <p class="lead">taxonomic toolbelt for R and Python</p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item active">
-        <a href="/">Home</a>
-      </li>
-
-      
-
-      
-      
-        
-          
-        
-      
-        
-      
-        
-          
-            <li class="sidebar-nav-item">
-              <a href="/Contribute.html">Contribute</a>
-            </li>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <li class="sidebar-nav-item">
-              <a href="/Install.html">Install</a>
-            </li>
-          
-        
-      
-        
-          
-            <li class="sidebar-nav-item">
-              <a href="/Sources.html">Sources</a>
-            </li>
-          
-        
-      
-
-      <!-- <li class="sidebar-nav-item"><a href="https://github.com/ropensci/taxize/archive/v.zip">Download</a></li> -->
-      <!-- <li class="sidebar-nav-item"><a href="https://github.com/ropensci/taxize">GitHub project</a></li> -->
-      <!-- <li class="sidebar-nav-item">R: v0.2.2</li>
-      <li class="sidebar-nav-item">Python: v0.0.1</li> -->
-      <li class="sidebar-nav-item"><a href="/examples">Examples</a></li>
-    </ul>
+    {{ post.content }}
   </div>
+  {% endfor %}
 </div>
 
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="/">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
 
-    <div class="content container">
-      <h1>taxize <i class="fa fa-sun-o"></i> taxonomic toolbelt for R &amp; Python</h1>
-
-<p>Taxonomy deals with the names of living things - well, in this context, we&#39;re dealing with living things. So let&#39;s call it biological taxonomy. </p>
-
-<p>Almost all biologists are likely to deal with names, whether they study a single species or 10 species, or 10,000 species. Organism names are created by people - thus they are messy of course. Two different names can be given to the same species, and two completely different taxonomic groups could have the identical name at different taxonomic ranks. All these problems and more make it so that you of course want to do your taxonomic sleuthing with a powerful, repeatable, for-loopable, tool. </p>
-
-<p>We created a tool to ease the headache of taxonomy. What makes it possible is the many online taxonomy databases that we can give you an interface to. Take a look at the sources of taxonomic databases we wrap in taxize at the <a href="/Sources">Sources</a> page.</p>
-
-<p>What can you actually do? Let&#39;s take a look.</p>
-
-<h3>R</h3>
-
-<div class="highlight"><pre><code class="coffee"><span class="nx">library</span><span class="p">(</span><span class="s">&quot;taxize&quot;</span><span class="p">)</span>
-<span class="nx">col_children</span><span class="p">(</span><span class="nv">name = </span><span class="s">&quot;Apis&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-<p>And you get </p>
-
-<div class="highlight"><pre><code class="coffee">    <span class="nx">id</span>                <span class="nx">name</span>     <span class="nx">rank</span>
-<span class="mi">6971712</span>  <span class="nx">Apis</span> <span class="nx">andreniformis</span>  <span class="nx">Species</span>
-<span class="mi">6971713</span>         <span class="nx">Apis</span> <span class="nx">cerana</span>  <span class="nx">Species</span>
-<span class="mi">6971714</span>        <span class="nx">Apis</span> <span class="nx">dorsata</span>  <span class="nx">Species</span>
-<span class="mi">6971715</span>         <span class="nx">Apis</span> <span class="nx">florea</span>  <span class="nx">Species</span>
-<span class="mi">6971716</span>  <span class="nx">Apis</span> <span class="nx">koschevnikovi</span>  <span class="nx">Species</span>
-<span class="mi">6845885</span>      <span class="nx">Apis</span> <span class="nx">mellifera</span>  <span class="nx">Species</span>
-<span class="mi">6971717</span>    <span class="nx">Apis</span> <span class="nx">nigrocincta</span>  <span class="nx">Species</span>
-</code></pre></div>
-
-<p>Awesome eh.</p>
-
-<h3>Python</h3>
-
-<div class="highlight"><pre><code class="python"><span class="kn">import</span> <span class="nn">pytaxize</span>
-<span class="n">pytaxize</span><span class="o">.</span><span class="n">col_children</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Apis&quot;</span><span class="p">])</span>
-</code></pre></div>
-
-<div class="highlight"><pre><code class="python"><span class="p">[</span>    <span class="nb">id</span>                <span class="n">name</span>     <span class="n">rank</span>
-<span class="mi">6971712</span>  <span class="n">Apis</span> <span class="n">andreniformis</span>  <span class="n">Species</span>
-<span class="mi">6971713</span>         <span class="n">Apis</span> <span class="n">cerana</span>  <span class="n">Species</span>
-<span class="mi">6971714</span>        <span class="n">Apis</span> <span class="n">dorsata</span>  <span class="n">Species</span>
-<span class="mi">6971715</span>         <span class="n">Apis</span> <span class="n">florea</span>  <span class="n">Species</span>
-<span class="mi">6971716</span>  <span class="n">Apis</span> <span class="n">koschevnikovi</span>  <span class="n">Species</span>
-<span class="mi">6845885</span>      <span class="n">Apis</span> <span class="n">mellifera</span>  <span class="n">Species</span>
-<span class="mi">6971717</span>    <span class="n">Apis</span> <span class="n">nigrocincta</span>  <span class="n">Species</span><span class="p">]</span>
-</code></pre></div>
-
-<hr>
-
-<p>Want to see something else added? Open an <a href="https://github.com/ropensci/taxize/issues/new">R</a> or <a href="https://github.com/sckott/pytaxize/issues/new">Python</a> issue.</p>
-
-    </div>
-
-  </body>
-</html>
