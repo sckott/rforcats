@@ -47,47 +47,18 @@ XXXX
 
 Install `cowsay`
 
-
-```r
+```{r eval=FALSE}
 install.packages("devtools")
 library("devtools")
 install_github("sckott/cowsay")
 ```
 
-
 Now let's get a cat fact!
 
-
-```r
+```{r}
 library("cowsay")
 say("catfact", "cat")
 ```
-
-```
-## 
-## 
-##  ----- 
-##  The Maine Coon cat is America's only natural breed of domestic feline. It is 4 to 5 times larger than the Singapura, the smallest breed of cat. 
-##  ------ 
-##     \   
-##      \  
-##                \`*-.
-##                  )  _`-.                 
-##                 .  : `. .                
-##                 : _   '                 
-##                 ; *` _.   `*-._          
-##                 `-.-'          `-.       
-##                   ;       `       `.     
-##                   :.       .       \
-##                   .\  .   :   .-'   .   
-##                   '  `+.;  ;  '      :   
-##                   :  '  |    ;       ;-. 
-##                   ; '   : :`-:     _.`* ;
-##                .*' /  .*' ; .*`- +'  `*' 
-##                `*-*   `*-*  `*-*'        
-## 
-```
-
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
 ```coffee

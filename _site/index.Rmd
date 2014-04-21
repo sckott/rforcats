@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      R for cats &middot; srsly
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>R for cats</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item active" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats/.zip">Download pdf</a>
+    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contribute @Github</a>
+    <!-- <span class="sidebar-nav-item">Currently v</span> -->
+  </nav>
+
+  <!-- <div class="sidebar-item">
+    <p>
+      &copy; 2014. All rights reserved.
+    </p>
+  </div> -->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">R for cats</a>
+            <small>srsly</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        ## An intro to R for new programmers
+
+This is an introduction to R. I promise, this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real progamming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things. 
+
+
+## What will we do?
+
+* [Using the R console - let's dig our claws in](#rconsole)
+* [vector's - the basic R data structure](#vectors)
+* [data.frame's - weird but familiar](#dataframes)
+* [lists](#lists)
+* [functions](#functions)
+* [Using packages](#packages)
+* [Open data from the web! Cat's love open data](#data)
+* [Reading](#reading)
+
+## <a href="#reading" name="rconsole"/>#</a> R console
+
+XXXX
+
+## <a href="#vectors" name="vectors"/>#</a> Vectors
+
+XXXX
+
+## <a href="#dataframes" name="dataframes"/>#</a> Data.frame's
+
+XXXX
+
+## <a href="#lists" name="lists"/>#</a> Lists
+
+XXXX
+
+## <a href="#functions" name="functions"/>#</a> Functions
+
+XXXX
+
+## <a href="#packages" name="packages"/>#</a> Using packages
+
+XXXX
+
+## <a href="#data" name="data"/>#</a> Data from the web
+
+Install `cowsay`
+
+```{r eval=FALSE}
+install.packages("devtools")
+library("devtools")
+install_github("sckott/cowsay")
+```
+
+Now let's get a cat fact!
+
+```{r}
+library("cowsay")
+say("catfact", "cat")
+```
+A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
+
+```coffee
+say <- function(what, by, type){
+  <== some ascii art ==>
+  url <- "http://catfacts-api.appspot.com/api/facts?number=1"
+  what <- fromJSON(url)$facts
+  message(sprintf(by, what))
+}
+```
+
+The first line is a bunch of ascii characters to make a cat. The second line defines the url for the cat facts API. The third line retrieves one cat fact from the cat facts API. And the fourth line prints the messages with a cat. 
+
+> But what is an API? I'm a cat, I only drink water or milk (preferably milk) - but at least I've heard of an IPA. What the rat's ass (yum) is an API. 
+
+Okay, here goes. An API stands for Application Programming Interface. It's just a set of instructions for two computers to talk to each other. It's sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don't know each other, then best of luck to you Mr. Tickles.
+
+## <a href="#reading" name="reading"/>#</a> Reading
+
+XXXX
+
+## <a href="#catslover" name="catslover"/>#</a> Cat's love R
+
+<img src="/assets/img/leo_giffed.gif" width="300">
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>

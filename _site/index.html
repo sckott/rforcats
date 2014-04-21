@@ -59,8 +59,12 @@
         
       
     
+      
+        
+      
+    
 
-    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats/archive/v.zip">Download pdf</a>
+    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats/.zip">Download pdf</a>
     <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contribute @Github</a>
     <!-- <span class="sidebar-nav-item">Currently v</span> -->
   </nav>
@@ -99,7 +103,7 @@
 <li><a href="#lists">lists</a></li>
 <li><a href="#functions">functions</a></li>
 <li><a href="#packages">Using packages</a></li>
-<li><a href="#data">Data! Cat&#39;s love open data</a></li>
+<li><a href="#data">Open data from the web! Cat&#39;s love open data</a></li>
 <li><a href="#reading">Reading</a></li>
 </ul>
 
@@ -127,13 +131,62 @@
 
 <p>XXXX</p>
 
-<h2><a href="#data" name="data"/>#</a> Data</h2>
+<h2><a href="#data" name="data"/>#</a> Data from the web</h2>
 
-<p>XXXX</p>
+<p>Install <code>cowsay</code></p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
+library<span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
+install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Now let&#39;s get a cat fact!</p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">library<span class="p">(</span><span class="s">&quot;cowsay&quot;</span><span class="p">)</span>
+say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## 
+## 
+##  ----- 
+##  The Maine Coon cat is America&#39;s only natural breed of domestic feline. It is 4 to 5 times larger than the Singapura, the smallest breed of cat. 
+##  ------ 
+##     \   
+##      \  
+##                \`*-.
+##                  )  _`-.                 
+##                 .  : `. .                
+##                 : _   &#39;                 
+##                 ; *` _.   `*-._          
+##                 `-.-&#39;          `-.       
+##                   ;       `       `.     
+##                   :.       .       \
+##                   .\  .   :   .-&#39;   .   
+##                   &#39;  `+.;  ;  &#39;      :   
+##                   :  &#39;  |    ;       ;-. 
+##                   ; &#39;   : :`-:     _.`* ;
+##                .*&#39; /  .*&#39; ; .*`- +&#39;  `*&#39; 
+##                `*-*   `*-*  `*-*&#39;        
+## 
+</code></pre></div>
+<p>A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code>say</code> function looks like sorta like this:</p>
+<div class="highlight"><pre><code class="coffee language-coffee" data-lang="coffee"><span class="nx">say</span> <span class="o">&lt;-</span> <span class="nx">function</span><span class="p">(</span><span class="nx">what</span><span class="p">,</span> <span class="k">by</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
+  <span class="o">&lt;==</span> <span class="nx">some</span> <span class="nx">ascii</span> <span class="nx">art</span> <span class="o">==&gt;</span>
+  <span class="nx">url</span> <span class="o">&lt;-</span> <span class="s">&quot;http://catfacts-api.appspot.com/api/facts?number=1&quot;</span>
+  <span class="nx">what</span> <span class="o">&lt;-</span> <span class="nx">fromJSON</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span><span class="nx">$facts</span>
+  <span class="nx">message</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="k">by</span><span class="p">,</span> <span class="nx">what</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The first line is a bunch of ascii characters to make a cat. The second line defines the url for the cat facts API. The third line retrieves one cat fact from the cat facts API. And the fourth line prints the messages with a cat. </p>
+
+<blockquote>
+<p>But what is an API? I&#39;m a cat, I only drink water or milk (preferably milk) - but at least I&#39;ve heard of an IPA. What the rat&#39;s ass (yum) is an API. </p>
+</blockquote>
+
+<p>Okay, here goes. An API stands for Application Programming Interface. It&#39;s just a set of instructions for two computers to talk to each other. It&#39;s sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don&#39;t know each other, then best of luck to you Mr. Tickles.</p>
 
 <h2><a href="#reading" name="reading"/>#</a> Reading</h2>
 
 <p>XXXX</p>
+
+<h2><a href="#catslover" name="catslover"/>#</a> Cat&#39;s love R</h2>
+
+<p><img src="/assets/img/leo_giffed.gif" width="300"></p>
 
       </div>
     </div>
