@@ -196,7 +196,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  The first breeding pair of Siamese cats arrived in England in 1884. 
+##  The life expectancy of cats has nearly doubled over the last fifty years. 
 ##  ------ 
 ##     \   
 ##      \  
