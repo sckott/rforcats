@@ -5,8 +5,12 @@ title: Home
 
 ## An intro to R for new programmers
 
-This is an introduction to R. I promise, this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real progamming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things. 
+This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real progamming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things. 
 
+
+## jsforcats?
+
+Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com).
 
 ## What will we do?
 
@@ -59,7 +63,11 @@ XXXX
 
 ## <a href="#dataframes" name="dataframes"/>#</a> Data.frame's
 
-XXXX
+A `data.frame` is one of the most commonly used objects in R. Just think of a `data.frame` like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the `data.frame` in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of `numeric` type, the second a `factor`, and the third `character`. 
+
+```
+
+```
 
 ## <a href="#lists" name="lists"/>#</a> Lists
 
@@ -97,7 +105,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  Cats can be taught to walk on a leash, but a lot of time and patience is required to teach them. The younger the cat is, the easier it will be for them to learn. 
+##  Some common houseplants poisonous to cats include: English Ivy, iris, mistletoe, philodendron, and yew. 
 ##  ------ 
 ##     \   
 ##      \  
@@ -142,3 +150,19 @@ XXXX
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
 <img src="/assets/img/leo_giffed.gif" width="300">
+
+<!-- Gaug.es tracking data -->
+
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '53553f05eddd5b1a730011e6');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
