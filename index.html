@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Home">
+  <meta name="author" content="">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
+    src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Home</h1>
+    <h2></h2>
+    <p><br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>An intro to R for new programmers</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any for that matter, you won&#39;t be tainted by real progamming languages like <code>Python</code> or <code>Java</code>. This is good - we can teach you the R way of doing things. </p>
+
+<h2>jsforcats?</h2>
+
+<p>Yep, this is a total rip off of <a href="http://jsforcats.com">JSforcats.com</a>.</p>
+
+<h2>What will we do?</h2>
+
+<ul>
+<li><a href="#rconsole">Using the R console - let&#39;s dig our claws in</a></li>
+<li><a href="#vectors">vector&#39;s - the basic R data structure</a></li>
+<li><a href="#dataframes">data.frame&#39;s - weird but familiar</a></li>
+<li><a href="#lists">lists</a></li>
+<li><a href="#functions">functions</a></li>
+<li><a href="#packages">Using packages</a></li>
+<li><a href="#data">Open data from the web! Cat&#39;s love open data</a></li>
+<li><a href="#reading">Reading</a></li>
+</ul>
+
+<h2><a href="#reading" name="rconsole"/>#</a> R console</h2>
+
+<p>Writing code is fun. Since you&#39;re a cat, not having opposable thumbs may be a bit of an issue, but surely you&#39;re clever enough to find a way around that. </p>
+
+<p>So open up R, and you&#39;ll see something like this:</p>
+
+<p><img src="/assets/img/console.png" width="550" border="1"></p>
+
+<p>You can do math:</p>
+
+<pre><code class="r">1 + 1
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+<p>Type a set of letters together (also known as a <em>word</em>) within quotes and the console will print it back to you</p>
+
+<pre><code class="r">&quot;Hello Mr Tickles&quot;
+</code></pre>
+
+<pre><code>## [1] &quot;Hello Mr Tickles&quot;
+</code></pre>
+
+<h2><a href="#vectors" name="vectors"/>#</a> Vectors</h2>
+
+<p>Vectors are one of the simplest and common objects in R. Think of a vector like a cat&#39;s tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all <code>numeric</code>, all <code>character</code>, all <code>factor</code>, etc. Let&#39;s try to put a <code>character</code> and a <code>numeric</code> together. But wait, how do we make a vector? The easiest way is to use a function simply called <code>c</code>. So <code>c(5,6,7)</code> will create a vector like 5, 6, 7</p>
+
+<pre><code class="r">c()
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<h2><a href="#dataframes" name="dataframes"/>#</a> Data.frame&#39;s</h2>
+
+<p>A <code>data.frame</code> is one of the most commonly used objects in R. Just think of a <code>data.frame</code> like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the <code>data.frame</code> in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of <code>numeric</code> type, the second a <code>factor</code>, and the third <code>character</code>. </p>
+
+<pre><code>
+</code></pre>
+
+<h2><a href="#lists" name="lists"/>#</a> Lists</h2>
+
+<p>XXXX</p>
+
+<h2><a href="#functions" name="functions"/>#</a> Functions</h2>
+
+<p>XXXX</p>
+
+<h2><a href="#packages" name="packages"/>#</a> Using packages</h2>
+
+<p>XXXX</p>
+
+<h2><a href="#data" name="data"/>#</a> Data from the web</h2>
+
+<p>Install <code>cowsay</code></p>
+
+<pre><code class="r">install.packages(&quot;devtools&quot;)
+library(&quot;devtools&quot;)
+install_github(&quot;sckott/cowsay&quot;)
+</code></pre>
+
+<p>Now let&#39;s get a cat fact!</p>
+
+<pre><code class="r">library(&quot;cowsay&quot;)
+say(&quot;catfact&quot;, &quot;cat&quot;)
+</code></pre>
+
+<pre><code>## 
+## 
+##  ----- 
+##  A cat that bites you for rubbing his stomach is often biting from pleasure, not anger. 
+##  ------ 
+##     \   
+##      \  
+##                \`*-.
+##                  )  _`-.                 
+##                 .  : `. .                
+##                 : _   &#39;                 
+##                 ; *` _.   `*-._          
+##                 `-.-&#39;          `-.       
+##                   ;       `       `.     
+##                   :.       .       \
+##                   .\  .   :   .-&#39;   .   
+##                   &#39;  `+.;  ;  &#39;      :   
+##                   :  &#39;  |    ;       ;-. 
+##                   ; &#39;   : :`-:     _.`* ;
+##                .*&#39; /  .*&#39; ; .*`- +&#39;  `*&#39; 
+##                `*-*   `*-*  `*-*&#39;        
+## 
+</code></pre>
+
+<p>A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code>say</code> function looks like sorta like this:</p>
+
+<pre><code class="coffee">say &lt;- function(what, by, type){
+  &lt;== some ascii art ==&gt;
+  url &lt;- &quot;http://catfacts-api.appspot.com/api/facts?number=1&quot;
+  what &lt;- fromJSON(url)$facts
+  message(sprintf(by, what))
+}
+</code></pre>
+
+<p>The first line is a bunch of ascii characters to make a cat. The second line defines the url for the cat facts API. The third line retrieves one cat fact from the cat facts API. And the fourth line prints the messages with a cat. </p>
+
+<blockquote>
+<p>But what is an API? I&#39;m a cat, I only drink water or milk (preferably milk) - but at least I&#39;ve heard of an IPA. What the rat&#39;s ass (yum) is an API. </p>
+</blockquote>
+
+<p>Okay, here goes. An API stands for Application Programming Interface. It&#39;s just a set of instructions for two computers to talk to each other. It&#39;s sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don&#39;t know each other, then best of luck to you Mr. Tickles.</p>
+
+<h2><a href="#reading" name="reading"/>#</a> Reading</h2>
+
+<p>XXXX</p>
+
+<h2><a href="#catslover" name="catslover"/>#</a> Cat&#39;s love R</h2>
+
+<p><img src="/assets/img/leo_giffed.gif" width="300"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='An intro to R for new programmers'>
+         1
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

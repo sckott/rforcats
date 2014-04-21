@@ -127,19 +127,60 @@
 <div class="highlight"><pre><code class="r language-r" data-lang="r"><span class="s">&quot;Hello Mr Tickles&quot;</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] &quot;Hello Mr Tickles&quot;
 </code></pre></div>
+<p>Another thing you&#39;ll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you burried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)). </p>
+
+<p>Assign the number 5 to the name <code>mynumber</code></p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">mynumber <span class="o">&lt;-</span> <span class="m">5</span>
+</code></pre></div>
+<p>Later you can use <code>mynumber</code>, like adding it to another number</p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">mynumber <span class="o">+</span> <span class="m">1</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] 6
+</code></pre></div>
+<p>Sweet! </p>
+
 <h2><a href="#vectors" name="vectors"/>#</a> Vectors</h2>
 
-<p>XXXX</p>
-
+<p>Vectors are one of the simplest and common objects in R. Think of a vector like a cat&#39;s tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all <code>numeric</code>, all <code>character</code>, all <code>factor</code>, etc. But wait, how do we make a vector? The easiest way is to use a function simply called <code>c</code>. So <code>c(5,6,7)</code> will create a vector of numbers 5, 6, and 7: 5, 6, 7. Let&#39;s try to put a <code>character</code> and a <code>numeric</code> together.</p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">c<span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] &quot;hello&quot; &quot;5&quot;
+</code></pre></div>
+<p>Notice how the output of the above converted the 5 to a character type with quotes around the <code>5</code> to make it <code>&quot;5&quot;</code>. 
+But we can happily make a vector of the same type of information, like</p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">c<span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1.5</span><span class="p">,</span> <span class="m">0.9</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1]   5.0   8.0 200.0   1.0   1.5   0.9
+</code></pre></div>
 <h2><a href="#dataframes" name="dataframes"/>#</a> Data.frame&#39;s</h2>
 
 <p>A <code>data.frame</code> is one of the most commonly used objects in R. Just think of a <code>data.frame</code> like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the <code>data.frame</code> in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of <code>numeric</code> type, the second a <code>factor</code>, and the third <code>character</code>. </p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">
+<div class="highlight"><pre><code class="r language-r" data-lang="r">df <span class="o">&lt;-</span> data.frame<span class="p">(</span>hey<span class="o">=</span>c<span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">),</span> 
+           there<span class="o">=</span>as.factor<span class="p">(</span>c<span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">)),</span> 
+           fella<span class="o">=</span>c<span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="s">&quot;brown&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">))</span>
+
+df
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">##   hey there fella
+## 1   5     a  blue
+## 2   6     b brown
+## 3   7     c green
+</code></pre></div>
+<p>Notice that the first <em>column</em> of numbers are actually row names, and are not part of the <code>data.frame</code> <em>per se</em>, though are part of the <em>metadata</em> for the <code>data.frame</code>.</p>
+
+<p>We can quickly get a sense for the type of data in the <code>df</code> object by using the function <code>str</code>, which gives inforomation on the types of data in each column. </p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">str<span class="p">(</span>df<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## &#39;data.frame&#39;:    3 obs. of  3 variables:
+##  $ hey  : num  5 6 7
+##  $ there: Factor w/ 3 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;: 1 2 3
+##  $ fella: Factor w/ 3 levels &quot;blue&quot;,&quot;brown&quot;,..: 1 2 3
 </code></pre></div>
 <h2><a href="#lists" name="lists"/>#</a> Lists</h2>
 
-<p>XXXX</p>
-
+<p>Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail anology again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only <code>character</code> for example), lists can hold for example, a data.frame and a number, or a data.frame and another list!  The way we make a list is via the function <code>list</code></p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">list<span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] &quot;a&quot;
+</code></pre></div>
 <h2><a href="#functions" name="functions"/>#</a> Functions</h2>
 
 <p>XXXX</p>
@@ -161,7 +202,7 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## 
 ## 
 ##  ----- 
-##  Cats, especially older cats, do get cancer. Many times this disease can be treated successfully. 
+##  The first breeding pair of Siamese cats arrived in England in 1884. 
 ##  ------ 
 ##     \   
 ##      \  

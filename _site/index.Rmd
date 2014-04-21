@@ -130,23 +130,66 @@ Type a set of letters together (also known as a _word_) within quotes and the co
 "Hello Mr Tickles"
 ```
 
+Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you burried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)). 
+
+Assign the number 5 to the name `mynumber`
+
+```{r}
+mynumber <- 5
+```
+
+Later you can use `mynumber`, like adding it to another number
+
+```{r}
+mynumber + 1
+```
+
+Sweet! 
 
 
 ## <a href="#vectors" name="vectors"/>#</a> Vectors
 
-XXXX
+Vectors are one of the simplest and common objects in R. Think of a vector like a cat's tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all `numeric`, all `character`, all `factor`, etc. But wait, how do we make a vector? The easiest way is to use a function simply called `c`. So `c(5,6,7)` will create a vector of numbers 5, 6, and 7: `r c(5,6,7)`. Let's try to put a `character` and a `numeric` together.
+
+```{r}
+c("hello", 5)
+``` 
+
+Notice how the output of the above converted the 5 to a character type with quotes around the `5` to make it `"5"`. 
+But we can happily make a vector of the same type of information, like
+
+```{r}
+c(5, 8, 200, 1, 1.5, 0.9)
+```
 
 ## <a href="#dataframes" name="dataframes"/>#</a> Data.frame's
 
 A `data.frame` is one of the most commonly used objects in R. Just think of a `data.frame` like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the `data.frame` in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of `numeric` type, the second a `factor`, and the third `character`. 
 
+
+```{r tidy=FALSE}
+df <- data.frame(hey=c(5,6,7), 
+           there=as.factor(c("a","b","c")), 
+           fella=c("blue","brown","green"))
+
+df
 ```
 
+Notice that the first _column_ of numbers are actually row names, and are not part of the `data.frame` _per se_, though are part of the _metadata_ for the `data.frame`.
+
+We can quickly get a sense for the type of data in the `df` object by using the function `str`, which gives inforomation on the types of data in each column. 
+
+```{r}
+str(df)
 ```
 
 ## <a href="#lists" name="lists"/>#</a> Lists
 
-XXXX
+Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail anology again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a data.frame and a number, or a data.frame and another list!  The way we make a list is via the function `list`
+
+```{r}
+list(1, "a")
+```
 
 ## <a href="#functions" name="functions"/>#</a> Functions
 
