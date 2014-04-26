@@ -4,7 +4,7 @@
  <title>R for cats</title>
  <link href="http://rforcats.net//atom.xml" rel="self"/>
  <link href="http://rforcats.net//"/>
- <updated>2014-04-25T17:04:35-06:00</updated>
+ <updated>2014-04-25T19:48:18-05:00</updated>
  <id>http://rforcats.net/</id>
  <author>
    <name>Scott Chamberlain</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Introducing Lanyon</title>
    <link href="http://rforcats.net//2014/01/02/introducing-lanyon/"/>
-   <updated>2014-01-02T00:00:00-07:00</updated>
+   <updated>2014-01-02T00:00:00-06:00</updated>
    <id>http://rforcats.net//2014/01/02/introducing-lanyon</id>
    <content type="html">&lt;p&gt;Lanyon is an unassuming &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; theme that places content first by tucking away navigation in a hidden drawer. It&amp;#39;s based on &lt;a href=&quot;http://getpoole.com&quot;&gt;Poole&lt;/a&gt;, the Jekyll butler.&lt;/p&gt;
 

@@ -360,7 +360,28 @@ say("catfact", "cat")
 ```
 
 ```
-## Error: cannot open the connection
+## 
+## 
+##  ----- 
+##  Tabby cats are thought to get their name from Attab, a district in Baghdad, now the capital of Iraq. 
+##  ------ 
+##     \   
+##      \
+##                \`*-.
+##                  )  _`-.
+##                 .  : `. .
+##                 : _   '  
+##                 ; *` _.   `*-._
+##                 `-.-'          `-.
+##                   ;       `       `.
+##                   :.       .       \
+##                   .\  .   :   .-'   .
+##                   '  `+.;  ;  '      :
+##                   :  '  |    ;       ;-.
+##                   ; '   : :`-:     _.`* ;
+##                .*' /  .*' ; .*`- +'  `*'
+##                `*-*   `*-*  `*-*'
+## 
 ```
 
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:

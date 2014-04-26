@@ -291,7 +291,28 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
 <p>Now let&#39;s get a cat fact!</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">library<span class="p">(</span><span class="s">&quot;cowsay&quot;</span><span class="p">)</span>
 say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## 
+## 
+##  ----- 
+##  Tabby cats are thought to get their name from Attab, a district in Baghdad, now the capital of Iraq. 
+##  ------ 
+##     \   
+##      \
+##                \`*-.
+##                  )  _`-.
+##                 .  : `. .
+##                 : _   &#39;  
+##                 ; *` _.   `*-._
+##                 `-.-&#39;          `-.
+##                   ;       `       `.
+##                   :.       .       \
+##                   .\  .   :   .-&#39;   .
+##                   &#39;  `+.;  ;  &#39;      :
+##                   :  &#39;  |    ;       ;-.
+##                   ; &#39;   : :`-:     _.`* ;
+##                .*&#39; /  .*&#39; ; .*`- +&#39;  `*&#39;
+##                `*-*   `*-*  `*-*&#39;
+## 
 </code></pre></div>
 <p>A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code>say</code> function looks like sorta like this:</p>
 <div class="highlight"><pre><code class="coffee language-coffee" data-lang="coffee"><span class="nx">say</span> <span class="o">&lt;-</span> <span class="nx">function</span><span class="p">(</span><span class="nx">what</span><span class="p">,</span> <span class="k">by</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
