@@ -18,6 +18,7 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com).
 * [vector's - the basic R data structure](#vectors)
 * [data.frame's - weird but familiar](#dataframes)
 * [lists](#lists)
+* [indexing](#indexing)
 * [functions](#functions)
 * [Using packages](#packages)
 * [Open data from the web! Cat's love open data](#data)
@@ -164,13 +165,179 @@ list(1, "a")
 ```
 
 
+
+## <a href="#indexing" name="indexing"/>#</a> Indexing
+
+Okay, so let's say you have made a `vector`, `list`, or `data.frame`. How do you get to the things in them? Its slightly different for each one. 
+
+There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame's`.  That is the double square bracket: `[]`.  For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`). 
+
+### vector
+
+Vectors only have one dimension, as we said above. So with `[]` there is only one number to give here. For example, let's say we have the vector 
+
+
+```r
+bb <- c(5, 6, 7)
+```
+
+
+We can index to each of those 3 numbers by the sequence of it's place in the vector. Get the 6 by doing 
+
+
+```r
+bb[2]
+```
+
+```
+## [1] 6
+```
+
+
+You can also have a named vector. What's that?  A named vector is like `bb` above, but each of the three elements has a name. 
+
+
+```r
+bb <- c(5, 6, 7)
+names(bb) <- c("hey", "hello", "wadup")
+bb
+```
+
+```
+##   hey hello wadup 
+##     5     6     7
+```
+
+```r
+names(bb)
+```
+
+```
+## [1] "hey"   "hello" "wadup"
+```
+
+
+With a named vector we can get to each element in the vector using it's name with a single set, or double set of brackets to get the value, or the value and name, respectively. 
+
+
+```r
+bb["hello"]
+```
+
+```
+## hello 
+##     6
+```
+
+
+
+```r
+bb[["hello"]]
+```
+
+```
+## [1] 6
+```
+
+
+Awesome! Vectors are great. 
+
+### list
+
+Indexing on lists is similar to vectors. A huge difference though is that lists can be nested. So there could be infinite things within each top slot of a list. 
+
+XX
+
+### data.frame and matrix
+
+Indexing on a `data.frame` and `matrix` is similar. 
+
+
 ## <a href="#functions" name="functions"/>#</a> Functions
 
-XXXX
+Cats are the type of feline to love functions. Functions make your life easier by allowing you to generalize many lines of code, and avoiding repeating yourself. Functions make your work tidier - just like cats like it. 
+
+Functions are written like this
+
+```r
+foo <- function(){
+  writeLines("I hate dogs")
+}
+```
+
+After defining this function we can then call it later like this 
+
+
+```r
+foo()
+```
+
+```
+## I hate dogs
+```
+
+
+Yay! Dumb dogs.
+
+The `foo` function was pretty simple. We can also pass in parameters to the function. 
+
+
+```r
+foo <- function(mess) {
+    writeLines(mess)
+}
+
+foo("I hate dogs")
+```
+
+```
+## I hate dogs
+```
+
+
+And set parameters to default values.
+
+
+```r
+foo <- function(mess = "I hate dogs") {
+    writeLines(mess)
+}
+
+foo()
+```
+
+```
+## I hate dogs
+```
+
+```r
+foo("Well, I hate most dogs, but I like the one in my house")
+```
+
+```
+## Well, I hate most dogs, but I like the one in my house
+```
+
+
+Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. 
 
 ## <a href="#packages" name="packages"/>#</a> Using packages
 
-XXXX
+Since you're a cat, you can think of packages like boxes that you put a bunch of code in. Since you are putting code in this box you probably don't want to sit in it :). These boxes generally hold a similar set of functions (see [functions](#functions) above). A package allows you and others to 
+
+* Easily install and load the code
+* Incorporate documentation
+* Lessen conflicts with functions in other packages
+
+Most people that make R packages share them on site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](#). 
+
+The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer. 
+
+Installation is super easy. Do `install.packages("package_name")`, where `package_name` is the name of the package you want to install. Remember that the package name is case sensitive! Or if you're using RStudio you can go to the _Packages_ pane. 
+
+Once the package is installed you have to load the package in to your R session. That's easy too! Do `library('package_name')`, or if you're in RStudio go to the _Packages_ pane. 
+
+_Note: Package creation is bit out of scope for this site, but Hadley has made it much easier with [devtools](https://github/com/hadley/devtools)._
 
 ## <a href="#data" name="data"/>#</a> Data from the web
 
@@ -193,28 +360,7 @@ say("catfact", "cat")
 ```
 
 ```
-## 
-## 
-##  ----- 
-##  The life expectancy of cats has nearly doubled over the last fifty years. 
-##  ------ 
-##     \   
-##      \  
-##                \`*-.
-##                  )  _`-.                 
-##                 .  : `. .                
-##                 : _   '                 
-##                 ; *` _.   `*-._          
-##                 `-.-'          `-.       
-##                   ;       `       `.     
-##                   :.       .       \
-##                   .\  .   :   .-'   .   
-##                   '  `+.;  ;  '      :   
-##                   :  '  |    ;       ;-. 
-##                   ; '   : :`-:     _.`* ;
-##                .*' /  .*' ; .*`- +'  `*' 
-##                `*-*   `*-*  `*-*'        
-## 
+## Error: cannot open the connection
 ```
 
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
@@ -236,7 +382,14 @@ Okay, here goes. An API stands for Application Programming Interface. It's just 
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 
-XXXX
+After this basic intro you'll want to head over to some other sites on the itnerwebs for more R!
+
+* [Advanced R, by Hadey Wickham]()
+* X
+* X
+* X
+* X
+* X
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
