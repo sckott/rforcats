@@ -524,7 +524,7 @@ foo()
 ```
 
 ```
-## I hate dogs
+## Error: could not find function "foo"
 ```
 
 
@@ -626,7 +626,28 @@ say("catfact", "cat")
 ```
 
 ```
-## Error: cannot open the connection
+## 
+## 
+##  ----- 
+##  Cats have 30 teeth (12 incisors, 10 premolars, 4 canines, and 4 molars), while dogs have 42. Kittens have baby teeth, which are replaced by permanent teeth around the age of 7 months. 
+##  ------ 
+##     \   
+##      \
+##                \`*-.
+##                  )  _`-.
+##                 .  : `. .
+##                 : _   '  
+##                 ; *` _.   `*-._
+##                 `-.-'          `-.
+##                   ;       `       `.
+##                   :.       .       \
+##                   .\  .   :   .-'   .
+##                   '  `+.;  ;  '      :
+##                   :  '  |    ;       ;-.
+##                   ; '   : :`-:     _.`* ;
+##                .*' /  .*' ; .*`- +'  `*'
+##                `*-*   `*-*  `*-*'
+## 
 ```
 
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
