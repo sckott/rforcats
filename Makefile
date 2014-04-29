@@ -1,2 +1,3 @@
-knit:
-    /bin/Rscript -e "library('knitr'); knitr::knit('index.Rmd')"
+pandoc:
+		pandoc -H margins.sty index.md -o index.pdf --highlight-style=tango;\
+    open index.pdf
