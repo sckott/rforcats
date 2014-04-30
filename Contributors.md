@@ -1,7 +1,8 @@
-rforcats
-=======
+---
+layout: page
+title: Contributors
+---
 
-Inspired by [jsforcats.com](http://jsforcats.com/) - __rforcats__ is aimed at teaching cats R programming.
 
 ### people
 
@@ -11,7 +12,3 @@ Inspired by [jsforcats.com](http://jsforcats.com/) - __rforcats__ is aimed at te
 ### cats:
 
 * the orange one at the bottom of the page: _Leo_ (aka _boom boom_, _muffin_, or _goosie_)
-
-### license
-
-CC0
