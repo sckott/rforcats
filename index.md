@@ -5,8 +5,9 @@ title: Home
 
 ## An intro to R for new programmers
 
-This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real progamming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things.
+This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real programming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things.
 
+<img src="/assets/img/programmer.png" width="300">
 
 ## jsforcats?
 
@@ -58,7 +59,7 @@ Type a set of letters together (also known as a _word_) within quotes and the co
 ```
 
 
-Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you burried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
+Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
 
 Assign the number 5 to the name `mynumber`
 
@@ -118,7 +119,7 @@ In addition, you can do something to each part of the vector. Let's say you have
 
 
 ```r
-dogs <- c("dalmations", "retrievers", "poodles")
+dogs <- c('dalmations','retrievers','poodles')
 ```
 
 
@@ -158,7 +159,7 @@ df
 
 Notice that the first _column_ of numbers are actually row names, and are not part of the `data.frame` _per se_, though are part of the _metadata_ for the `data.frame`.
 
-We can quickly get a sense for the type of data in the `df` object by using the function `str`, which gives inforomation on the types of data in each column.
+We can quickly get a sense for the type of data in the `df` object by using the function `str`, which gives information on the types of data in each column.
 
 
 ```r
@@ -181,7 +182,7 @@ We'll not dig into these further since I'm guessing since you're a cat, you'll b
 
 ## <a href="#lists" name="lists"/>#</a> Lists
 
-Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail anology again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a `data.frame` and a `numeric`, or a `data.frame` and another `list`!  The way we make a list is via the function `list`
+Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a `data.frame` and a `numeric`, or a `data.frame` and another `list`!  The way we make a list is via the function `list`
 
 
 ```r
@@ -201,7 +202,7 @@ A nested vector
 
 
 ```r
-mylist <- list(1, list("a", "b", "c"))
+mylist <- list(1, list("a","b","c"))
 mylist
 ```
 
@@ -243,7 +244,7 @@ length(mylist[2])
 ```
 
 
-Gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Ineeded there are
+Gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Indeed there are
 
 
 ```r
@@ -267,7 +268,7 @@ Vectors only have one dimension, as we said above. So with `[]` there is only on
 
 
 ```r
-bb <- c(5, 6, 7)
+bb <- c(5,6,7)
 ```
 
 
@@ -287,8 +288,8 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 
 
 ```r
-bb <- c(5, 6, 7)
-names(bb) <- c("hey", "hello", "wadup")
+bb <- c(5,6,7)
+names(bb) <- c('hey','hello','wadup')
 bb
 ```
 
@@ -310,7 +311,7 @@ With a named vector we can get to each element in the vector using it's name wit
 
 
 ```r
-bb["hello"]
+bb['hello']
 ```
 
 ```
@@ -321,7 +322,7 @@ bb["hello"]
 
 
 ```r
-bb[["hello"]]
+bb[['hello']]
 ```
 
 ```
@@ -339,7 +340,7 @@ For example, let's say we have the nested list from above `mylist`
 
 
 ```r
-mylist <- list(foo = 1, bar = list("a", "b", "c"))
+mylist <- list(foo=1, bar=list("a","b","c"))
 ```
 
 
@@ -360,7 +361,7 @@ Or equivalently
 
 
 ```r
-mylist["foo"]
+mylist['foo']
 ```
 
 ```
@@ -385,7 +386,7 @@ Or equivalently
 
 
 ```r
-mylist[["foo"]]
+mylist[['foo']]
 ```
 
 ```
@@ -397,7 +398,7 @@ And get the second item in `mylist` by
 
 
 ```r
-mylist[2]  # or mylist['bar']
+mylist[2] # or mylist['bar']
 ```
 
 ```
@@ -413,7 +414,7 @@ mylist[2]  # or mylist['bar']
 ```
 
 ```r
-mylist[[2]]  # or mylist[['bar']]
+mylist[[2]] # or mylist[['bar']]
 ```
 
 ```
@@ -469,7 +470,7 @@ you can index to the third row and second column by doing
 
 
 ```r
-iris[3, 2]
+iris[3,2]
 ```
 
 ```
@@ -481,7 +482,7 @@ You can also use names to index if you have named rows or columns. For example,
 
 
 ```r
-iris[2, "Species"]
+iris[2,"Species"]
 ```
 
 ```
@@ -524,7 +525,7 @@ foo()
 ```
 
 ```
-## Error: could not find function "foo"
+## I hate dogs
 ```
 
 
@@ -534,8 +535,8 @@ The `foo` function was pretty simple. We can also pass in parameters to the func
 
 
 ```r
-foo <- function(mess) {
-    writeLines(mess)
+foo <- function(mess){
+  writeLines(mess)
 }
 
 foo("I hate dogs")
@@ -550,8 +551,8 @@ And set parameters to default values.
 
 
 ```r
-foo <- function(mess = "I hate dogs") {
-    writeLines(mess)
+foo <- function(mess = "I hate dogs"){
+  writeLines(mess)
 }
 
 foo()
@@ -580,7 +581,7 @@ Since you're a cat, you can think of packages like boxes that you put a bunch of
 * Incorporate documentation
 * Lessen conflicts with functions in other packages
 
-Most people that make R packages share them on site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](#).
+Most people that make R packages share them on site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](http://cran.r-project.org/).
 
 The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer.
 
@@ -629,7 +630,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  Cats have 30 teeth (12 incisors, 10 premolars, 4 canines, and 4 molars), while dogs have 42. Kittens have baby teeth, which are replaced by permanent teeth around the age of 7 months. 
+##  Cats respond better to women than to men, probably due to the fact that women's voices have a higher pitch. 
 ##  ------ 
 ##     \   
 ##      \
@@ -675,7 +676,7 @@ After this basic intro you'll want to head over to:
 
 And for even more advanced R:
 
-* [Advanced R, by Hadey Wickham](link)
+* [Advanced R, by Hadley Wickham](link)
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 

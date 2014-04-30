@@ -5,8 +5,9 @@ title: Home
 
 ## An intro to R for new programmers
 
-This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real progamming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things.
+This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real programming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things.
 
+<img src="/assets/img/programmer.png" width="300">
 
 ## jsforcats?
 
@@ -46,7 +47,7 @@ Type a set of letters together (also known as a _word_) within quotes and the co
 "Hello Mr Tickles"
 ```
 
-Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you burried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
+Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
 
 Assign the number 5 to the name `mynumber`
 
@@ -109,7 +110,7 @@ df
 
 Notice that the first _column_ of numbers are actually row names, and are not part of the `data.frame` _per se_, though are part of the _metadata_ for the `data.frame`.
 
-We can quickly get a sense for the type of data in the `df` object by using the function `str`, which gives inforomation on the types of data in each column.
+We can quickly get a sense for the type of data in the `df` object by using the function `str`, which gives information on the types of data in each column.
 
 ```{r}
 str(df)
@@ -123,7 +124,7 @@ We'll not dig into these further since I'm guessing since you're a cat, you'll b
 
 ## <a href="#lists" name="lists"/>#</a> Lists
 
-Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail anology again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a `data.frame` and a `numeric`, or a `data.frame` and another `list`!  The way we make a list is via the function `list`
+Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a `data.frame` and a `numeric`, or a `data.frame` and another `list`!  The way we make a list is via the function `list`
 
 ```{r list1}
 list(1, "a")
@@ -145,7 +146,7 @@ length(mylist[1])
 length(mylist[2])
 ```
 
-Gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Ineeded there are
+Gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Indeed there are
 
 ```{r list4}
 length(mylist[2][[1]])
@@ -320,7 +321,7 @@ Since you're a cat, you can think of packages like boxes that you put a bunch of
 * Incorporate documentation
 * Lessen conflicts with functions in other packages
 
-Most people that make R packages share them on site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](#).
+Most people that make R packages share them on site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](http://cran.r-project.org/).
 
 The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer.
 
@@ -386,7 +387,7 @@ After this basic intro you'll want to head over to:
 
 And for even more advanced R:
 
-* [Advanced R, by Hadey Wickham](link)
+* [Advanced R, by Hadley Wickham](link)
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
