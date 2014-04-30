@@ -525,7 +525,7 @@ foo()
 ```
 
 ```
-## Error: could not find function "foo"
+## I hate dogs
 ```
 
 
@@ -623,18 +623,32 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
-```
-
-```
-## Error: there is no package called 'cowsay'
-```
-
-```r
 say("catfact", "cat")
 ```
 
 ```
-## Error: could not find function "say"
+## 
+## 
+##  ----- 
+##  Cats respond better to women than to men, probably due to the fact that women's voices have a higher pitch. 
+##  ------ 
+##     \   
+##      \
+##                \`*-.
+##                  )  _`-.
+##                 .  : `. .
+##                 : _   '  
+##                 ; *` _.   `*-._
+##                 `-.-'          `-.
+##                   ;       `       `.
+##                   :.       .       \
+##                   .\  .   :   .-'   .
+##                   '  `+.;  ;  '      :
+##                   :  '  |    ;       ;-.
+##                   ; '   : :`-:     _.`* ;
+##                .*' /  .*' ; .*`- +'  `*'
+##                `*-*   `*-*  `*-*'
+## 
 ```
 
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
