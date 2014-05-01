@@ -13,7 +13,7 @@ This is an introduction to R. I promise this will be fun.  Since you have never 
 
 Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefully Max doesn't mind.
 
-## What will we do?
+## List of things
 
 * [Using the R console - let's dig our claws in](#rconsole)
 * [vector's - the basic R data structure](#vectors)
@@ -26,6 +26,7 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 * [Do do's for cats - or things to do](#dodos)
 * [Open data from the web! Cat's love open data](#data)
 * [Reading](#reading)
+* [Does this site suck?](#makeitbetter)
 
 ## <a href="#reading" name="rconsole"/>#</a> R console
 
@@ -119,7 +120,7 @@ In addition, you can do something to each part of the vector. Let's say you have
 
 
 ```r
-dogs <- c('dalmations','retrievers','poodles')
+dogs <- c("dalmations", "retrievers", "poodles")
 ```
 
 
@@ -198,11 +199,11 @@ list(1, "a")
 ```
 
 
-A nested vector
+A nested list
 
 
 ```r
-mylist <- list(1, list("a","b","c"))
+mylist <- list(1, list("a", "b", "c"))
 mylist
 ```
 
@@ -268,7 +269,7 @@ Vectors only have one dimension, as we said above. So with `[]` there is only on
 
 
 ```r
-bb <- c(5,6,7)
+bb <- c(5, 6, 7)
 ```
 
 
@@ -288,8 +289,8 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 
 
 ```r
-bb <- c(5,6,7)
-names(bb) <- c('hey','hello','wadup')
+bb <- c(5, 6, 7)
+names(bb) <- c("hey", "hello", "wadup")
 bb
 ```
 
@@ -311,7 +312,7 @@ With a named vector we can get to each element in the vector using it's name wit
 
 
 ```r
-bb['hello']
+bb["hello"]
 ```
 
 ```
@@ -322,7 +323,7 @@ bb['hello']
 
 
 ```r
-bb[['hello']]
+bb[["hello"]]
 ```
 
 ```
@@ -340,7 +341,7 @@ For example, let's say we have the nested list from above `mylist`
 
 
 ```r
-mylist <- list(foo=1, bar=list("a","b","c"))
+mylist <- list(foo = 1, bar = list("a", "b", "c"))
 ```
 
 
@@ -361,7 +362,7 @@ Or equivalently
 
 
 ```r
-mylist['foo']
+mylist["foo"]
 ```
 
 ```
@@ -386,7 +387,7 @@ Or equivalently
 
 
 ```r
-mylist[['foo']]
+mylist[["foo"]]
 ```
 
 ```
@@ -398,7 +399,7 @@ And get the second item in `mylist` by
 
 
 ```r
-mylist[2] # or mylist['bar']
+mylist[2]  # or mylist['bar']
 ```
 
 ```
@@ -414,7 +415,7 @@ mylist[2] # or mylist['bar']
 ```
 
 ```r
-mylist[[2]] # or mylist[['bar']]
+mylist[[2]]  # or mylist[['bar']]
 ```
 
 ```
@@ -470,7 +471,7 @@ you can index to the third row and second column by doing
 
 
 ```r
-iris[3,2]
+iris[3, 2]
 ```
 
 ```
@@ -482,7 +483,7 @@ You can also use names to index if you have named rows or columns. For example,
 
 
 ```r
-iris[2,"Species"]
+iris[2, "Species"]
 ```
 
 ```
@@ -535,8 +536,8 @@ The `foo` function was pretty simple. We can also pass in parameters to the func
 
 
 ```r
-foo <- function(mess){
-  writeLines(mess)
+foo <- function(mess) {
+    writeLines(mess)
 }
 
 foo("I hate dogs")
@@ -551,8 +552,8 @@ And set parameters to default values.
 
 
 ```r
-foo <- function(mess = "I hate dogs"){
-  writeLines(mess)
+foo <- function(mess = "I hate dogs") {
+    writeLines(mess)
 }
 
 foo()
@@ -630,7 +631,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  Cats respond better to women than to men, probably due to the fact that women's voices have a higher pitch. 
+##  A cat's normal pulse is 140-240 beats per minute, with an average of 195. 
 ##  ------ 
 ##     \   
 ##      \
@@ -672,14 +673,18 @@ Okay, here goes. An API stands for Application Programming Interface. It's just 
 
 After this basic intro you'll want to head over to:
 
-* [XXXXX](link)
+* thinking...
 
 And for even more advanced R:
 
 * [Advanced R, by Hadley Wickham](link)
 
+## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
+
+Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats). 
+
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
 <img src="/assets/img/leo_giffed.gif" width="300">
 
-## <a href="#license" name="license"/>#</a> License 
+## <a href="#license" name="license"/>#</a> License

@@ -71,9 +71,9 @@
       
     
 
-    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats/raw/gh-pages/index.pdf">Download pdf</a>
 <!--     <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contributors</a> -->
     <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contribute</a>
+    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats/raw/gh-pages/index.pdf">Download pdf</a>
     <!-- <span class="sidebar-nav-item">Currently v</span> -->
   </nav>
 
@@ -108,7 +108,7 @@
 
 <p>Yep, this is a total rip off of <a href="http://jsforcats.com">JSforcats.com</a> - hopefully Max doesn&#39;t mind.</p>
 
-<h2>What will we do?</h2>
+<h2>List of things</h2>
 
 <ul>
 <li><a href="#rconsole">Using the R console - let&#39;s dig our claws in</a></li>
@@ -122,6 +122,7 @@
 <li><a href="#dodos">Do do&#39;s for cats - or things to do</a></li>
 <li><a href="#data">Open data from the web! Cat&#39;s love open data</a></li>
 <li><a href="#reading">Reading</a></li>
+<li><a href="#makeitbetter">Does this site suck?</a></li>
 </ul>
 
 <h2><a href="#reading" name="rconsole"/>#</a> R console</h2>
@@ -167,7 +168,7 @@ But we can happily make a vector of the same type of information, like</p>
 <p>Vectors are handy because they can be combined to make other R objects, such as lists (see <a href="#lists">lists</a> below), and <a href="#dataframes">data.frame&#39;s</a>.</p>
 
 <p>In addition, you can do something to each part of the vector. Let&#39;s say you have a vector of three types of dog:</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">dogs <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&#39;dalmations&#39;</span><span class="p">,</span><span class="s">&#39;retrievers&#39;</span><span class="p">,</span><span class="s">&#39;poodles&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">dogs <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;dalmations&quot;</span><span class="p">,</span> <span class="s">&quot;retrievers&quot;</span><span class="p">,</span> <span class="s">&quot;poodles&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>You can add something to each of them like</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">paste<span class="p">(</span>dogs<span class="p">,</span> <span class="s">&quot;are dumb&quot;</span><span class="p">)</span>
@@ -211,8 +212,8 @@ df
 ## [[2]]
 ## [1] &quot;a&quot;
 </code></pre></div>
-<p>A nested vector</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist <span class="o">&lt;-</span> list<span class="p">(</span><span class="m">1</span><span class="p">,</span> list<span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
+<p>A nested list</p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist <span class="o">&lt;-</span> list<span class="p">(</span><span class="m">1</span><span class="p">,</span> list<span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">))</span>
 mylist
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [[1]]
 ## [1] 1
@@ -248,15 +249,15 @@ mylist
 <p><strong>vectors</strong></p>
 
 <p>Vectors only have one dimension, as we said above. So with <code>[]</code> there is only one number to give here. For example, let&#39;s say we have the vector</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">bb <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">bb <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">)</span>
 </code></pre></div>
 <p>We can index to each of those 3 numbers by the sequence of it&#39;s place in the vector. Get the 6 by doing</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">bb<span class="p">[</span><span class="m">2</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] 6
 </code></pre></div>
 <p>You can also have a named vector. What&#39;s that?  A named vector is like <code>bb</code> above, but each of the three elements has a name.</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">bb <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
-names<span class="p">(</span>bb<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&#39;hey&#39;</span><span class="p">,</span><span class="s">&#39;hello&#39;</span><span class="p">,</span><span class="s">&#39;wadup&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">bb <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">7</span><span class="p">)</span>
+names<span class="p">(</span>bb<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;hey&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="s">&quot;wadup&quot;</span><span class="p">)</span>
 bb
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">##   hey hello wadup 
 ##     5     6     7
@@ -264,10 +265,10 @@ bb
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] &quot;hey&quot;   &quot;hello&quot; &quot;wadup&quot;
 </code></pre></div>
 <p>With a named vector we can get to each element in the vector using it&#39;s name with a single set, or double set of brackets to get the value, or the value and name, respectively.</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">bb<span class="p">[</span><span class="s">&#39;hello&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">bb<span class="p">[</span><span class="s">&quot;hello&quot;</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## hello 
 ##     6
-</code></pre></div><div class="highlight"><pre><code class="r language-r" data-lang="r">bb<span class="p">[[</span><span class="s">&#39;hello&#39;</span><span class="p">]]</span>
+</code></pre></div><div class="highlight"><pre><code class="r language-r" data-lang="r">bb<span class="p">[[</span><span class="s">&quot;hello&quot;</span><span class="p">]]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] 6
 </code></pre></div>
 <p>Fun.</p>
@@ -277,7 +278,7 @@ bb
 <p>Indexing on lists is similar to vectors. A huge difference though is that lists can be nested. So there could be infinite things within each slot of a list.</p>
 
 <p>For example, let&#39;s say we have the nested list from above <code>mylist</code></p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist <span class="o">&lt;-</span> list<span class="p">(</span>foo<span class="o">=</span><span class="m">1</span><span class="p">,</span> bar<span class="o">=</span>list<span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist <span class="o">&lt;-</span> list<span class="p">(</span>foo <span class="o">=</span> <span class="m">1</span><span class="p">,</span> bar <span class="o">=</span> list<span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p>We can index to the first item in the list, including it&#39;s name, by</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[</span><span class="m">1</span><span class="p">]</span>
@@ -285,7 +286,7 @@ bb
 ## [1] 1
 </code></pre></div>
 <p>Or equivalently</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## $foo
 ## [1] 1
 </code></pre></div>
@@ -294,11 +295,11 @@ bb
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] 1
 </code></pre></div>
 <p>Or equivalently</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[[</span><span class="s">&#39;foo&#39;</span><span class="p">]]</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[[</span><span class="s">&quot;foo&quot;</span><span class="p">]]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] 1
 </code></pre></div>
 <p>And get the second item in <code>mylist</code> by</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="c1"># or mylist[&#39;bar&#39;]</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[</span><span class="m">2</span><span class="p">]</span>  <span class="c1"># or mylist[&#39;bar&#39;]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## $bar
 ## $bar[[1]]
 ## [1] &quot;a&quot;
@@ -308,7 +309,7 @@ bb
 ## 
 ## $bar[[3]]
 ## [1] &quot;c&quot;
-</code></pre></div><div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="c1"># or mylist[[&#39;bar&#39;]]</span>
+</code></pre></div><div class="highlight"><pre><code class="r language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">2</span><span class="p">]]</span>  <span class="c1"># or mylist[[&#39;bar&#39;]]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [[1]]
 ## [1] &quot;a&quot;
 ## 
@@ -340,11 +341,11 @@ bb
 ## 6          5.4         3.9          1.7         0.4  setosa
 </code></pre></div>
 <p>you can index to the third row and second column by doing</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">iris<span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">iris<span class="p">[</span><span class="m">3</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] 3.2
 </code></pre></div>
 <p>You can also use names to index if you have named rows or columns. For example,</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">iris<span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="s">&quot;Species&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">iris<span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="s">&quot;Species&quot;</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] setosa
 ## Levels: setosa versicolor virginica
 </code></pre></div>
@@ -370,16 +371,16 @@ bb
 <p>Yay! Dumb dogs.</p>
 
 <p>The <code>foo</code> function was pretty simple. We can also pass in parameters to the function.</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>mess<span class="p">){</span>
-  writeLines<span class="p">(</span>mess<span class="p">)</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>mess<span class="p">)</span> <span class="p">{</span>
+    writeLines<span class="p">(</span>mess<span class="p">)</span>
 <span class="p">}</span>
 
 foo<span class="p">(</span><span class="s">&quot;I hate dogs&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## I hate dogs
 </code></pre></div>
 <p>And set parameters to default values.</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>mess <span class="o">=</span> <span class="s">&quot;I hate dogs&quot;</span><span class="p">){</span>
-  writeLines<span class="p">(</span>mess<span class="p">)</span>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>mess <span class="o">=</span> <span class="s">&quot;I hate dogs&quot;</span><span class="p">)</span> <span class="p">{</span>
+    writeLines<span class="p">(</span>mess<span class="p">)</span>
 <span class="p">}</span>
 
 foo<span class="p">()</span>
@@ -441,7 +442,7 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## 
 ## 
 ##  ----- 
-##  Cats respond better to women than to men, probably due to the fact that women&#39;s voices have a higher pitch. 
+##  A cat&#39;s normal pulse is 140-240 beats per minute, with an average of 195. 
 ##  ------ 
 ##     \   
 ##      \
@@ -482,7 +483,7 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 <p>After this basic intro you&#39;ll want to head over to:</p>
 
 <ul>
-<li><a href="link">XXXXX</a></li>
+<li>thinking...</li>
 </ul>
 
 <p>And for even more advanced R:</p>
@@ -490,6 +491,10 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 <ul>
 <li><a href="link">Advanced R, by Hadley Wickham</a></li>
 </ul>
+
+<h2><a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better</h2>
+
+<p>Contribute by sending a pull request to <a href="https://github.com/sckott/rforcats">sckott/rforcats</a>. </p>
 
 <h2><a href="#catslover" name="catslover"/>#</a> Cat&#39;s love R</h2>
 

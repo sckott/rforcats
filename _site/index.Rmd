@@ -71,9 +71,9 @@
       
     
 
-    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats/raw/gh-pages/index.pdf">Download pdf</a>
 <!--     <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contributors</a> -->
     <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contribute</a>
+    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats/raw/gh-pages/index.pdf">Download pdf</a>
     <!-- <span class="sidebar-nav-item">Currently v</span> -->
   </nav>
 
@@ -108,7 +108,7 @@ This is an introduction to R. I promise this will be fun.  Since you have never 
 
 Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefully Max doesn't mind.
 
-## What will we do?
+## List of things
 
 * [Using the R console - let's dig our claws in](#rconsole)
 * [vector's - the basic R data structure](#vectors)
@@ -121,6 +121,7 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 * [Do do's for cats - or things to do](#dodos)
 * [Open data from the web! Cat's love open data](#data)
 * [Reading](#reading)
+* [Does this site suck?](#makeitbetter)
 
 ## <a href="#reading" name="rconsole"/>#</a> R console
 
@@ -225,7 +226,7 @@ Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail 
 list(1, "a")
 ```
 
-A nested vector
+A nested list
 
 ```{r list2}
 mylist <- list(1, list("a","b","c"))
@@ -478,17 +479,21 @@ Okay, here goes. An API stands for Application Programming Interface. It's just 
 
 After this basic intro you'll want to head over to:
 
-* [XXXXX](link)
+* thinking...
 
 And for even more advanced R:
 
 * [Advanced R, by Hadley Wickham](link)
 
+## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
+
+Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats). 
+
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
 <img src="/assets/img/leo_giffed.gif" width="300">
 
-## <a href="#license" name="license"/>#</a> License 
+## <a href="#license" name="license"/>#</a> License
 
       
     <!-- CC0 license image -->
