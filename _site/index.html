@@ -112,8 +112,8 @@
 
 <ul>
 <li><a href="#rconsole">Using the R console - let&#39;s dig our claws in</a></li>
-<li><a href="#vectors">vector&#39;s - the basic R data structure</a></li>
-<li><a href="#dataframes">data.frame&#39;s - weird but familiar</a></li>
+<li><a href="#vectors">vectors - the basic R data structure</a></li>
+<li><a href="#dataframes">data frames - weird but familiar</a></li>
 <li><a href="#lists">lists</a></li>
 <li><a href="#indexing">indexing</a></li>
 <li><a href="#functions">functions</a></li>
@@ -165,7 +165,7 @@ But we can happily make a vector of the same type of information, like</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">c<span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1.5</span><span class="p">,</span> <span class="m">0.9</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1]   5.0   8.0 200.0   1.0   1.5   0.9
 </code></pre></div>
-<p>Vectors are handy because they can be combined to make other R objects, such as lists (see <a href="#lists">lists</a> below), and <a href="#dataframes">data.frame&#39;s</a>.</p>
+<p>Vectors are handy because they can be combined to make other R objects, such as lists (see <a href="#lists">lists</a> below), and <a href="#dataframes">data frames</a>.</p>
 
 <p>In addition, you can do something to each part of the vector. Let&#39;s say you have a vector of three types of dog:</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">dogs <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;dalmations&quot;</span><span class="p">,</span> <span class="s">&quot;retrievers&quot;</span><span class="p">,</span> <span class="s">&quot;poodles&quot;</span><span class="p">)</span>
@@ -174,7 +174,7 @@ But we can happily make a vector of the same type of information, like</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">paste<span class="p">(</span>dogs<span class="p">,</span> <span class="s">&quot;are dumb&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] &quot;dalmations are dumb&quot; &quot;retrievers are dumb&quot; &quot;poodles are dumb&quot;
 </code></pre></div>
-<h2><a href="#dataframes" name="dataframes"/>#</a> Data.frame&#39;s</h2>
+<h2><a href="#dataframes" name="dataframes"/>#</a> Data frames</h2>
 
 <p>A <code>data.frame</code> is one of the most commonly used objects in R. Just think of a <code>data.frame</code> like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the <code>data.frame</code> in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of <code>numeric</code> type, the second a <code>factor</code>, and the third <code>character</code>.</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">df <span class="o">&lt;-</span> data.frame<span class="p">(</span>hey<span class="o">=</span>c<span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">),</span>
@@ -244,7 +244,7 @@ mylist
 
 <p>Okay, so let&#39;s say you have made a <code>vector</code>, <code>list</code>, or <code>data.frame</code>. How do you get to the things in them? Its slightly different for each one.</p>
 
-<p>There is a general way to index objects in R that can be used across <code>vectors</code>, <code>lists</code>, and <code>data.frame&#39;s</code>.  That is the double square bracket: <code>[]</code>.  For some objects you can index by the sequence number (e.g., <code>5</code>) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., <code>kitty</code>).</p>
+<p>There is a general way to index objects in R that can be used across <code>vectors</code>, <code>lists</code>, and <code>data.frames</code>.  That is the double square bracket: <code>[]</code>.  For some objects you can index by the sequence number (e.g., <code>5</code>) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., <code>kitty</code>).</p>
 
 <p><strong>vectors</strong></p>
 
@@ -330,7 +330,7 @@ bb
 
 <p><strong>data.frame and matrix</strong></p>
 
-<p>Indexing on a <code>data.frame</code> and <code>matrix</code> is similar. Both have two things to index on: rows and columns. Within <code>[,]</code>, the part before the comma is for rows, and the part after the comma for columns. So if you have a data.frame <code>iris</code> in R,</p>
+<p>Indexing on a <code>data.frame</code> and <code>matrix</code> is similar. Both have two things to index on: rows and columns. Within <code>[,]</code>, the part before the comma is for rows, and the part after the comma for columns. So if you have a data frame <code>iris</code> in R,</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">head<span class="p">(</span>iris<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
