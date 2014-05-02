@@ -16,8 +16,8 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 ## List of things
 
 * [Using the R console - let's dig our claws in](#rconsole)
-* [vector's - the basic R data structure](#vectors)
-* [data.frame's - weird but familiar](#dataframes)
+* [vectors - the basic R data structure](#vectors)
+* [data frames - weird but familiar](#dataframes)
 * [lists](#lists)
 * [indexing](#indexing)
 * [functions](#functions)
@@ -114,7 +114,7 @@ c(5, 8, 200, 1, 1.5, 0.9)
 ```
 
 
-Vectors are handy because they can be combined to make other R objects, such as lists (see [lists](#lists) below), and [data.frame's](#dataframes).
+Vectors are handy because they can be combined to make other R objects, such as lists (see [lists](#lists) below), and [data frames](#dataframes).
 
 In addition, you can do something to each part of the vector. Let's say you have a vector of three types of dog:
 
@@ -136,7 +136,7 @@ paste(dogs, "are dumb")
 ```
 
 
-## <a href="#dataframes" name="dataframes"/>#</a> Data.frame's
+## <a href="#dataframes" name="dataframes"/>#</a> Data frames
 
 A `data.frame` is one of the most commonly used objects in R. Just think of a `data.frame` like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the `data.frame` in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of `numeric` type, the second a `factor`, and the third `character`.
 
@@ -261,7 +261,7 @@ length(mylist[2][[1]])
 
 Okay, so let's say you have made a `vector`, `list`, or `data.frame`. How do you get to the things in them? Its slightly different for each one.
 
-There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame's`.  That is the double square bracket: `[]`.  For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`).
+There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame`.  That is the double square bracket: `[]`.  For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`).
 
 **vectors**
 
@@ -449,7 +449,7 @@ There are a number of convenience functions to make working with lists easier, b
 
 **data.frame and matrix**
 
-Indexing on a `data.frame` and `matrix` is similar. Both have two things to index on: rows and columns. Within `[,]`, the part before the comma is for rows, and the part after the comma for columns. So if you have a data.frame `iris` in R,
+Indexing on a `data.frame` and `matrix` is similar. Both have two things to index on: rows and columns. Within `[,]`, the part before the comma is for rows, and the part after the comma for columns. So if you have a data frame `iris` in R,
 
 
 ```r
@@ -631,7 +631,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  A cat's normal pulse is 140-240 beats per minute, with an average of 195. 
+##  A cat has more bones than a human; humans have 206, but the cat has 230 (some cites list 245 bones, and state that bones may fuse together as the cat ages). 
 ##  ------ 
 ##     \   
 ##      \
@@ -681,7 +681,7 @@ And for even more advanced R:
 
 ## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
 
-Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats). 
+Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats) - and follow [these instructions](#Contributing.md).
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
