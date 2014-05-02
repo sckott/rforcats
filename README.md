@@ -5,8 +5,11 @@ Inspired by [jsforcats.com](http://jsforcats.com/) - __rforcats__ is aimed at te
 
 ### people
 
-* Scott Chamberlain
+* Scott Chamberlain [@sckott](https://github.com/sckott)
 * Carson Sievert [@cpsievert](https://github.com/cpsievert)
+* Ben Marwick [@benmarwick](https://github.com/benmarwick)
+* Noam Ross [@noamross](https://github.com/noamross)
+* You?
 
 ### cats:
 

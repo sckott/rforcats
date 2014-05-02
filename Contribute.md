@@ -40,6 +40,7 @@ Thanks for contributing whether you or your cat wrote the code!!!!!
 * Scott Chamberlain [@sckott](https://github.com/sckott)
 * Carson Sievert [@cpsievert](https://github.com/cpsievert)
 * Ben Marwick [@benmarwick](https://github.com/benmarwick)
+* Noam Ross [@noamross](https://github.com/noamross)
 * You?
 
 ### cats
