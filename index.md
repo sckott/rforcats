@@ -631,7 +631,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  On February 28, 1 980 a female cat climbed 70 feet up the sheer pebble-dash outside wall of a block of flats in Bradford, Yorkshire and took refuge in the roof space. She had been frightened by a dog. 
+##  Cats have 30 vertebrae--5 more than humans have. 
 ##  ------ 
 ##     \   
 ##      \
@@ -711,9 +711,9 @@ getcutecat(400)
 
 ![some kittens](http://placekitten.com/g/400/400)
 
-## ***Hey!, R is not just for cats!*** - dogs
+## ***Hey! R is not just for cats!*** - dogs
 
-R and web APIs are open to all sorts of animals.  For instance, the [dogr.io](http://dogr.io) service will create a "doge" style meme for you when provided with text.  Let's write another function to call this API
+R and web APIs are open to all sorts of animals.  For instance, the [dogr.io](http://dogr.io) service will create a "doge" style meme for you when provided with text.  Let's write another function to call this API:
 
 
 ```r
@@ -734,7 +734,7 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 
 ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
 
-***Now, back to your regular, cat-dominated tutorial***
+***Now, back to your regular, cat-dominated tutorial.***
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 
