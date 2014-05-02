@@ -336,16 +336,16 @@ _Note: Package creation is bit out of scope for this site, but Hadley has made i
 
 There are a few R gotchas to avoid cat friends.
 
-* `attach()`: Don't use it. Just, don't.
+* `attach()`: Don't use it. Just don't.
 * When doing `library()` or `require()` use the package name in quotes as package name without quotes is sugar, but can cause problems.
+* Make sure to keep your claws trimmed so they don't get stuck in spaces between the keys.
 
 ## <a href="#dodos" name="dodos"/>#</a> Do do's for cats using R
-
-There are a few things I recommend when using R.
 
 * Do combine code and text with `Markdown` or `LaTeX` to have reproducible documents, using `knitr`.
 * Do share your code.
 * Do ask lots of questions on StackOverflow (use the `[r]` tag), Twitter (does this need saying), etc.
+* `.rda`, `.rds`, `.RData` compressed files are useful, but for reproducibility purposes, use non-R specific file formats like `.csv`, `.xml`, etc.
 
 ## <a href="#data" name="data"/>#</a> Data from the web
 
@@ -379,6 +379,34 @@ The first line is a bunch of ascii characters to make a cat. The second line def
 > But what is an API? I'm a cat, I only drink water or milk (preferably milk) - but at least I've heard of an IPA. What the rat's ass (yum) is an API.
 
 Okay, here goes. An API stands for Application Programming Interface. It's just a set of instructions for two computers to talk to each other. It's sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don't know each other, then best of luck to you Mr. Tickles.
+
+**Another example**
+
+Above, we learned about writing functions. Let's create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website [placekitten.com](http://placekitten.com/). This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, `http://placekitten.com/g/300/300` gives an image that is 300 by 300 pixels. 
+
+```{r, tidy=FALSE}
+getcutecat <- function(x){
+  writeLines(
+    sprintf("![](http://placekitten.com/g/%s/%s)", x, x)
+  )
+}
+```
+
+300 pixels
+
+```{r}
+getcutecat(300)
+```
+
+![some kittens](http://placekitten.com/g/300/300)
+
+400 pixels
+
+```{r}
+getcutecat(400)
+```
+
+![some kittens](http://placekitten.com/g/400/400)
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 

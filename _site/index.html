@@ -419,18 +419,18 @@ foo<span class="p">()</span>
 <p>There are a few R gotchas to avoid cat friends.</p>
 
 <ul>
-<li><code>attach()</code>: Don&#39;t use it. Just, don&#39;t.</li>
+<li><code>attach()</code>: Don&#39;t use it. Just don&#39;t.</li>
 <li>When doing <code>library()</code> or <code>require()</code> use the package name in quotes as package name without quotes is sugar, but can cause problems.</li>
+<li>Make sure to keep your claws trimmed so they don&#39;t get stuck in spaces between the keys.</li>
 </ul>
 
 <h2><a href="#dodos" name="dodos"/>#</a> Do do&#39;s for cats using R</h2>
-
-<p>There are a few things I recommend when using R.</p>
 
 <ul>
 <li>Do combine code and text with <code>Markdown</code> or <code>LaTeX</code> to have reproducible documents, using <code>knitr</code>.</li>
 <li>Do share your code.</li>
 <li>Do ask lots of questions on StackOverflow (use the <code>[r]</code> tag), Twitter (does this need saying), etc.</li>
+<li><code>.rda</code>, <code>.rds</code>, <code>.RData</code> compressed files are useful, but for reproducibility purposes, use non-R specific file formats like <code>.csv</code>, <code>.xml</code>, etc.</li>
 </ul>
 
 <h2><a href="#data" name="data"/>#</a> Data from the web</h2>
@@ -446,7 +446,7 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## 
 ## 
 ##  ----- 
-##  In just 7 years, one un-spayed female cat and one un-neutered male cat and their offspring can result in 420,000 kittens. 
+##  Cats see six times better in the dark and at night than humans. 
 ##  ------ 
 ##     \   
 ##      \
@@ -481,6 +481,27 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 </blockquote>
 
 <p>Okay, here goes. An API stands for Application Programming Interface. It&#39;s just a set of instructions for two computers to talk to each other. It&#39;s sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don&#39;t know each other, then best of luck to you Mr. Tickles.</p>
+
+<p><strong>Another example</strong></p>
+
+<p>Above, we learned about writing functions. Let&#39;s create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website <a href="http://placekitten.com/">placekitten.com</a>. This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, <code>http://placekitten.com/g/300/300</code> gives an image that is 300 by 300 pixels. </p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">getcutecat <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
+  writeLines<span class="p">(</span>
+    sprintf<span class="p">(</span><span class="s">&quot;![](http://placekitten.com/g/%s/%s)&quot;</span><span class="p">,</span> x<span class="p">,</span> x<span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>300 pixels</p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">300</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## ![](http://placekitten.com/g/300/300)
+</code></pre></div>
+<p><img src="http://placekitten.com/g/300/300" alt="some kittens"></p>
+
+<p>400 pixels</p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">400</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## ![](http://placekitten.com/g/400/400)
+</code></pre></div>
+<p><img src="http://placekitten.com/g/400/400" alt="some kittens"></p>
 
 <h2><a href="#reading" name="reading"/>#</a> Reading</h2>
 
