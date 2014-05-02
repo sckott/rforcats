@@ -128,11 +128,11 @@ You can add something to each of them like
 
 
 ```r
-paste(dogs, "are dumb")
+paste(dogs, "are silly")
 ```
 
 ```
-## [1] "dalmations are dumb" "retrievers are dumb" "poodles are dumb"
+## [1] "dalmations are silly" "retrievers are silly" "poodles are silly"
 ```
 
 
@@ -631,24 +631,24 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  Phoenician cargo ships are thought to have brought the first domesticated cats to Europe in about 900 BC. 
+##  On February 28, 1 980 a female cat climbed 70 feet up the sheer pebble-dash outside wall of a block of flats in Bradford, Yorkshire and took refuge in the roof space. She had been frightened by a dog. 
 ##  ------ 
 ##     \   
-##      \  
+##      \
 ##                \`*-.
-##                  )  _`-.                 
-##                 .  : `. .                
-##                 : _   '                 
-##                 ; *` _.   `*-._          
-##                 `-.-'          `-.       
-##                   ;       `       `.     
+##                  )  _`-.
+##                 .  : `. .
+##                 : _   '  
+##                 ; *` _.   `*-._
+##                 `-.-'          `-.
+##                   ;       `       `.
 ##                   :.       .       \
-##                   .\  .   :   .-'   .   
-##                   '  `+.;  ;  '      :   
-##                   :  '  |    ;       ;-. 
+##                   .\  .   :   .-'   .
+##                   '  `+.;  ;  '      :
+##                   :  '  |    ;       ;-.
 ##                   ; '   : :`-:     _.`* ;
-##                .*' /  .*' ; .*`- +'  `*' 
-##                `*-*   `*-*  `*-*'        
+##                .*' /  .*' ; .*`- +'  `*'
+##                `*-*   `*-*  `*-*'
 ## 
 ```
 
@@ -671,7 +671,7 @@ Okay, here goes. An API stands for Application Programming Interface. It's just 
 
 **Another example**
 
-Above, we learned about writing functions. Let's create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website [placekitten.com](http://placekitten.com/). This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, `http://placekitten.com/g/300/300` gives an image that is 300 by 300 pixels. 
+Above, we learned about writing functions. Let's create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website [placekitten.com](http://placekitten.com/). This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, `http://placekitten.com/g/300/300` gives an image that is 300 by 300 pixels.
 
 
 ```r

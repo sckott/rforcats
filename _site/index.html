@@ -175,8 +175,8 @@ But we can happily make a vector of the same type of information, like</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">dogs <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">&quot;dalmations&quot;</span><span class="p">,</span> <span class="s">&quot;retrievers&quot;</span><span class="p">,</span> <span class="s">&quot;poodles&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>You can add something to each of them like</p>
-<div class="highlight"><pre><code class="r language-r" data-lang="r">paste<span class="p">(</span>dogs<span class="p">,</span> <span class="s">&quot;are dumb&quot;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] &quot;dalmations are dumb&quot; &quot;retrievers are dumb&quot; &quot;poodles are dumb&quot;
+<div class="highlight"><pre><code class="r language-r" data-lang="r">paste<span class="p">(</span>dogs<span class="p">,</span> <span class="s">&quot;are silly&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## [1] &quot;dalmations are silly&quot; &quot;retrievers are silly&quot; &quot;poodles are silly&quot;
 </code></pre></div>
 <h2><a href="#dataframes" name="dataframes"/>#</a> Data frames</h2>
 
@@ -446,7 +446,7 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## 
 ## 
 ##  ----- 
-##  Cats see six times better in the dark and at night than humans. 
+##  On February 28, 1 980 a female cat climbed 70 feet up the sheer pebble-dash outside wall of a block of flats in Bradford, Yorkshire and took refuge in the roof space. She had been frightened by a dog. 
 ##  ------ 
 ##     \   
 ##      \
@@ -484,7 +484,7 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 
 <p><strong>Another example</strong></p>
 
-<p>Above, we learned about writing functions. Let&#39;s create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website <a href="http://placekitten.com/">placekitten.com</a>. This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, <code>http://placekitten.com/g/300/300</code> gives an image that is 300 by 300 pixels. </p>
+<p>Above, we learned about writing functions. Let&#39;s create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website <a href="http://placekitten.com/">placekitten.com</a>. This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, <code>http://placekitten.com/g/300/300</code> gives an image that is 300 by 300 pixels.</p>
 <div class="highlight"><pre><code class="r language-r" data-lang="r">getcutecat <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
   writeLines<span class="p">(</span>
     sprintf<span class="p">(</span><span class="s">&quot;![](http://placekitten.com/g/%s/%s)&quot;</span><span class="p">,</span> x<span class="p">,</span> x<span class="p">)</span>
@@ -502,6 +502,23 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 </code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## ![](http://placekitten.com/g/400/400)
 </code></pre></div>
 <p><img src="http://placekitten.com/g/400/400" alt="some kittens"></p>
+
+<h2><strong><em>Hey!, R is not just for cats!</em></strong> - dogs</h2>
+
+<p>R and web APIs are open to all sorts of animals.  For instance, the <a href="http://dogr.io">dogr.io</a> service will create a &quot;doge&quot; style meme for you when provided with text.  Let&#39;s write another function to call this API</p>
+<div class="highlight"><pre><code class="r language-r" data-lang="r">getdoge <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
+  x <span class="o">=</span> paste<span class="p">(</span>x<span class="p">,</span> collapse<span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+  writeLines<span class="p">(</span>
+    sprintf<span class="p">(</span><span class="s">&quot;![](http://dogr.io/%s.png)&quot;</span><span class="p">,</span> x<span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+getdoge<span class="p">(</span>c<span class="p">(</span><span class="s">&quot;wow&quot;</span><span class="p">,</span> <span class="s">&quot;suchhostility&quot;</span><span class="p">,</span> <span class="s">&quot;bemoreinclusive&quot;</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="text language-text" data-lang="text">## ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
+</code></pre></div>
+<p><img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" alt=""></p>
+
+<p><strong><em>Now, back to your regular, cat-dominated tutorial</em></strong></p>
 
 <h2><a href="#reading" name="reading"/>#</a> Reading</h2>
 
