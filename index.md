@@ -631,7 +631,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  A cat has more bones than a human; humans have 206, but the cat has 230 (some cites list 245 bones, and state that bones may fuse together as the cat ages). 
+##  In just 7 years, one un-spayed female cat and one un-neutered male cat and their offspring can result in 420,000 kittens. 
 ##  ------ 
 ##     \   
 ##      \
@@ -681,7 +681,7 @@ And for even more advanced R:
 
 ## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
 
-Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats) - and follow [these instructions](#Contributing.md).
+Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats) - and follow [these instructions](/Contribute).
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 

@@ -392,7 +392,7 @@ And for even more advanced R:
 
 ## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
 
-Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats) - and follow [these instructions](https://github.com/sckott/rforcats/blob/gh-pages/CONTRIBUTING.md).
+Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats) - and follow [these instructions](/Contribute).
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
