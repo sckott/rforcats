@@ -631,7 +631,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  Cats have 30 vertebrae--5 more than humans have. 
+##  A cat's brain is more similar to a man's brain than that of a dog. 
 ##  ------ 
 ##     \   
 ##      \
@@ -711,7 +711,7 @@ getcutecat(400)
 
 ![some kittens](http://placekitten.com/g/400/400)
 
-## ***Hey! R is not just for cats!*** - dogs
+## <a href="#doge" name="doge"/>#</a> ***Hey! R is not just for cats!*** - dogs
 
 R and web APIs are open to all sorts of animals.  For instance, the [dogr.io](http://dogr.io) service will create a "doge" style meme for you when provided with text.  Let's write another function to call this API:
 
@@ -732,7 +732,7 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 ```
 
 
-![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
+<img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400"/>
 
 ***Now, back to your regular, cat-dominated tutorial.***
 
