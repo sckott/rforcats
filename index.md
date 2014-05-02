@@ -631,24 +631,24 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  Cats see six times better in the dark and at night than humans. 
+##  Phoenician cargo ships are thought to have brought the first domesticated cats to Europe in about 900 BC. 
 ##  ------ 
 ##     \   
-##      \
+##      \  
 ##                \`*-.
-##                  )  _`-.
-##                 .  : `. .
-##                 : _   '  
-##                 ; *` _.   `*-._
-##                 `-.-'          `-.
-##                   ;       `       `.
+##                  )  _`-.                 
+##                 .  : `. .                
+##                 : _   '                 
+##                 ; *` _.   `*-._          
+##                 `-.-'          `-.       
+##                   ;       `       `.     
 ##                   :.       .       \
-##                   .\  .   :   .-'   .
-##                   '  `+.;  ;  '      :
-##                   :  '  |    ;       ;-.
+##                   .\  .   :   .-'   .   
+##                   '  `+.;  ;  '      :   
+##                   :  '  |    ;       ;-. 
 ##                   ; '   : :`-:     _.`* ;
-##                .*' /  .*' ; .*`- +'  `*'
-##                `*-*   `*-*  `*-*'
+##                .*' /  .*' ; .*`- +'  `*' 
+##                `*-*   `*-*  `*-*'        
 ## 
 ```
 
@@ -710,6 +710,31 @@ getcutecat(400)
 
 
 ![some kittens](http://placekitten.com/g/400/400)
+
+## ***Hey!, R is not just for cats!*** - dogs
+
+R and web APIs are open to all sorts of animals.  For instance, the [dogr.io](http://dogr.io) service will create a "doge" style meme for you when provided with text.  Let's write another function to call this API
+
+
+```r
+getdoge <- function(x){
+  x = paste(x, collapse="/")
+  writeLines(
+    sprintf("![](http://dogr.io/%s.png)", x)
+  )
+}
+
+getdoge(c("wow", "suchhostility", "bemoreinclusive"))
+```
+
+```
+## ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
+```
+
+
+![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
+
+***Now, back to your regular, cat-dominated tutorial***
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 
