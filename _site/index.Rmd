@@ -58,7 +58,7 @@
     
       
         
-          <a class="sidebar-nav-item" href="/Contributors/">Contributors</a>
+          <a class="sidebar-nav-item" href="/Contribute/">Contribute</a>
         
       
     
@@ -72,7 +72,7 @@
     
 
 <!--     <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contributors</a> -->
-    <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contribute</a>
+<!--     <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats">Contribute</a> -->
     <a class="sidebar-nav-item" href="https://github.com/sckott/rforcats/raw/gh-pages/index.pdf">Download pdf</a>
     <!-- <span class="sidebar-nav-item">Currently v</span> -->
   </nav>
@@ -487,7 +487,7 @@ And for even more advanced R:
 
 ## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
 
-Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats) - and follow [these instructions](#Contributing.md).
+Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats) - and follow [these instructions](https://github.com/sckott/rforcats/blob/gh-pages/CONTRIBUTING.md).
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
