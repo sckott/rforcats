@@ -41,24 +41,16 @@ You can do math:
 
 ```r
 1 + 1
-```
-
-```
 ## [1] 2
 ```
-
 
 Type a set of letters together (also known as a _word_) within quotes and the console will print it back to you
 
 
 ```r
 "Hello Mr Tickles"
-```
-
-```
 ## [1] "Hello Mr Tickles"
 ```
-
 
 Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
 
@@ -69,18 +61,13 @@ Assign the number 5 to the name `mynumber`
 mynumber <- 5
 ```
 
-
 Later you can use `mynumber`, like adding it to another number
 
 
 ```r
 mynumber + 1
-```
-
-```
 ## [1] 6
 ```
-
 
 Sweet!
 
@@ -94,12 +81,8 @@ But wait, how do we make a vector? The easiest way is to use a function called `
 
 ```r
 c("hello", 5)
-```
-
-```
 ## [1] "hello" "5"
 ```
-
 
 Notice how the output of the above converted the 5 to a character type with quotes around the `5` to make it `"5"`, i.e., or an object of type _character_.
 But we can happily make a vector of the same type of information, like
@@ -107,12 +90,8 @@ But we can happily make a vector of the same type of information, like
 
 ```r
 c(5, 8, 200, 1, 1.5, 0.9)
-```
-
-```
 ## [1]   5.0   8.0 200.0   1.0   1.5   0.9
 ```
-
 
 Vectors are handy because they can be combined to make other R objects, such as lists (see [lists](#lists) below), and [data frames](#dataframes).
 
@@ -120,21 +99,16 @@ In addition, you can do something to each part of the vector. Let's say you have
 
 
 ```r
-dogs <- c("dalmations", "retrievers", "poodles")
+dogs <- c('dalmatians','retrievers','poodles')
 ```
-
 
 You can add something to each of them like
 
 
 ```r
 paste(dogs, "are silly")
+## [1] "dalmatians are silly" "retrievers are silly" "poodles are silly"
 ```
-
-```
-## [1] "dalmations are silly" "retrievers are silly" "poodles are silly"
-```
-
 
 ## <a href="#dataframes" name="dataframes"/>#</a> Data frames
 
@@ -146,17 +120,16 @@ A `data.frame` is one of the most commonly used objects in R. Just think of a `d
 df <- data.frame(hey=c(5,6,7),
            there=as.factor(c("a","b","c")),
            fella=c("blue","brown","green"))
+```
 
+
+```r
 df
-```
-
-```
 ##   hey there fella
 ## 1   5     a  blue
 ## 2   6     b brown
 ## 3   7     c green
 ```
-
 
 Notice that the first _column_ of numbers are actually row names, and are not part of the `data.frame` _per se_, though are part of the _metadata_ for the `data.frame`.
 
@@ -165,21 +138,19 @@ We can quickly get a sense for the type of data in the `df` object by using the 
 
 ```r
 str(df)
-```
-
-```
 ## 'data.frame':	3 obs. of  3 variables:
 ##  $ hey  : num  5 6 7
 ##  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
 ##  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
 ```
 
-
 __Matrices__
 
 Think of a matrix in R like a `data.frame` with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a [two-dimensional array](link).  
 
 We'll not dig into these further since I'm guessing since you're a cat, you'll be more of a `data.frame` kind of animal.
+
+If someone wants to write more about matrices, [do so](/Contribute).
 
 ## <a href="#lists" name="lists"/>#</a> Lists
 
@@ -198,16 +169,12 @@ list(1, "a")
 ## [1] "a"
 ```
 
-
 A nested list
 
 
 ```r
-mylist <- list(1, list("a", "b", "c"))
+mylist <- list(1, list("a","b","c"))
 mylist
-```
-
-```
 ## [[1]]
 ## [1] 1
 ## 
@@ -222,7 +189,6 @@ mylist
 ## [1] "c"
 ```
 
-
 Just like vectors, you can do operations on each element of the list. However, since lists can be nested you have to worry about what level of nesting you want to manipulate.
 
 For example, if we take the `mylist` list from above, the following
@@ -230,38 +196,24 @@ For example, if we take the `mylist` list from above, the following
 
 ```r
 length(mylist[1])
-```
-
-```
 ## [1] 1
-```
-
-```r
 length(mylist[2])
-```
-
-```
 ## [1] 1
 ```
-
 
 Gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Indeed there are
 
 
 ```r
 length(mylist[2][[1]])
-```
-
-```
 ## [1] 3
 ```
-
 
 ## <a href="#indexing" name="indexing"/>#</a> Indexing
 
 Okay, so let's say you have made a `vector`, `list`, or `data.frame`. How do you get to the things in them? Its slightly different for each one.
 
-There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame`.  That is the double square bracket: `[]`.  For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`).
+There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame`.  That is the square bracket: `[]`.  For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`).
 
 **vectors**
 
@@ -269,67 +221,44 @@ Vectors only have one dimension, as we said above. So with `[]` there is only on
 
 
 ```r
-bb <- c(5, 6, 7)
+bb <- c(5,6,7)
 ```
-
 
 We can index to each of those 3 numbers by the sequence of it's place in the vector. Get the 6 by doing
 
 
 ```r
 bb[2]
-```
-
-```
 ## [1] 6
 ```
-
 
 You can also have a named vector. What's that?  A named vector is like `bb` above, but each of the three elements has a name.
 
 
 ```r
-bb <- c(5, 6, 7)
-names(bb) <- c("hey", "hello", "wadup")
+bb <- c(5,6,7)
+names(bb) <- c('hey','hello','wadup')
 bb
-```
-
-```
 ##   hey hello wadup 
 ##     5     6     7
-```
-
-```r
 names(bb)
-```
-
-```
 ## [1] "hey"   "hello" "wadup"
 ```
-
 
 With a named vector we can get to each element in the vector using it's name with a single set, or double set of brackets to get the value, or the value and name, respectively.
 
 
 ```r
-bb["hello"]
-```
-
-```
+bb['hello']
 ## hello 
 ##     6
 ```
 
 
-
 ```r
-bb[["hello"]]
-```
-
-```
+bb[['hello']]
 ## [1] 6
 ```
-
 
 Fun.
 
@@ -341,68 +270,48 @@ For example, let's say we have the nested list from above `mylist`
 
 
 ```r
-mylist <- list(foo = 1, bar = list("a", "b", "c"))
+mylist <- list(foo=1, bar=list("a","b","c"))
 ```
-
 
 We can index to the first item in the list, including it's name, by
 
 
 ```r
 mylist[1]
-```
-
-```
 ## $foo
 ## [1] 1
 ```
-
 
 Or equivalently
 
 
 ```r
-mylist["foo"]
-```
-
-```
+mylist['foo']
 ## $foo
 ## [1] 1
 ```
-
 
 And get just the value by using two `[`
 
 
 ```r
 mylist[[1]]
-```
-
-```
 ## [1] 1
 ```
-
 
 Or equivalently
 
 
 ```r
-mylist[["foo"]]
-```
-
-```
+mylist[['foo']]
 ## [1] 1
 ```
-
 
 And get the second item in `mylist` by
 
 
 ```r
-mylist[2]  # or mylist['bar']
-```
-
-```
+mylist[2] # or mylist['bar']
 ## $bar
 ## $bar[[1]]
 ## [1] "a"
@@ -412,13 +321,7 @@ mylist[2]  # or mylist['bar']
 ## 
 ## $bar[[3]]
 ## [1] "c"
-```
-
-```r
-mylist[[2]]  # or mylist[['bar']]
-```
-
-```
+mylist[[2]] # or mylist[['bar']]
 ## [[1]]
 ## [1] "a"
 ## 
@@ -429,19 +332,14 @@ mylist[[2]]  # or mylist[['bar']]
 ## [1] "c"
 ```
 
-
 And get to the individual elements within `bar` by
 
 
 ```r
 mylist[[2]][1]
-```
-
-```
 ## [[1]]
 ## [1] "a"
 ```
-
 
 And so on to get to get to what you need.
 
@@ -454,9 +352,6 @@ Indexing on a `data.frame` and `matrix` is similar. Both have two things to inde
 
 ```r
 head(iris)
-```
-
-```
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
 ## 2          4.9         3.0          1.4         0.2  setosa
@@ -466,45 +361,32 @@ head(iris)
 ## 6          5.4         3.9          1.7         0.4  setosa
 ```
 
-
 you can index to the third row and second column by doing
 
 
 ```r
-iris[3, 2]
-```
-
-```
+iris[3,2]
 ## [1] 3.2
 ```
-
 
 You can also use names to index if you have named rows or columns. For example,
 
 
 ```r
-iris[2, "Species"]
-```
-
-```
+iris[2,"Species"]
 ## [1] setosa
 ## Levels: setosa versicolor virginica
 ```
-
 
 You can also use the `$` symbol to index to a column, like
 
 
 ```r
 mtcars$mpg
-```
-
-```
 ##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
 ## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
 ## [29] 15.8 19.7 15.0 21.4
 ```
-
 
 ## <a href="#functions" name="functions"/>#</a> Functions
 
@@ -526,9 +408,8 @@ foo()
 ```
 
 ```
-## Error: could not find function "foo"
+## I strongly dislike dogs
 ```
-
 
 Yay! Dumb dogs.
 
@@ -536,61 +417,53 @@ The `foo` function was pretty simple. We can also pass in parameters to the func
 
 
 ```r
-foo <- function(mess) {
-    writeLines(mess)
+foo <- function(mess){
+  writeLines(mess)
 }
-
-foo("I hate dogs")
 ```
 
-```
-## I hate dogs
-```
 
+```r
+foo("I strongly dislike dogs")
+## I strongly dislike dogs
+```
 
 And set parameters to default values.
 
 
 ```r
-foo <- function(mess = "I hate dogs") {
-    writeLines(mess)
+foo <- function(mess = "I strongly dislike dogs"){
+  writeLines(mess)
 }
-
-foo()
 ```
 
-```
-## I hate dogs
-```
 
 ```r
-foo("Well, I hate most dogs, but I like the one in my house")
+foo()
+## I strongly dislike dogs
+foo("Well, I dislike most dogs, but I like the one in my house")
+## Well, I dislike most dogs, but I like the one in my house
 ```
-
-```
-## Well, I hate most dogs, but I like the one in my house
-```
-
 
 Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general.
 
 ## <a href="#packages" name="packages"/>#</a> Using packages
 
-Since you're a cat, you can think of packages like boxes that you put a bunch of code in. Since you are putting code in this box you probably don't want to sit in it :). These boxes generally hold a similar set of functions (see [functions](#functions) above). A package allows you and others to
+A lot of the functionality in R is in extensions to the language, called packages. Since you're a cat, you can think of packages like boxes that you put a bunch of code in. Since you are putting code in this box you probably don't want to sit in it :). These boxes generally hold a similar set of functions (see [functions](#functions) above). A package allows you and others to
 
 * Easily install and load the code
 * Incorporate documentation
-* Lessen conflicts with functions in other packages
+* Lessen conflicts with functions in other packages (don't worry about why for now, but if you want to know [go here](http://adv-r.had.co.nz/Namespaces.html))
 
-Most people that make R packages share them on site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](http://cran.r-project.org/).
+Most people that make R packages share them on a site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](http://cran.r-project.org/).
 
-The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer.
+The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OSX.
 
 Installation is super easy. Do `install.packages("package_name")`, where `package_name` is the name of the package you want to install. Remember that the package name is case sensitive! Or if you're using RStudio you can go to the _Packages_ pane.
 
 Once the package is installed you have to load the package in to your R session. That's easy too! Do `library('package_name')`, or if you're in RStudio go to the _Packages_ pane.
 
-_Note: Package creation is bit out of scope for this site, but Hadley has made it much easier with [devtools](https://github/com/hadley/devtools)._
+_Note: Package creation is out of scope for this site, but Hadley has made it much easier with [devtools](https://github/com/hadley/devtools)._
 
 ## <a href="#nonos" name="nonos"/>#</a> No no's for cats using R
 
@@ -604,10 +477,14 @@ There are a few R gotchas to avoid cat friends.
 
 * Do combine code and text with `Markdown` or `LaTeX` to have reproducible documents, using `knitr`.
 * Do share your code.
-* Do ask lots of questions on StackOverflow (use the `[r]` tag), Twitter (does this need saying), etc.
-* `.rda`, `.rds`, `.RData` compressed files are useful, but for reproducibility purposes, use non-R specific file formats like `.csv`, `.xml`, etc.
+* When googling for R help, use `cran`, not `r`
+* When asking questions on Twitter/Appdotnet/G+/etc. use `#rstats`
+* Do ask lots of questions on StackOverflow (use the `[r]` tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and [include a reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example)!
+* `.rda`, `.rds`, `.RData` compressed files are useful, but for reproducibility purposes, use non-R specific file formats like `.csv`, `.xml`, `.json`, etc.
 
 ## <a href="#data" name="data"/>#</a> Data from the web
+
+This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That's the point of the internet after all - to serve cat pictures. 
 
 Install `cowsay`
 
@@ -617,7 +494,6 @@ install.packages("devtools")
 library("devtools")
 install_github("sckott/cowsay")
 ```
-
 
 Now let's get a cat fact!
 
@@ -631,7 +507,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  The cheetah is the world's fastest land mammal. It can run at speeds of up to 70 miles an hour (113 kilometers an hour). 
+##  Cats are subject to gum disease and to dental caries. They should have their teeth cleaned by the vet or the cat dentist once a year. 
 ##  ------ 
 ##     \   
 ##      \
@@ -651,7 +527,6 @@ say("catfact", "cat")
 ##                `*-*   `*-*  `*-*'
 ## 
 ```
-
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
 ```coffee
@@ -682,18 +557,13 @@ getcutecat <- function(x){
 }
 ```
 
-
 300 pixels
 
 
 ```r
 getcutecat(300)
-```
-
-```
 ## ![](http://placekitten.com/g/300/300)
 ```
-
 
 ![some kittens](http://placekitten.com/g/300/300)
 
@@ -702,12 +572,8 @@ getcutecat(300)
 
 ```r
 getcutecat(400)
-```
-
-```
 ## ![](http://placekitten.com/g/400/400)
 ```
-
 
 ![some kittens](http://placekitten.com/g/400/400)
 
@@ -723,14 +589,13 @@ getdoge <- function(x){
     sprintf("![](http://dogr.io/%s.png)", x)
   )
 }
+```
 
+
+```r
 getdoge(c("wow", "suchhostility", "bemoreinclusive"))
-```
-
-```
 ## ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
 ```
-
 
 <img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400"/>
 
@@ -740,7 +605,7 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 
 After this basic intro you'll want to head over to:
 
-* thinking...
+* What do you think should go here? say so [here](https://github.com/sckott/rforcats/issues)
 
 And for even more advanced R:
 
@@ -748,7 +613,7 @@ And for even more advanced R:
 
 ## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
 
-Contribute by sending a pull request to [sckott/rforcats](https://github.com/sckott/rforcats) - and follow [these instructions](/Contribute).
+Contribute by following [these instructions](/Contribute).
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
