@@ -526,7 +526,7 @@ foo()
 ```
 
 ```
-## I hate dogs
+## Error: could not find function "foo"
 ```
 
 
@@ -631,7 +631,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  A cat's brain is more similar to a man's brain than that of a dog. 
+##  The cheetah is the world's fastest land mammal. It can run at speeds of up to 70 miles an hour (113 kilometers an hour). 
 ##  ------ 
 ##     \   
 ##      \

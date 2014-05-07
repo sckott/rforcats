@@ -534,7 +534,7 @@ After this basic intro you'll want to head over to:
 
 And for even more advanced R:
 
-* [Advanced R, by Hadley Wickham](link)
+* [Advanced R, by Hadley Wickham](http://adv-r.had.co.nz/)
 
 ## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
 
