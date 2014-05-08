@@ -321,6 +321,10 @@ mylist[2] # or mylist['bar']
 ## 
 ## $bar[[3]]
 ## [1] "c"
+```
+
+
+```r
 mylist[[2]] # or mylist[['bar']]
 ## [[1]]
 ## [1] "a"
@@ -341,7 +345,7 @@ mylist[[2]][1]
 ## [1] "a"
 ```
 
-And so on to get to get to what you need.
+And so on to get to what you need.
 
 There are a number of convenience functions to make working with lists easier, but you can learn about those later.
 
@@ -445,7 +449,7 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 ## Well, I dislike most dogs, but I like the one in my house
 ```
 
-Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general.
+Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this google the _DRY principle_. 
 
 ## <a href="#packages" name="packages"/>#</a> Using packages
 
@@ -476,7 +480,6 @@ There are a few R gotchas to avoid cat friends.
 ## <a href="#dodos" name="dodos"/>#</a> Do do's for cats using R
 
 * Do combine code and text with `Markdown` or `LaTeX` to have reproducible documents, using `knitr`.
-* Do share your code.
 * When googling for R help, use `cran`, not `r`
 * When asking questions on Twitter/Appdotnet/G+/etc. use `#rstats`
 * Do ask lots of questions on StackOverflow (use the `[r]` tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and [include a reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example)!
@@ -507,7 +510,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  Cats are subject to gum disease and to dental caries. They should have their teeth cleaned by the vet or the cat dentist once a year. 
+##  Cats have an average of 24 whiskers, arranged in four horizontal rows on each side. 
 ##  ------ 
 ##     \   
 ##      \
