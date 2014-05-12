@@ -28,7 +28,7 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 * [Reading](#reading)
 * [Does this site suck?](#makeitbetter)
 
-## <a href="#reading" name="rconsole"/>#</a> R console
+## <a href="#rconsole" name="rconsole"/>#</a> R console
 
 Writing code is fun. Since you're a cat, not having opposable thumbs may be a bit of an issue, but surely you're clever enough to find a way around that.
 
@@ -412,7 +412,7 @@ foo()
 ```
 
 ```
-## I strongly dislike dogs
+## Error: could not find function "foo"
 ```
 
 Yay! Dumb dogs.
@@ -449,7 +449,7 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 ## Well, I dislike most dogs, but I like the one in my house
 ```
 
-Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this google the _DRY principle_. 
+Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this google the _DRY principle_.
 
 ## <a href="#packages" name="packages"/>#</a> Using packages
 
@@ -487,7 +487,7 @@ There are a few R gotchas to avoid cat friends.
 
 ## <a href="#data" name="data"/>#</a> Data from the web
 
-This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That's the point of the internet after all - to serve cat pictures. 
+This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That's the point of the internet after all - to serve cat pictures.
 
 Install `cowsay`
 
@@ -510,7 +510,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  Cats have an average of 24 whiskers, arranged in four horizontal rows on each side. 
+##  The domestic cat is the only species able to hold its tail vertically while walking. You can also learn about your cat's present state of mind by observing the posture of his tail. 
 ##  ------ 
 ##     \   
 ##      \
