@@ -5,7 +5,7 @@ title: Home
 
 ## An intro to R for new programmers
 
-This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real programming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things.
+This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any language for that matter, you won't be tainted by other programming languages with different ways of doing things. This is good - we can teach you the R way of doing things.
 
 <img src="/assets/img/programmer.png" width="300">
 
@@ -412,7 +412,7 @@ foo()
 ```
 
 ```
-## Error: could not find function "foo"
+## I strongly dislike dogs
 ```
 
 Yay! Dumb dogs.
@@ -510,7 +510,7 @@ say("catfact", "cat")
 ## 
 ## 
 ##  ----- 
-##  The domestic cat is the only species able to hold its tail vertically while walking. You can also learn about your cat's present state of mind by observing the posture of his tail. 
+##  The average lifespan of an outdoor-only cat is about 3 to 5 years while an indoor-only cat can live 16 years or much longer. 
 ##  ------ 
 ##     \   
 ##      \

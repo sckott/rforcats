@@ -5,7 +5,7 @@ title: Home
 
 ## An intro to R for new programmers
 
-This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any for that matter, you won't be tainted by real programming languages like `Python` or `Java`. This is good - we can teach you the R way of doing things.
+This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any language for that matter, you won't be tainted by other programming languages with different ways of doing things. This is good - we can teach you the R way of doing things.
 
 <img src="/assets/img/programmer.png" width="300">
 
