@@ -148,7 +148,7 @@ str(df)
 
 __Matrices__
 
-Think of a matrix in R like a `data.frame` with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a [two-dimensional array](link).
+Think of a matrix in R like a `data.frame` with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a two-dimensional array.
 
 
 ```r
@@ -518,7 +518,7 @@ say("catfact", "cat")
 ```
 ## 
 ##  -------------- 
-## Cats with long, lean bodies are more likely to be outgoing, and more protective and vocal than those with a stocky build. 
+## It is estimated that cats can make over 60 different sounds. 
 ##  --------------
 ##     \
 ##       \

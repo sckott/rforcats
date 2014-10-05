@@ -9,11 +9,12 @@ Inspired by [jsforcats.com](http://jsforcats.com/) - __rforcats__ is aimed at te
 * Carson Sievert [@cpsievert](https://github.com/cpsievert)
 * Ben Marwick [@benmarwick](https://github.com/benmarwick)
 * Noam Ross [@noamross](https://github.com/noamross)
+* Zach Stednick [@stedy](https://github.com/stedy)
 * You?
 
 ### cats
 
-* the orange one at the bottom of the page: _Leo_ (aka _boom boom_, _muffin_, _goose_, _goosie_, _bumpkin_, _goosebump_, _kitten face_, _kitten butt_, or _monkey_)
+* the orange fur ball at the bottom of the page: _Leo_ (aka _boom boom_, _muffin_, _goose_, _goosie_, _bumpkin_, _goosebump_, _kitten face_, _kitten butt_, _monkey_, __)
 
 ### license
 
