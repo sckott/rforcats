@@ -44,15 +44,17 @@ You can do math:
 ## [1] 2
 ```
 
-Type a set of letters together (also known as a _word_) within quotes and the console will print it back to you
+Strings are always fun to start with, type a set of letters together within quotes and the console will print it back to you
 
 
 ```r
 "Hello Mr Tickles"
 ## [1] "Hello Mr Tickles"
+"This is a string"
+## [1] "This is a string"
 ```
 
-Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
+Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. Think of this as being if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
 
 Assign the number 5 to the name `mynumber`
 
@@ -95,19 +97,19 @@ c(5, 8, 200, 1, 1.5, 0.9)
 
 Vectors are handy because they can be combined to make other R objects, such as lists (see [lists](#lists) below), and [data frames](#dataframes).
 
-In addition, you can do something to each part of the vector. Let's say you have a vector of three types of dog:
+In addition, you can do something to each part of the vector. Let's say you have a vector of three types of animals:
 
 
 ```r
-dogs <- c('dalmatians','retrievers','poodles')
+animals <- c('birds','squirrels','fish')
 ```
 
 You can add something to each of them like
 
 
 ```r
-paste(dogs, "are silly")
-## [1] "dalmatians are silly" "retrievers are silly" "poodles are silly"
+paste(animals, "are silly")
+## [1] "birds are silly"     "squirrels are silly" "fish are silly"
 ```
 
 ## <a href="#dataframes" name="dataframes"/>#</a> Data frames
@@ -141,20 +143,29 @@ str(df)
 ## 'data.frame':	3 obs. of  3 variables:
 ##  $ hey  : num  5 6 7
 ##  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
-##  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
+##  $ fella: chr  "blue" "brown" "green"
 ```
 
 __Matrices__
 
-Think of a matrix in R like a `data.frame` with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a [two-dimensional array](link).  
+Think of a matrix in R like a `data.frame` with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a [two-dimensional array](link).
 
-We'll not dig into these further since I'm guessing since you're a cat, you'll be more of a `data.frame` kind of animal.
 
-If someone wants to write more about matrices, [do so](/Contribute).
+```r
+mat <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3)
+```
+
+
+```r
+mat
+##      [,1] [,2] [,3]
+## [1,]    1    3   12
+## [2,]    2   11   13
+```
 
 ## <a href="#lists" name="lists"/>#</a> Lists
 
-Lists are sorta crazy. They are kinda like vectors, but not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a `data.frame` and a `numeric`, or a `data.frame` and another `list`!  The way we make a list is via the function `list`
+Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a `data.frame` and a `numeric`, or a `data.frame` and another `list`!  The way we make a list is via the function `list`
 
 
 ```r
@@ -191,7 +202,7 @@ mylist
 
 Just like vectors, you can do operations on each element of the list. However, since lists can be nested you have to worry about what level of nesting you want to manipulate.
 
-For example, if we take the `mylist` list from above, the following
+For example, if we take the `mylist` list from above, and perform the following:
 
 
 ```r
@@ -201,7 +212,7 @@ length(mylist[2])
 ## [1] 1
 ```
 
-Gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Indeed there are
+This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Indeed there are
 
 
 ```r
@@ -224,7 +235,7 @@ Vectors only have one dimension, as we said above. So with `[]` there is only on
 bb <- c(5,6,7)
 ```
 
-We can index to each of those 3 numbers by the sequence of it's place in the vector. Get the 6 by doing
+We can index to each of those 3 numbers by the sequence of its place in the vector. Get the 6 by doing
 
 
 ```r
@@ -245,7 +256,7 @@ names(bb)
 ## [1] "hey"   "hello" "wadup"
 ```
 
-With a named vector we can get to each element in the vector using it's name with a single set, or double set of brackets to get the value, or the value and name, respectively.
+With a named vector we can get to each element in the vector using its name with a single set, or double set of brackets to get the value, or the value and name, respectively.
 
 
 ```r
@@ -273,7 +284,7 @@ For example, let's say we have the nested list from above `mylist`
 mylist <- list(foo=1, bar=list("a","b","c"))
 ```
 
-We can index to the first item in the list, including it's name, by
+We can index to the first item in the list, including its name, by
 
 
 ```r
@@ -365,7 +376,7 @@ head(iris)
 ## 6          5.4         3.9          1.7         0.4  setosa
 ```
 
-you can index to the third row and second column by doing
+You can index to the third row and second column by doing
 
 
 ```r
@@ -412,7 +423,7 @@ foo()
 ```
 
 ```
-## I strongly dislike dogs
+## Error: could not find function "foo"
 ```
 
 Yay! Dumb dogs.
@@ -449,7 +460,7 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 ## Well, I dislike most dogs, but I like the one in my house
 ```
 
-Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this google the _DRY principle_.
+Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this Google the _DRY principle_.
 
 ## <a href="#packages" name="packages"/>#</a> Using packages
 
@@ -461,7 +472,7 @@ A lot of the functionality in R is in extensions to the language, called package
 
 Most people that make R packages share them on a site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](http://cran.r-project.org/).
 
-The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OSX.
+The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OS X.
 
 Installation is super easy. Do `install.packages("package_name")`, where `package_name` is the name of the package you want to install. Remember that the package name is case sensitive! Or if you're using RStudio you can go to the _Packages_ pane.
 
@@ -473,8 +484,8 @@ _Note: Package creation is out of scope for this site, but Hadley has made it mu
 
 There are a few R gotchas to avoid cat friends.
 
-* `attach()`: Don't use it. Just don't.
-* When doing `library()` or `require()` use the package name in quotes as package name without quotes is sugar, but can cause problems.
+* `attach()`: This attaches an object to the search path. Like fleas, these can be hard to live with and harder to get rid of.
+* When doing `library()` or `require()` use the package name in quotes as package name without quotes is easier, but can cause problems.
 * Make sure to keep your claws trimmed so they don't get stuck in spaces between the keys.
 
 ## <a href="#dodos" name="dodos"/>#</a> Do do's for cats using R
@@ -503,32 +514,18 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
+```
+
+```
+## Error: there is no package called 'cowsay'
+```
+
+```r
 say("catfact", "cat")
 ```
 
 ```
-## 
-## 
-##  ----- 
-##  The average lifespan of an outdoor-only cat is about 3 to 5 years while an indoor-only cat can live 16 years or much longer. 
-##  ------ 
-##     \   
-##      \
-##                \`*-.
-##                  )  _`-.
-##                 .  : `. .
-##                 : _   '  
-##                 ; *` _.   `*-._
-##                 `-.-'          `-.
-##                   ;       `       `.
-##                   :.       .       \
-##                   .\  .   :   .-'   .
-##                   '  `+.;  ;  '      :
-##                   :  '  |    ;       ;-.
-##                   ; '   : :`-:     _.`* ;
-##                .*' /  .*' ; .*`- +'  `*'
-##                `*-*   `*-*  `*-*'
-## 
+## Error: could not find function "say"
 ```
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
@@ -543,7 +540,7 @@ say <- function(what, by, type){
 
 The first line is a bunch of ascii characters to make a cat. The second line defines the url for the cat facts API. The third line retrieves one cat fact from the cat facts API. And the fourth line prints the messages with a cat.
 
-> But what is an API? I'm a cat, I only drink water or milk (preferably milk) - but at least I've heard of an IPA. What the rat's ass (yum) is an API.
+> But what is an API? I'm a cat, I only drink water or milk (preferably milk) - but at least I've heard of an IPA. What the rat's ass (yum) is an API?
 
 Okay, here goes. An API stands for Application Programming Interface. It's just a set of instructions for two computers to talk to each other. It's sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don't know each other, then best of luck to you Mr. Tickles.
 
@@ -606,7 +603,7 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 
-After this basic intro you'll want to head over to:
+After this basic intro you'll want to do more, such as:
 
 * What do you think should go here? say so [here](https://github.com/sckott/rforcats/issues)
 
