@@ -143,7 +143,7 @@ str(df)
 ## 'data.frame':	3 obs. of  3 variables:
 ##  $ hey  : num  5 6 7
 ##  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
-##  $ fella: chr  "blue" "brown" "green"
+##  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
 ```
 
 __Matrices__
@@ -170,9 +170,6 @@ Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat
 
 ```r
 list(1, "a")
-```
-
-```
 ## [[1]]
 ## [1] 1
 ## 
@@ -409,6 +406,7 @@ Cats are the type of feline to love functions. Functions make your life easier b
 
 Functions are written like this
 
+
 ```r
 foo <- function(){
   writeLines("I hate dogs")
@@ -423,7 +421,7 @@ foo()
 ```
 
 ```
-## Error: could not find function "foo"
+## I hate dogs
 ```
 
 Yay! Dumb dogs.
@@ -514,18 +512,28 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
-```
-
-```
-## Error: there is no package called 'cowsay'
-```
-
-```r
 say("catfact", "cat")
 ```
 
 ```
-## Error: could not find function "say"
+## 
+##  -------------- 
+## Cats with long, lean bodies are more likely to be outgoing, and more protective and vocal than those with a stocky build. 
+##  --------------
+##     \
+##       \
+##         \
+##             |\___/|
+##           ==) ^Y^ (==
+##             \  ^  /
+##              )=*=(
+##             /     \
+##             |     |
+##            /| | | |\
+##            \| | |_|/\
+##       jgs  //_// ___/
+##                \_)
+## 
 ```
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 

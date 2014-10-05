@@ -136,7 +136,7 @@ mat
 
 Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a `data.frame` and a `numeric`, or a `data.frame` and another `list`!  The way we make a list is via the function `list`
 
-```{r list1}
+```{r list1, collapse=TRUE}
 list(1, "a")
 ```
 
@@ -289,7 +289,7 @@ Cats are the type of feline to love functions. Functions make your life easier b
 
 Functions are written like this
 
-```r
+```{r}
 foo <- function(){
   writeLines("I hate dogs")
 }

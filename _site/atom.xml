@@ -4,7 +4,7 @@
  <title>R for cats</title>
  <link href="http://rforcats.net//atom.xml" rel="self"/>
  <link href="http://rforcats.net//"/>
- <updated>2014-09-11T09:20:09-04:00</updated>
+ <updated>2014-10-05T12:09:27-07:00</updated>
  <id>http://rforcats.net/</id>
  <author>
    <name>Scott Chamberlain</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>no blog</title>
    <link href="http://rforcats.net//2014/01/02/noposts/"/>
-   <updated>2014-01-02T00:00:00-05:00</updated>
+   <updated>2014-01-02T00:00:00-08:00</updated>
    <id>http://rforcats.net//2014/01/02/noposts</id>
    <content type="html">&lt;h3&gt;nothing to see here :)&lt;/h3&gt;
 </content>
