@@ -505,18 +505,28 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
-```
-
-```
-## Error in library("cowsay"): there is no package called 'cowsay'
-```
-
-```r
 say("catfact", "cat")
 ```
 
 ```
-## Error in eval(expr, envir, enclos): could not find function "say"
+## 
+##  -------------- 
+## The Ancient Egyptian word for cat was mau, which means "to see". 
+##  --------------
+##     \
+##       \
+##         \
+##             |\___/|
+##           ==) ^Y^ (==
+##             \  ^  /
+##              )=*=(
+##             /     \
+##             |     |
+##            /| | | |\
+##            \| | |_|/\
+##       jgs  //_// ___/
+##                \_)
+## 
 ```
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
