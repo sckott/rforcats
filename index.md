@@ -51,6 +51,7 @@ Type a set of letters together (also known as a _word_) within quotes and the co
 "Hello Mr Tickles"
 ## [1] "Hello Mr Tickles"
 ```
+Double and single quotes are pretty much interchangeable, but for consistencies sake (and to not confuse dogs) we will stick with double quotes.
 
 Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. This is as if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
 
@@ -99,7 +100,7 @@ In addition, you can do something to each part of the vector. Let's say you have
 
 
 ```r
-dogs <- c('dalmatians','retrievers','poodles')
+dogs <- c("dalmatians","retrievers","poodles")
 ```
 
 You can add something to each of them like
@@ -237,7 +238,7 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 
 ```r
 bb <- c(5,6,7)
-names(bb) <- c('hey','hello','wadup')
+names(bb) <- c("hey","hello","wadup")
 bb
 ##   hey hello wadup 
 ##     5     6     7
@@ -249,14 +250,14 @@ With a named vector we can get to each element in the vector using it's name wit
 
 
 ```r
-bb['hello']
+bb["hello"]
 ## hello 
 ##     6
 ```
 
 
 ```r
-bb[['hello']]
+bb[["hello"]]
 ## [1] 6
 ```
 
@@ -286,7 +287,7 @@ Or equivalently
 
 
 ```r
-mylist['foo']
+mylist["foo"]
 ## $foo
 ## [1] 1
 ```
@@ -303,7 +304,7 @@ Or equivalently
 
 
 ```r
-mylist[['foo']]
+mylist[["foo"]]
 ## [1] 1
 ```
 
@@ -311,7 +312,7 @@ And get the second item in `mylist` by
 
 
 ```r
-mylist[2] # or mylist['bar']
+mylist[2] # or mylist["bar"]
 ## $bar
 ## $bar[[1]]
 ## [1] "a"
@@ -325,7 +326,7 @@ mylist[2] # or mylist['bar']
 
 
 ```r
-mylist[[2]] # or mylist[['bar']]
+mylist[[2]] # or mylist[["bar"]]
 ## [[1]]
 ## [1] "a"
 ## 
@@ -398,6 +399,7 @@ Cats are the type of feline to love functions. Functions make your life easier b
 
 Functions are written like this
 
+
 ```r
 foo <- function(){
   writeLines("I hate dogs")
@@ -412,7 +414,7 @@ foo()
 ```
 
 ```
-## I strongly dislike dogs
+## I hate dogs
 ```
 
 Yay! Dumb dogs.
@@ -503,32 +505,18 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
+```
+
+```
+## Error in library("cowsay"): there is no package called 'cowsay'
+```
+
+```r
 say("catfact", "cat")
 ```
 
 ```
-## 
-## 
-##  ----- 
-##  The average lifespan of an outdoor-only cat is about 3 to 5 years while an indoor-only cat can live 16 years or much longer. 
-##  ------ 
-##     \   
-##      \
-##                \`*-.
-##                  )  _`-.
-##                 .  : `. .
-##                 : _   '  
-##                 ; *` _.   `*-._
-##                 `-.-'          `-.
-##                   ;       `       `.
-##                   :.       .       \
-##                   .\  .   :   .-'   .
-##                   '  `+.;  ;  '      :
-##                   :  '  |    ;       ;-.
-##                   ; '   : :`-:     _.`* ;
-##                .*' /  .*' ; .*`- +'  `*'
-##                `*-*   `*-*  `*-*'
-## 
+## Error in eval(expr, envir, enclos): could not find function "say"
 ```
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
