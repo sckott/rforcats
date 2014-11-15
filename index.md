@@ -53,6 +53,7 @@ Strings are always fun to start with, type a set of letters together within quot
 "This is a string"
 ## [1] "This is a string"
 ```
+Double quotes and single quotes are more or less interchangable, but is better practice to stick with double quotes.
 
 Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. Think of this as being if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
 
@@ -101,7 +102,7 @@ In addition, you can do something to each part of the vector. Let's say you have
 
 
 ```r
-animals <- c('birds','squirrels','fish')
+animals <- c("birds","squirrels","fish")
 ```
 
 You can add something to each of them like
@@ -245,7 +246,7 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 
 ```r
 bb <- c(5,6,7)
-names(bb) <- c('hey','hello','wadup')
+names(bb) <- c("hey","hello","wadup")
 bb
 ##   hey hello wadup 
 ##     5     6     7
@@ -257,14 +258,14 @@ With a named vector we can get to each element in the vector using its name with
 
 
 ```r
-bb['hello']
+bb["hello"]
 ## hello 
 ##     6
 ```
 
 
 ```r
-bb[['hello']]
+bb[["hello"]]
 ## [1] 6
 ```
 
@@ -294,7 +295,7 @@ Or equivalently
 
 
 ```r
-mylist['foo']
+mylist["foo"]
 ## $foo
 ## [1] 1
 ```
@@ -311,7 +312,7 @@ Or equivalently
 
 
 ```r
-mylist[['foo']]
+mylist[["foo"]]
 ## [1] 1
 ```
 
@@ -319,7 +320,7 @@ And get the second item in `mylist` by
 
 
 ```r
-mylist[2] # or mylist['bar']
+mylist[2] # or mylist["bar"]
 ## $bar
 ## $bar[[1]]
 ## [1] "a"
@@ -333,7 +334,7 @@ mylist[2] # or mylist['bar']
 
 
 ```r
-mylist[[2]] # or mylist[['bar']]
+mylist[[2]] # or mylist[["bar"]]
 ## [[1]]
 ## [1] "a"
 ## 
@@ -518,7 +519,7 @@ say("catfact", "cat")
 ```
 ## 
 ##  -------------- 
-## It is estimated that cats can make over 60 different sounds. 
+## Some common houseplants poisonous to cats include: English Ivy, iris, mistletoe, philodendron, and yew. 
 ##  --------------
 ##     \
 ##       \
