@@ -10,6 +10,7 @@ Inspired by [jsforcats.com](http://jsforcats.com/) - __rforcats__ is aimed at te
 * Ben Marwick [@benmarwick](https://github.com/benmarwick)
 * Noam Ross [@noamross](https://github.com/noamross)
 * Zach Stednick [@stedy](https://github.com/stedy)
+* Jeffrey Hollister [@jhollist](https://github.com/jhollist)
 * You?
 
 ### cats

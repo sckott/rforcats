@@ -41,9 +41,10 @@ Thanks for contributing whether you or your cat wrote the code!!!!!
 * Carson Sievert [@cpsievert](https://github.com/cpsievert)
 * Ben Marwick [@benmarwick](https://github.com/benmarwick)
 * Noam Ross [@noamross](https://github.com/noamross)
+* Zach Stednick [@stedy](https://github.com/stedy)
+* Jeffrey Hollister [@jhollist](https://github.com/jhollist)
 * You?
 
 ### cats
 
-* the orange one at the bottom of the page: _Leo_ (aka _boom boom_, _muffin_, or _goosie_)
-* your cat?
+* the orange fur ball at the bottom of the page: _Leo_ (aka _boom boom_, _muffin_, _goose_, _goosie_, _bumpkin_, _goosebump_, _kitten face_, _kitten butt_, _monkey_, _monkey butt_, _sa sa_, _leo the lion_, and more)
