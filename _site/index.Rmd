@@ -147,6 +147,7 @@ Strings are always fun to start with, type a set of letters together within quot
 "Hello Mr Tickles"
 "This is a string"
 ```
+Double quotes and single quotes are more or less interchangable, but is better practice to stick with double quotes.
 
 Another thing you'll want to do as a cat using R is assign things to a name so that you can use it later. Think of this as being if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).
 
@@ -187,7 +188,7 @@ Vectors are handy because they can be combined to make other R objects, such as 
 In addition, you can do something to each part of the vector. Let's say you have a vector of three types of animals:
 
 ```{r, collapse=TRUE}
-animals <- c('birds','squirrels','fish')
+animals <- c("birds","squirrels","fish")
 ```
 
 You can add something to each of them like
@@ -285,7 +286,7 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 
 ```{r, collapse=TRUE}
 bb <- c(5,6,7)
-names(bb) <- c('hey','hello','wadup')
+names(bb) <- c("hey","hello","wadup")
 bb
 names(bb)
 ```
@@ -293,11 +294,11 @@ names(bb)
 With a named vector we can get to each element in the vector using its name with a single set, or double set of brackets to get the value, or the value and name, respectively.
 
 ```{r, collapse=TRUE}
-bb['hello']
+bb["hello"]
 ```
 
 ```{r, collapse=TRUE}
-bb[['hello']]
+bb[["hello"]]
 ```
 
 Fun.
@@ -321,7 +322,7 @@ mylist[1]
 Or equivalently
 
 ```{r, collapse=TRUE}
-mylist['foo']
+mylist["foo"]
 ```
 
 And get just the value by using two `[`
@@ -333,17 +334,17 @@ mylist[[1]]
 Or equivalently
 
 ```{r, collapse=TRUE}
-mylist[['foo']]
+mylist[["foo"]]
 ```
 
 And get the second item in `mylist` by
 
 ```{r, collapse=TRUE}
-mylist[2] # or mylist['bar']
+mylist[2] # or mylist["bar"]
 ```
 
 ```{r, collapse=TRUE}
-mylist[[2]] # or mylist[['bar']]
+mylist[[2]] # or mylist[["bar"]]
 ```
 
 And get to the individual elements within `bar` by

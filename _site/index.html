@@ -147,6 +147,8 @@
 <span class="s">&quot;This is a string&quot;</span>
 <span class="c1">## [1] &quot;This is a string&quot;</span>
 </code></pre></div>
+<p>Double quotes and single quotes are more or less interchangable, but is better practice to stick with double quotes.</p>
+
 <p>Another thing you&#39;ll want to do as a cat using R is assign things to a name so that you can use it later. Think of this as being if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).</p>
 
 <p>Assign the number 5 to the name <code>mynumber</code></p>
@@ -174,7 +176,7 @@ But we can happily make a vector of the same type of information, like</p>
 <p>Vectors are handy because they can be combined to make other R objects, such as lists (see <a href="#lists">lists</a> below), and <a href="#dataframes">data frames</a>.</p>
 
 <p>In addition, you can do something to each part of the vector. Let&#39;s say you have a vector of three types of animals:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">animals <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;birds&#39;</span><span class="p">,</span><span class="s">&#39;squirrels&#39;</span><span class="p">,</span><span class="s">&#39;fish&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">animals <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;birds&quot;</span><span class="p">,</span><span class="s">&quot;squirrels&quot;</span><span class="p">,</span><span class="s">&quot;fish&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>You can add something to each of them like</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">paste</span><span class="p">(</span>animals<span class="p">,</span> <span class="s">&quot;are silly&quot;</span><span class="p">)</span>
@@ -265,7 +267,7 @@ mylist
 </code></pre></div>
 <p>You can also have a named vector. What&#39;s that?  A named vector is like <code>bb</code> above, but each of the three elements has a name.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">bb <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
-<span class="kp">names</span><span class="p">(</span>bb<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;hey&#39;</span><span class="p">,</span><span class="s">&#39;hello&#39;</span><span class="p">,</span><span class="s">&#39;wadup&#39;</span><span class="p">)</span>
+<span class="kp">names</span><span class="p">(</span>bb<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;hey&quot;</span><span class="p">,</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="s">&quot;wadup&quot;</span><span class="p">)</span>
 bb
 <span class="c1">##   hey hello wadup </span>
 <span class="c1">##     5     6     7</span>
@@ -273,10 +275,10 @@ bb
 <span class="c1">## [1] &quot;hey&quot;   &quot;hello&quot; &quot;wadup&quot;</span>
 </code></pre></div>
 <p>With a named vector we can get to each element in the vector using its name with a single set, or double set of brackets to get the value, or the value and name, respectively.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[</span><span class="s">&#39;hello&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[</span><span class="s">&quot;hello&quot;</span><span class="p">]</span>
 <span class="c1">## hello </span>
 <span class="c1">##     6</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[[</span><span class="s">&#39;hello&#39;</span><span class="p">]]</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[[</span><span class="s">&quot;hello&quot;</span><span class="p">]]</span>
 <span class="c1">## [1] 6</span>
 </code></pre></div>
 <p>Fun.</p>
@@ -294,7 +296,7 @@ bb
 <span class="c1">## [1] 1</span>
 </code></pre></div>
 <p>Or equivalently</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">]</span>
 <span class="c1">## $foo</span>
 <span class="c1">## [1] 1</span>
 </code></pre></div>
@@ -303,11 +305,11 @@ bb
 <span class="c1">## [1] 1</span>
 </code></pre></div>
 <p>Or equivalently</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="s">&#39;foo&#39;</span><span class="p">]]</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="s">&quot;foo&quot;</span><span class="p">]]</span>
 <span class="c1">## [1] 1</span>
 </code></pre></div>
 <p>And get the second item in <code>mylist</code> by</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="c1"># or mylist[&#39;bar&#39;]</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="c1"># or mylist[&quot;bar&quot;]</span>
 <span class="c1">## $bar</span>
 <span class="c1">## $bar[[1]]</span>
 <span class="c1">## [1] &quot;a&quot;</span>
@@ -317,7 +319,7 @@ bb
 <span class="c1">## </span>
 <span class="c1">## $bar[[3]]</span>
 <span class="c1">## [1] &quot;c&quot;</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="c1"># or mylist[[&#39;bar&#39;]]</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="c1"># or mylist[[&quot;bar&quot;]]</span>
 <span class="c1">## [[1]]</span>
 <span class="c1">## [1] &quot;a&quot;</span>
 <span class="c1">## </span>
@@ -450,7 +452,7 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
 say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## 
 ##  -------------- 
-## It is estimated that cats can make over 60 different sounds. 
+## Some common houseplants poisonous to cats include: English Ivy, iris, mistletoe, philodendron, and yew. 
 ##  --------------
 ##     \
 ##       \
