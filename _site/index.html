@@ -83,7 +83,7 @@
 
   <!-- <div class="sidebar-item">
     <p>
-      &copy; 2014. All rights reserved.
+      &copy; 2015. All rights reserved.
     </p>
   </div> -->
 </div>
@@ -121,6 +121,7 @@
 <li><a href="#lists">lists</a></li>
 <li><a href="#indexing">indexing</a></li>
 <li><a href="#functions">functions</a></li>
+<li><a href="#pipes">pipes</a></li>
 <li><a href="#packages">Using packages</a></li>
 <li><a href="#nonos">No no&#39;s for cats using R</a></li>
 <li><a href="#dodos">Do do&#39;s for cats - or things to do</a></li>
@@ -418,6 +419,44 @@ foo<span class="p">(</span><span class="s">&quot;Well, I dislike most dogs, but 
 
 <p><em>Note: Package creation is out of scope for this site, but Hadley has made it much easier with <a href="https://github/com/hadley/devtools">devtools</a>.</em></p>
 
+<h2><a href="#pipes" name="pipes"/>#</a> Pipes</h2>
+
+<p><img src="http://media.giphy.com/media/7fLGzTYkX3hO8/giphy.gif" width="300"></p>
+
+<p>Pipes are not in base R, but are a concept you should know about as a cat.</p>
+
+<p>The R package <a href="http://cran.r-project.org/web/packages/magrittr/index.html">magrittr</a> introduced pipe operators. There are many, but we&#39;ll just focus on <code>%&gt;%</code>. This allows you to pipe a value forward into an expression or function call, like <code>x %&gt;% f</code>, rather than <code>f(x)</code>, if <code>f()</code> is a function.</p>
+
+<p>First, let&#39;s install <code>magrittr</code>:</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&quot;magrittr&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Then load the package so we can use it in the R session:</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span><span class="s">&quot;magrittr&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Why should you care about this? This concept can make writing code and understanding it simpler. Take for example this case:</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">mtcars <span class="o">%&gt;%</span> <span class="kp">subset</span><span class="p">(</span>cyl <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="kp">head</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+## Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+## Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+## Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+## Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+</code></pre></div>
+<p>Alternatively, we could avoid pipes:</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span> <span class="kp">subset</span><span class="p">(</span>mtcars<span class="p">,</span> cyl <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+## Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+## Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+## Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+## Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+</code></pre></div>
+<p>Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we&#39;re going to manipulate (the <code>mtcars</code> data.frame), then subsets the data.frame to take rows with the <code>cyl</code> column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (<code>mtcars</code>), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.</p>
+
+<p>Pipe are increasingly being integrated into various R packages. One of the more popular ones is <a href="http://cran.r-project.org/web/packages/dplyr/index.html">dplyr</a>, which allows you to manipulate data.frames.</p>
+
 <h2><a href="#nonos" name="nonos"/>#</a> No no&#39;s for cats using R</h2>
 
 <p>There are a few R gotchas to avoid cat friends.</p>
@@ -452,7 +491,7 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
 say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## 
 ##  -------------- 
-## Some common houseplants poisonous to cats include: English Ivy, iris, mistletoe, philodendron, and yew. 
+## It has been scientifically proven that stroking a cat can lower one&#39;s blood pressure. 
 ##  --------------
 ##     \
 ##       \
@@ -500,11 +539,11 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 </code></pre></div>
 <p><img src="http://placekitten.com/g/300/300" alt="some kittens"></p>
 
-<p>400 pixels</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">400</span><span class="p">)</span>
-<span class="c1">## ![](http://placekitten.com/g/400/400)</span>
+<p>250 pixels</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">250</span><span class="p">)</span>
+<span class="c1">## ![](http://placekitten.com/g/250/250)</span>
 </code></pre></div>
-<p><img src="http://placekitten.com/g/400/400" alt="some kittens"></p>
+<p><img src="http://placekitten.com/g/250/250" alt="some kittens"></p>
 
 <h2><a href="#doge" name="doge"/>#</a> <strong><em>Hey! R is not just for cats!</em></strong> - dogs</h2>
 
@@ -542,7 +581,7 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 
 <h2><a href="#catslover" name="catslover"/>#</a> Cat&#39;s love R</h2>
 
-<p><img src="/assets/img/leo_giffed.gif" width="300"></p>
+<p><img src="assets/img/leo_giffed.gif" width="300"></p>
 
 <h2><a href="#license" name="license"/>#</a> License</h2>
 

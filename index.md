@@ -482,6 +482,8 @@ _Note: Package creation is out of scope for this site, but Hadley has made it mu
 
 ## <a href="#pipes" name="pipes"/>#</a> Pipes
 
+<img src="http://media.giphy.com/media/7fLGzTYkX3hO8/giphy.gif" width="300">
+
 Pipes are not in base R, but are a concept you should know about as a cat.
 
 The R package [magrittr](http://cran.r-project.org/web/packages/magrittr/index.html) introduced pipe operators. There are many, but we'll just focus on `%>%`. This allows you to pipe a value forward into an expression or function call, like `x %>% f`, rather than `f(x)`, if `f()` is a function.
@@ -579,7 +581,7 @@ say("catfact", "cat")
 ```
 ## 
 ##  -------------- 
-## A cat has a total of 24 whiskers, 4 rows of whiskers on each side. The upper two rows can move independently of the bottom two rows. 
+## It has been scientifically proven that stroking a cat can lower one's blood pressure. 
 ##  --------------
 ##     \
 ##       \
