@@ -21,6 +21,7 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 * [lists](#lists)
 * [indexing](#indexing)
 * [functions](#functions)
+* [pipes](#pipes)
 * [Using packages](#packages)
 * [No no's for cats using R](#nonos)
 * [Do do's for cats - or things to do](#dodos)
@@ -349,6 +350,41 @@ Once the package is installed you have to load the package in to your R session.
 
 _Note: Package creation is out of scope for this site, but Hadley has made it much easier with [devtools](https://github/com/hadley/devtools)._
 
+## <a href="#pipes" name="pipes"/>#</a> Pipes
+
+Pipes are not in base R, but are a concept you should know about as a cat.
+
+The R package [magrittr](http://cran.r-project.org/web/packages/magrittr/index.html) introduced pipe operators. There are many, but we'll just focus on `%>%`. This allows you to pipe a value forward into an expression or function call, like `x %>% f`, rather than `f(x)`, if `f()` is a function.
+
+First, let's install `magrittr`:
+
+```{r eval=FALSE}
+install.packages("magrittr")
+```
+
+Then load the package so we can use it in the R session:
+
+```{r}
+library("magrittr")
+```
+
+Why should you care about this? This concept can make writing code and understanding it simpler. Take for example this case:
+
+```{r}
+mtcars %>% subset(cyl < 6) %>% head()
+```
+
+Alternatively, we could avoid pipes:
+
+```{r}
+head( subset(mtcars, cyl < 6) )
+```
+
+Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we're going to manipulate (the `mtcars` data.frame), then subsets the data.frame to take rows with the `cyl` column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (`mtcars`), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.
+
+Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](http://cran.r-project.org/web/packages/dplyr/index.html), which allows you to manipulate data.frames.
+
+
 ## <a href="#nonos" name="nonos"/>#</a> No no's for cats using R
 
 There are a few R gotchas to avoid cat friends.
@@ -420,13 +456,13 @@ getcutecat(300)
 
 ![some kittens](http://placekitten.com/g/300/300)
 
-400 pixels
+250 pixels
 
 ```{r, collapse=TRUE}
-getcutecat(400)
+getcutecat(250)
 ```
 
-![some kittens](http://placekitten.com/g/400/400)
+![some kittens](http://placekitten.com/g/250/250)
 
 ## <a href="#doge" name="doge"/>#</a> ***Hey! R is not just for cats!*** - dogs
 
@@ -465,6 +501,6 @@ Contribute by following [these instructions](/Contribute).
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
-<img src="/assets/img/leo_giffed.gif" width="300">
+<img src="assets/img/leo_giffed.gif" width="300">
 
 ## <a href="#license" name="license"/>#</a> License

@@ -21,6 +21,7 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 * [lists](#lists)
 * [indexing](#indexing)
 * [functions](#functions)
+* [pipes](#pipes)
 * [Using packages](#packages)
 * [No no's for cats using R](#nonos)
 * [Do do's for cats - or things to do](#dodos)
@@ -479,6 +480,65 @@ Once the package is installed you have to load the package in to your R session.
 
 _Note: Package creation is out of scope for this site, but Hadley has made it much easier with [devtools](https://github/com/hadley/devtools)._
 
+## <a href="#pipes" name="pipes"/>#</a> Pipes
+
+Pipes are not in base R, but are a concept you should know about as a cat.
+
+The R package [magrittr](http://cran.r-project.org/web/packages/magrittr/index.html) introduced pipe operators. There are many, but we'll just focus on `%>%`. This allows you to pipe a value forward into an expression or function call, like `x %>% f`, rather than `f(x)`, if `f()` is a function.
+
+First, let's install `magrittr`:
+
+
+```r
+install.packages("magrittr")
+```
+
+Then load the package so we can use it in the R session:
+
+
+```r
+library("magrittr")
+```
+
+Why should you care about this? This concept can make writing code and understanding it simpler. Take for example this case:
+
+
+```r
+mtcars %>% subset(cyl < 6) %>% head()
+```
+
+```
+##                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+## Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+## Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+## Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+## Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+```
+
+Alternatively, we could avoid pipes:
+
+
+```r
+head( subset(mtcars, cyl < 6) )
+```
+
+```
+##                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+## Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+## Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+## Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+## Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+```
+
+Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we're going to manipulate (the `mtcars` data.frame), then subsets the data.frame to take rows with the `cyl` column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (`mtcars`), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.
+
+Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](http://cran.r-project.org/web/packages/dplyr/index.html), which allows you to manipulate data.frames.
+
+
 ## <a href="#nonos" name="nonos"/>#</a> No no's for cats using R
 
 There are a few R gotchas to avoid cat friends.
@@ -519,7 +579,7 @@ say("catfact", "cat")
 ```
 ## 
 ##  -------------- 
-## Some common houseplants poisonous to cats include: English Ivy, iris, mistletoe, philodendron, and yew. 
+## A cat has a total of 24 whiskers, 4 rows of whiskers on each side. The upper two rows can move independently of the bottom two rows. 
 ##  --------------
 ##     \
 ##       \
@@ -576,15 +636,15 @@ getcutecat(300)
 
 ![some kittens](http://placekitten.com/g/300/300)
 
-400 pixels
+250 pixels
 
 
 ```r
-getcutecat(400)
-## ![](http://placekitten.com/g/400/400)
+getcutecat(250)
+## ![](http://placekitten.com/g/250/250)
 ```
 
-![some kittens](http://placekitten.com/g/400/400)
+![some kittens](http://placekitten.com/g/250/250)
 
 ## <a href="#doge" name="doge"/>#</a> ***Hey! R is not just for cats!*** - dogs
 
@@ -626,6 +686,6 @@ Contribute by following [these instructions](/Contribute).
 
 ## <a href="#catslover" name="catslover"/>#</a> Cat's love R
 
-<img src="/assets/img/leo_giffed.gif" width="300">
+<img src="assets/img/leo_giffed.gif" width="300">
 
 ## <a href="#license" name="license"/>#</a> License
