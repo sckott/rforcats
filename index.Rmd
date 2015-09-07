@@ -495,43 +495,37 @@ Besides pictures, R is also really good at scraping data from websites! Here, we
 
 First, we'll have to load some helpful packages.
 ```{r scrapePackages, collapse=TRUE}
+library(httr)
 library(XML)
-library(RCurl)
 ```
 
-Each of these packages will help us do different things. The XML package has really helpful functions for turning websites into useable R data. However, the XML package doesn't play nice with https, so we'll have to use another package to tell R that it doesn't have to worry about security--that is, the RCurl package. 
+Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the XML package can translate those webpages into useful objects in our environment. 
 
-We have an object telling R where to go on the internet, so let's store the URL into an object: 
-```{r makeURL, collapse=TRUE}
-url <- "https://en.wikipedia.org/wiki/Popular_cat_names"
-```
+Here, we'll use the `GET()` function from the httr package to save the source code of the page in an object. 
 
-Wait a minute! This website looks like it uses https! That's a bit annoying, but we can work around it. If we want to scrape data from an https website, we'll have to tell R not to use the extra layer of security.
-
-Fortunately, the RCurl package has a function that lets you choose not to use https. Phew! Here, we'll tell R to copy the webpage into a new object, "wikiCatNamePage". 
-```{r makePage, collapse=TRUE}
-wikiCatNamePage <- getURL(url,.opts = list(ssl.verifypeer = FALSE) )
+```{r getPage, collapse=TRUE}
+wikiCatNamePage <- GET("https://en.wikipedia.org/wiki/Popular_cat_names")
 ```
 
 Cool! We have the website in an object!
 
-But...looking at the object, it's just a bunch of gibberish! This is where we use the XML package--it's really good at translating what the HTML is trying to say! That's what we'll do in this next command:
+But...looking at `wikiCatNamePage`, it doesn't seem like R will understand what we want to do! This is where we use the `content()` function from the httr package--it's really good at translating the page so R can use it. That's what we'll do in this next command:
 
 ```{r htmlParse, collapse=TRUE}
-parsedWikiCatNamePage <- htmlParse(wikiCatNamePage)
+parsedWikiCatNamePage <- content(wikiCatNamePage)
 ```
 
-Alright! Now we've organized the website so that a different function, htmlTables(), will be able to pull the tables that we want. 
+Alright! Now we've translated the website code so that a different function, `readHTMLTable()`, will be able to pull the tables that we want. 
 
 ```{r tableParse, collapse=TRUE}
 wikiCatNameTables <- readHTMLTable(parsedWikiCatNamePage)
 ```
 
-It looks like the function stored seven different things in the object, "wikiCatNameTables". Looking at the webpage, I like the table from the subsection called "Cultural references to the naming of cats". One of my uncles is related to the son-in-law of the cousin of the co-creator of Tom, from Tom and Jerry. I know--I'm cool. 
+It looks like the function stored seven different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called "Cultural references to the naming of cats". My favorite is Tom, from Tom and Jerry! 
 
-If we use the str() function to look at the objects in wikiCatNameTables, we'll see that the last item in the list has the data we want. The str() function shows too much information because of how wikiCatNameTables is organized, so the output isn't shown here. You should try it, though!
+If we use `str(wikiCatNameTables`, we'll see that `wikiCatNameTables` is a list with seven items. It looks like the seventh item is the one with our data--we're almost done! The `str()` function shows too much information because of how `wikiCatNameTables` is organized, so the output isn't shown here. You should try it, though!
 
-So, let's put the last item in wikiCatNameTables into an object and see what we get!
+Let's put the seventh item in `wikiCatNameTables` into an object and see what we get:
 
 ```{r makeFamous, collapse=TRUE}
 famousCats <- wikiCatNameTables[[7]]
@@ -539,6 +533,8 @@ famousCats
 ```
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!
+
+If you're interested in learning more about scraping webpages, you should also check out the rvest package. It's designed to be as cat-friendly as possible! For example, you can use the `html()` function from `rvest` to parse HTML.
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 
