@@ -537,11 +537,6 @@ So, let's put the last item in wikiCatNameTables into an object and see what we 
 famousCats <- wikiCatNameTables[[7]]
 famousCats
 ```
-```coffee
-famousCats <- wikiCatNameTables[[7]]
-famousCats
-}
-```
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!
 
