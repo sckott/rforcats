@@ -497,12 +497,9 @@ First, we'll have to load some helpful packages.
 ```{r scrapePackages, collapse=TRUE}
 library(XML)
 library(RCurl)
-library(stringr)
 ```
 
 Each of these packages will help us do different things. The XML package has really helpful functions for turning websites into useable R data. However, the XML package doesn't play nice with https, so we'll have to use another package to tell R that it doesn't have to worry about security--that is, the RCurl package. 
-
-The last package that we just loaded is called "stringr", and it's super useful for cleaning up data. Sometimes, there will be extra whitespaces or numbers or even dogs, and we want to clean the data up so it's not weighed down by noise.
 
 We have an object telling R where to go on the internet, so let's store the URL into an object: 
 ```{r makeURL, collapse=TRUE}
