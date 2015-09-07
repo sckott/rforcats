@@ -534,7 +534,7 @@ famousCats
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!
 
-If you're interested in learning more about scraping webpages, you should also check out the rvest package. It's designed to be as cat-friendly as possible! For example, you can use the `html()` function from `rvest` to parse HTML.
+If you're interested in learning more about scraping webpages, you should also check out the `rvest` package. It's designed to be as cat-friendly as possible! For example, you can use the `html()` function from `rvest` to parse HTML.
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 
