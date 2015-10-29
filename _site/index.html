@@ -110,7 +110,7 @@
 
 <h2>jsforcats?</h2>
 
-<p>Yep, this is a total rip off of <a href="http://jsforcats.com">JSforcats.com</a> - hopefully Max doesn&#39;t mind.</p>
+<p>Yep, this is a total rip off of <a href="http://jsforcats.com">JSforcats.com</a> - hopefully <a href="http://maxogden.com/">Max</a> doesn&#39;t mind.</p>
 
 <h2>List of things</h2>
 
@@ -140,13 +140,13 @@
 
 <p>You can do math:</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">1</span> <span class="o">+</span> <span class="m">1</span>
-<span class="c1">## [1] 2</span>
+<span class="c1">#&gt; [1] 2</span>
 </code></pre></div>
 <p>Strings are always fun to start with, type a set of letters together within quotes and the console will print it back to you</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="s">&quot;Hello Mr Tickles&quot;</span>
-<span class="c1">## [1] &quot;Hello Mr Tickles&quot;</span>
+<span class="c1">#&gt; [1] &quot;Hello Mr Tickles&quot;</span>
 <span class="s">&quot;This is a string&quot;</span>
-<span class="c1">## [1] &quot;This is a string&quot;</span>
+<span class="c1">#&gt; [1] &quot;This is a string&quot;</span>
 </code></pre></div>
 <p>Double quotes and single quotes are more or less interchangable, but is better practice to stick with double quotes.</p>
 
@@ -157,7 +157,7 @@
 </code></pre></div>
 <p>Later you can use <code>mynumber</code>, like adding it to another number</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mynumber <span class="o">+</span> <span class="m">1</span>
-<span class="c1">## [1] 6</span>
+<span class="c1">#&gt; [1] 6</span>
 </code></pre></div>
 <p>Sweet!</p>
 
@@ -167,12 +167,12 @@
 
 <p>But wait, how do we make a vector? The easiest way is to use a function called <code>c</code>. So <code>c(5,6,7)</code> will create a vector of numbers 5, 6, and 7. Let&#39;s try to put a <code>character</code> and a <code>numeric</code> together.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kt">c</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
-<span class="c1">## [1] &quot;hello&quot; &quot;5&quot;</span>
+<span class="c1">#&gt; [1] &quot;hello&quot; &quot;5&quot;</span>
 </code></pre></div>
 <p>Notice how the output of the above converted the 5 to a character type with quotes around the <code>5</code> to make it <code>&quot;5&quot;</code>, i.e., or an object of type <em>character</em>.
 But we can happily make a vector of the same type of information, like</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1.5</span><span class="p">,</span> <span class="m">0.9</span><span class="p">)</span>
-<span class="c1">## [1]   5.0   8.0 200.0   1.0   1.5   0.9</span>
+<span class="c1">#&gt; [1]   5.0   8.0 200.0   1.0   1.5   0.9</span>
 </code></pre></div>
 <p>Vectors are handy because they can be combined to make other R objects, such as lists (see <a href="#lists">lists</a> below), and <a href="#dataframes">data frames</a>.</p>
 
@@ -181,7 +181,7 @@ But we can happily make a vector of the same type of information, like</p>
 </code></pre></div>
 <p>You can add something to each of them like</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">paste</span><span class="p">(</span>animals<span class="p">,</span> <span class="s">&quot;are silly&quot;</span><span class="p">)</span>
-<span class="c1">## [1] &quot;birds are silly&quot;     &quot;squirrels are silly&quot; &quot;fish are silly&quot;</span>
+<span class="c1">#&gt; [1] &quot;birds are silly&quot;     &quot;squirrels are silly&quot; &quot;fish are silly&quot;</span>
 </code></pre></div>
 <h2><a href="#dataframes" name="dataframes"/>#</a> Data frames</h2>
 
@@ -190,66 +190,66 @@ But we can happily make a vector of the same type of information, like</p>
            there<span class="o">=</span><span class="kp">as.factor</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">)),</span>
            fella<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="s">&quot;brown&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df
-<span class="c1">##   hey there fella</span>
-<span class="c1">## 1   5     a  blue</span>
-<span class="c1">## 2   6     b brown</span>
-<span class="c1">## 3   7     c green</span>
+<span class="c1">#&gt;   hey there fella</span>
+<span class="c1">#&gt; 1   5     a  blue</span>
+<span class="c1">#&gt; 2   6     b brown</span>
+<span class="c1">#&gt; 3   7     c green</span>
 </code></pre></div>
 <p>Notice that the first <em>column</em> of numbers are actually row names, and are not part of the <code>data.frame</code> <em>per se</em>, though are part of the <em>metadata</em> for the <code>data.frame</code>.</p>
 
 <p>We can quickly get a sense for the type of data in the <code>df</code> object by using the function <code>str</code>, which gives information on the types of data in each column.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">str<span class="p">(</span>df<span class="p">)</span>
-<span class="c1">## &#39;data.frame&#39;:    3 obs. of  3 variables:</span>
-<span class="c1">##  $ hey  : num  5 6 7</span>
-<span class="c1">##  $ there: Factor w/ 3 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;: 1 2 3</span>
-<span class="c1">##  $ fella: Factor w/ 3 levels &quot;blue&quot;,&quot;brown&quot;,..: 1 2 3</span>
+<span class="c1">#&gt; &#39;data.frame&#39;:    3 obs. of  3 variables:</span>
+<span class="c1">#&gt;  $ hey  : num  5 6 7</span>
+<span class="c1">#&gt;  $ there: Factor w/ 3 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;: 1 2 3</span>
+<span class="c1">#&gt;  $ fella: Factor w/ 3 levels &quot;blue&quot;,&quot;brown&quot;,..: 1 2 3</span>
 </code></pre></div>
 <p><strong>Matrices</strong></p>
 
 <p>Think of a matrix in R like a <code>data.frame</code> with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a two-dimensional array.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mat <span class="o">&lt;-</span> <span class="kt">matrix</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">13</span><span class="p">),</span> nrow <span class="o">=</span> <span class="m">2</span><span class="p">,</span> ncol <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">mat
-<span class="c1">##      [,1] [,2] [,3]</span>
-<span class="c1">## [1,]    1    3   12</span>
-<span class="c1">## [2,]    2   11   13</span>
+<span class="c1">#&gt;      [,1] [,2] [,3]</span>
+<span class="c1">#&gt; [1,]    1    3   12</span>
+<span class="c1">#&gt; [2,]    2   11   13</span>
 </code></pre></div>
 <h2><a href="#lists" name="lists"/>#</a> Lists</h2>
 
 <p>Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only <code>character</code> for example), lists can hold for example, a <code>data.frame</code> and a <code>numeric</code>, or a <code>data.frame</code> and another <code>list</code>!  The way we make a list is via the function <code>list</code></p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kt">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">)</span>
-<span class="c1">## [[1]]</span>
-<span class="c1">## [1] 1</span>
-<span class="c1">## </span>
-<span class="c1">## [[2]]</span>
-<span class="c1">## [1] &quot;a&quot;</span>
+<span class="c1">#&gt; [[1]]</span>
+<span class="c1">#&gt; [1] 1</span>
+<span class="c1">#&gt; </span>
+<span class="c1">#&gt; [[2]]</span>
+<span class="c1">#&gt; [1] &quot;a&quot;</span>
 </code></pre></div>
 <p>A nested list</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mylist <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="kt">list</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
 mylist
-<span class="c1">## [[1]]</span>
-<span class="c1">## [1] 1</span>
-<span class="c1">## </span>
-<span class="c1">## [[2]]</span>
-<span class="c1">## [[2]][[1]]</span>
-<span class="c1">## [1] &quot;a&quot;</span>
-<span class="c1">## </span>
-<span class="c1">## [[2]][[2]]</span>
-<span class="c1">## [1] &quot;b&quot;</span>
-<span class="c1">## </span>
-<span class="c1">## [[2]][[3]]</span>
-<span class="c1">## [1] &quot;c&quot;</span>
+<span class="c1">#&gt; [[1]]</span>
+<span class="c1">#&gt; [1] 1</span>
+<span class="c1">#&gt; </span>
+<span class="c1">#&gt; [[2]]</span>
+<span class="c1">#&gt; [[2]][[1]]</span>
+<span class="c1">#&gt; [1] &quot;a&quot;</span>
+<span class="c1">#&gt; </span>
+<span class="c1">#&gt; [[2]][[2]]</span>
+<span class="c1">#&gt; [1] &quot;b&quot;</span>
+<span class="c1">#&gt; </span>
+<span class="c1">#&gt; [[2]][[3]]</span>
+<span class="c1">#&gt; [1] &quot;c&quot;</span>
 </code></pre></div>
 <p>Just like vectors, you can do operations on each element of the list. However, since lists can be nested you have to worry about what level of nesting you want to manipulate.</p>
 
 <p>For example, if we take the <code>mylist</code> list from above, and perform the following:</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">length</span><span class="p">(</span>mylist<span class="p">[</span><span class="m">1</span><span class="p">])</span>
-<span class="c1">## [1] 1</span>
+<span class="c1">#&gt; [1] 1</span>
 <span class="kp">length</span><span class="p">(</span>mylist<span class="p">[</span><span class="m">2</span><span class="p">])</span>
-<span class="c1">## [1] 1</span>
+<span class="c1">#&gt; [1] 1</span>
 </code></pre></div>
 <p>This gives a length of 1 for each element of the list. But wait, aren&#39;t there three things in the second slot of the list (&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)?  Indeed there are</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">length</span><span class="p">(</span>mylist<span class="p">[</span><span class="m">2</span><span class="p">][[</span><span class="m">1</span><span class="p">]])</span>
-<span class="c1">## [1] 3</span>
+<span class="c1">#&gt; [1] 3</span>
 </code></pre></div>
 <h2><a href="#indexing" name="indexing"/>#</a> Indexing</h2>
 
@@ -264,23 +264,23 @@ mylist
 </code></pre></div>
 <p>We can index to each of those 3 numbers by the sequence of its place in the vector. Get the 6 by doing</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[</span><span class="m">2</span><span class="p">]</span>
-<span class="c1">## [1] 6</span>
+<span class="c1">#&gt; [1] 6</span>
 </code></pre></div>
 <p>You can also have a named vector. What&#39;s that?  A named vector is like <code>bb</code> above, but each of the three elements has a name.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">bb <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
 <span class="kp">names</span><span class="p">(</span>bb<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;hey&quot;</span><span class="p">,</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="s">&quot;wadup&quot;</span><span class="p">)</span>
 bb
-<span class="c1">##   hey hello wadup </span>
-<span class="c1">##     5     6     7</span>
+<span class="c1">#&gt;   hey hello wadup </span>
+<span class="c1">#&gt;     5     6     7</span>
 <span class="kp">names</span><span class="p">(</span>bb<span class="p">)</span>
-<span class="c1">## [1] &quot;hey&quot;   &quot;hello&quot; &quot;wadup&quot;</span>
+<span class="c1">#&gt; [1] &quot;hey&quot;   &quot;hello&quot; &quot;wadup&quot;</span>
 </code></pre></div>
 <p>With a named vector we can get to each element in the vector using its name with a single set, or double set of brackets to get the value, or the value and name, respectively.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[</span><span class="s">&quot;hello&quot;</span><span class="p">]</span>
-<span class="c1">## hello </span>
-<span class="c1">##     6</span>
+<span class="c1">#&gt; hello </span>
+<span class="c1">#&gt;     6</span>
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[[</span><span class="s">&quot;hello&quot;</span><span class="p">]]</span>
-<span class="c1">## [1] 6</span>
+<span class="c1">#&gt; [1] 6</span>
 </code></pre></div>
 <p>Fun.</p>
 
@@ -293,47 +293,47 @@ bb
 </code></pre></div>
 <p>We can index to the first item in the list, including its name, by</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="m">1</span><span class="p">]</span>
-<span class="c1">## $foo</span>
-<span class="c1">## [1] 1</span>
+<span class="c1">#&gt; $foo</span>
+<span class="c1">#&gt; [1] 1</span>
 </code></pre></div>
 <p>Or equivalently</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">]</span>
-<span class="c1">## $foo</span>
-<span class="c1">## [1] 1</span>
+<span class="c1">#&gt; $foo</span>
+<span class="c1">#&gt; [1] 1</span>
 </code></pre></div>
 <p>And get just the value by using two <code>[</code></p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
-<span class="c1">## [1] 1</span>
+<span class="c1">#&gt; [1] 1</span>
 </code></pre></div>
 <p>Or equivalently</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="s">&quot;foo&quot;</span><span class="p">]]</span>
-<span class="c1">## [1] 1</span>
+<span class="c1">#&gt; [1] 1</span>
 </code></pre></div>
 <p>And get the second item in <code>mylist</code> by</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="c1"># or mylist[&quot;bar&quot;]</span>
-<span class="c1">## $bar</span>
-<span class="c1">## $bar[[1]]</span>
-<span class="c1">## [1] &quot;a&quot;</span>
-<span class="c1">## </span>
-<span class="c1">## $bar[[2]]</span>
-<span class="c1">## [1] &quot;b&quot;</span>
-<span class="c1">## </span>
-<span class="c1">## $bar[[3]]</span>
-<span class="c1">## [1] &quot;c&quot;</span>
+<span class="c1">#&gt; $bar</span>
+<span class="c1">#&gt; $bar[[1]]</span>
+<span class="c1">#&gt; [1] &quot;a&quot;</span>
+<span class="c1">#&gt; </span>
+<span class="c1">#&gt; $bar[[2]]</span>
+<span class="c1">#&gt; [1] &quot;b&quot;</span>
+<span class="c1">#&gt; </span>
+<span class="c1">#&gt; $bar[[3]]</span>
+<span class="c1">#&gt; [1] &quot;c&quot;</span>
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="c1"># or mylist[[&quot;bar&quot;]]</span>
-<span class="c1">## [[1]]</span>
-<span class="c1">## [1] &quot;a&quot;</span>
-<span class="c1">## </span>
-<span class="c1">## [[2]]</span>
-<span class="c1">## [1] &quot;b&quot;</span>
-<span class="c1">## </span>
-<span class="c1">## [[3]]</span>
-<span class="c1">## [1] &quot;c&quot;</span>
+<span class="c1">#&gt; [[1]]</span>
+<span class="c1">#&gt; [1] &quot;a&quot;</span>
+<span class="c1">#&gt; </span>
+<span class="c1">#&gt; [[2]]</span>
+<span class="c1">#&gt; [1] &quot;b&quot;</span>
+<span class="c1">#&gt; </span>
+<span class="c1">#&gt; [[3]]</span>
+<span class="c1">#&gt; [1] &quot;c&quot;</span>
 </code></pre></div>
 <p>And get to the individual elements within <code>bar</code> by</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="p">]</span>
-<span class="c1">## [[1]]</span>
-<span class="c1">## [1] &quot;a&quot;</span>
+<span class="c1">#&gt; [[1]]</span>
+<span class="c1">#&gt; [1] &quot;a&quot;</span>
 </code></pre></div>
 <p>And so on to get to what you need.</p>
 
@@ -343,28 +343,28 @@ bb
 
 <p>Indexing on a <code>data.frame</code> and <code>matrix</code> is similar. Both have two things to index on: rows and columns. Within <code>[,]</code>, the part before the comma is for rows, and the part after the comma for columns. So if you have a data frame <code>iris</code> in R,</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span>iris<span class="p">)</span>
-<span class="c1">##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
-<span class="c1">## 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="c1">## 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="c1">## 3          4.7         3.2          1.3         0.2  setosa</span>
-<span class="c1">## 4          4.6         3.1          1.5         0.2  setosa</span>
-<span class="c1">## 5          5.0         3.6          1.4         0.2  setosa</span>
-<span class="c1">## 6          5.4         3.9          1.7         0.4  setosa</span>
+<span class="c1">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
+<span class="c1">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
+<span class="c1">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
+<span class="c1">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span>
+<span class="c1">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span>
+<span class="c1">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span>
+<span class="c1">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span>
 </code></pre></div>
 <p>You can index to the third row and second column by doing</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">iris<span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
-<span class="c1">## [1] 3.2</span>
+<span class="c1">#&gt; [1] 3.2</span>
 </code></pre></div>
 <p>You can also use names to index if you have named rows or columns. For example,</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">iris<span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="s">&quot;Species&quot;</span><span class="p">]</span>
-<span class="c1">## [1] setosa</span>
-<span class="c1">## Levels: setosa versicolor virginica</span>
+<span class="c1">#&gt; [1] setosa</span>
+<span class="c1">#&gt; Levels: setosa versicolor virginica</span>
 </code></pre></div>
 <p>You can also use the <code>$</code> symbol to index to a column, like</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mtcars<span class="o">$</span>mpg
-<span class="c1">##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2</span>
-<span class="c1">## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span>
-<span class="c1">## [29] 15.8 19.7 15.0 21.4</span>
+<span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2</span>
+<span class="c1">#&gt; [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span>
+<span class="c1">#&gt; [29] 15.8 19.7 15.0 21.4</span>
 </code></pre></div>
 <h2><a href="#functions" name="functions"/>#</a> Functions</h2>
 
@@ -372,12 +372,12 @@ bb
 
 <p>Functions are written like this</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(){</span>
-  <span class="kp">writeLines</span><span class="p">(</span><span class="s">&quot;I hate dogs&quot;</span><span class="p">)</span>
+  <span class="kp">writeLines</span><span class="p">(</span><span class="s">&quot;I strongly dislike dogs&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>After defining this function we can then call it later like this</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">foo<span class="p">()</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## I hate dogs
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt; I strongly dislike dogs
 </code></pre></div>
 <p>Yay! Dumb dogs.</p>
 
@@ -386,16 +386,16 @@ bb
   <span class="kp">writeLines</span><span class="p">(</span>mess<span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">foo<span class="p">(</span><span class="s">&quot;I strongly dislike dogs&quot;</span><span class="p">)</span>
-<span class="c1">## I strongly dislike dogs</span>
+<span class="c1">#&gt; I strongly dislike dogs</span>
 </code></pre></div>
 <p>And set parameters to default values.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>mess <span class="o">=</span> <span class="s">&quot;I strongly dislike dogs&quot;</span><span class="p">){</span>
   <span class="kp">writeLines</span><span class="p">(</span>mess<span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">foo<span class="p">()</span>
-<span class="c1">## I strongly dislike dogs</span>
+<span class="c1">#&gt; I strongly dislike dogs</span>
 foo<span class="p">(</span><span class="s">&quot;Well, I dislike most dogs, but I like the one in my house&quot;</span><span class="p">)</span>
-<span class="c1">## Well, I dislike most dogs, but I like the one in my house</span>
+<span class="c1">#&gt; Well, I dislike most dogs, but I like the one in my house</span>
 </code></pre></div>
 <p>Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this Google the <em>DRY principle</em>.</p>
 
@@ -435,23 +435,23 @@ foo<span class="p">(</span><span class="s">&quot;Well, I dislike most dogs, but 
 </code></pre></div>
 <p>Why should you care about this? This concept can make writing code and understanding it simpler. Take for example this case:</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">mtcars <span class="o">%&gt;%</span> <span class="kp">subset</span><span class="p">(</span>cyl <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="kp">head</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
-## Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
-## Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
-## Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
-## Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
-## Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
-## Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+#&gt; Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+#&gt; Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+#&gt; Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+#&gt; Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+#&gt; Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+#&gt; Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
 </code></pre></div>
 <p>Alternatively, we could avoid pipes:</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span> <span class="kp">subset</span><span class="p">(</span>mtcars<span class="p">,</span> cyl <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
-## Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
-## Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
-## Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
-## Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
-## Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
-## Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+#&gt; Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+#&gt; Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+#&gt; Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+#&gt; Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+#&gt; Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+#&gt; Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
 </code></pre></div>
 <p>Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we&#39;re going to manipulate (the <code>mtcars</code> data.frame), then subsets the data.frame to take rows with the <code>cyl</code> column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (<code>mtcars</code>), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.</p>
 
@@ -488,31 +488,25 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
 </code></pre></div>
 <p>Now let&#39;s get a cat fact!</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span><span class="s">&quot;cowsay&quot;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## 
-## Attaching package: &#39;cowsay&#39;
-## 
-## The following object is masked _by_ &#39;.GlobalEnv&#39;:
-## 
-##     animals
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## 
-##  -------------- 
-## Most cats adore sardines. 
-##  --------------
-##     \
-##       \
-##         \
-##             |\___/|
-##           ==) ^Y^ (==
-##             \  ^  /
-##              )=*=(
-##             /     \
-##             |     |
-##            /| | | |\
-##            \| | |_|/\
-##       jgs  //_// ___/
-##                \_)
-## 
+say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt; 
+#&gt;  -------------- 
+#&gt; Siamese kittens are born white because of the heat inside the mother&#39;s uterus before birth. This heat keeps the kittens&#39; hair from darkening on the points. 
+#&gt;  --------------
+#&gt;     \
+#&gt;       \
+#&gt;         \
+#&gt;             |\___/|
+#&gt;           ==) ^Y^ (==
+#&gt;             \  ^  /
+#&gt;              )=*=(
+#&gt;             /     \
+#&gt;             |     |
+#&gt;            /| | | |\
+#&gt;            \| | |_|/\
+#&gt;       jgs  //_// ___/
+#&gt;                \_)
+#&gt; 
 </code></pre></div>
 <p>A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code>say</code> function looks like sorta like this:</p>
 <div class="highlight"><pre><code class="language-coffee" data-lang="coffee"><span class="nx">say</span> <span class="o">&lt;-</span> <span class="nx">function</span><span class="p">(</span><span class="nx">what</span><span class="p">,</span> <span class="k">by</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
@@ -539,15 +533,15 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
   <span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>300 pixels</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">300</span><span class="p">)</span>
-<span class="c1">## ![](http://placekitten.com/g/300/300)</span>
+<p>150 pixels</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">150</span><span class="p">)</span>
+<span class="c1">#&gt; ![](http://placekitten.com/g/150/150)</span>
 </code></pre></div>
-<p><img src="http://placekitten.com/g/300/300" alt="some kittens"></p>
+<p><img src="http://placekitten.com/g/150/150" alt="some kittens"></p>
 
 <p>250 pixels</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">250</span><span class="p">)</span>
-<span class="c1">## ![](http://placekitten.com/g/250/250)</span>
+<span class="c1">#&gt; ![](http://placekitten.com/g/250/250)</span>
 </code></pre></div>
 <p><img src="http://placekitten.com/g/250/250" alt="some kittens"></p>
 
@@ -561,7 +555,7 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
   <span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">getdoge<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;wow&quot;</span><span class="p">,</span> <span class="s">&quot;suchhostility&quot;</span><span class="p">,</span> <span class="s">&quot;bemoreinclusive&quot;</span><span class="p">))</span>
-<span class="c1">## ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)</span>
+<span class="c1">#&gt; ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)</span>
 </code></pre></div>
 <p><img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400"/></p>
 
@@ -595,13 +589,13 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
 <p>Let&#39;s put the seventh item in <code>wikiCatNameTables</code> into an object and see what we get:</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">famousCats <span class="o">&lt;-</span> wikiCatNameTables<span class="p">[[</span><span class="m">7</span><span class="p">]]</span>
 <span class="kp">head</span><span class="p">(</span>famousCats<span class="p">)</span>
-<span class="c1">##        Cat Name Made Famous By</span>
-<span class="c1">## 1 Amelia Gabble The Aristocats</span>
-<span class="c1">## 2       Berlioz The Aristocats</span>
-<span class="c1">## 3        Carlos      Marmaduke</span>
-<span class="c1">## 4           Cat      Peg + Cat</span>
-<span class="c1">## 5   Chinese Cat The Aristocats</span>
-<span class="c1">## 6         Diana    Sailor Moon</span>
+<span class="c1">#&gt;        Cat Name Made Famous By</span>
+<span class="c1">#&gt; 1 Amelia Gabble The Aristocats</span>
+<span class="c1">#&gt; 2       Berlioz The Aristocats</span>
+<span class="c1">#&gt; 3        Carlos      Marmaduke</span>
+<span class="c1">#&gt; 4           Cat      Peg + Cat</span>
+<span class="c1">#&gt; 5   Chinese Cat The Aristocats</span>
+<span class="c1">#&gt; 6         Diana    Sailor Moon</span>
 </code></pre></div>
 <p>Wow! We did it! And the data looks great! Give yourself a pat on the back!</p>
 

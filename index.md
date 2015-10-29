@@ -3,6 +3,9 @@ title: "Home"
 layout: default
 ---
 
+
+
+
 ## An intro to R for new programmers
 
 This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any language for that matter, you won't be tainted by other programming languages with different ways of doing things. This is good - we can teach you the R way of doing things.
@@ -11,7 +14,7 @@ This is an introduction to R. I promise this will be fun.  Since you have never 
 
 ## jsforcats?
 
-Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefully Max doesn't mind.
+Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefully [Max](http://maxogden.com/) doesn't mind.
 
 ## List of things
 
@@ -42,7 +45,7 @@ You can do math:
 
 ```r
 1 + 1
-## [1] 2
+#> [1] 2
 ```
 
 Strings are always fun to start with, type a set of letters together within quotes and the console will print it back to you
@@ -50,9 +53,9 @@ Strings are always fun to start with, type a set of letters together within quot
 
 ```r
 "Hello Mr Tickles"
-## [1] "Hello Mr Tickles"
+#> [1] "Hello Mr Tickles"
 "This is a string"
-## [1] "This is a string"
+#> [1] "This is a string"
 ```
 Double quotes and single quotes are more or less interchangable, but is better practice to stick with double quotes.
 
@@ -70,7 +73,7 @@ Later you can use `mynumber`, like adding it to another number
 
 ```r
 mynumber + 1
-## [1] 6
+#> [1] 6
 ```
 
 Sweet!
@@ -85,7 +88,7 @@ But wait, how do we make a vector? The easiest way is to use a function called `
 
 ```r
 c("hello", 5)
-## [1] "hello" "5"
+#> [1] "hello" "5"
 ```
 
 Notice how the output of the above converted the 5 to a character type with quotes around the `5` to make it `"5"`, i.e., or an object of type _character_.
@@ -94,7 +97,7 @@ But we can happily make a vector of the same type of information, like
 
 ```r
 c(5, 8, 200, 1, 1.5, 0.9)
-## [1]   5.0   8.0 200.0   1.0   1.5   0.9
+#> [1]   5.0   8.0 200.0   1.0   1.5   0.9
 ```
 
 Vectors are handy because they can be combined to make other R objects, such as lists (see [lists](#lists) below), and [data frames](#dataframes).
@@ -111,7 +114,7 @@ You can add something to each of them like
 
 ```r
 paste(animals, "are silly")
-## [1] "birds are silly"     "squirrels are silly" "fish are silly"
+#> [1] "birds are silly"     "squirrels are silly" "fish are silly"
 ```
 
 ## <a href="#dataframes" name="dataframes"/>#</a> Data frames
@@ -129,10 +132,10 @@ df <- data.frame(hey=c(5,6,7),
 
 ```r
 df
-##   hey there fella
-## 1   5     a  blue
-## 2   6     b brown
-## 3   7     c green
+#>   hey there fella
+#> 1   5     a  blue
+#> 2   6     b brown
+#> 3   7     c green
 ```
 
 Notice that the first _column_ of numbers are actually row names, and are not part of the `data.frame` _per se_, though are part of the _metadata_ for the `data.frame`.
@@ -142,10 +145,10 @@ We can quickly get a sense for the type of data in the `df` object by using the 
 
 ```r
 str(df)
-## 'data.frame':	3 obs. of  3 variables:
-##  $ hey  : num  5 6 7
-##  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
-##  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
+#> 'data.frame':	3 obs. of  3 variables:
+#>  $ hey  : num  5 6 7
+#>  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
+#>  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
 ```
 
 __Matrices__
@@ -160,9 +163,9 @@ mat <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3)
 
 ```r
 mat
-##      [,1] [,2] [,3]
-## [1,]    1    3   12
-## [2,]    2   11   13
+#>      [,1] [,2] [,3]
+#> [1,]    1    3   12
+#> [2,]    2   11   13
 ```
 
 ## <a href="#lists" name="lists"/>#</a> Lists
@@ -172,11 +175,11 @@ Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat
 
 ```r
 list(1, "a")
-## [[1]]
-## [1] 1
-## 
-## [[2]]
-## [1] "a"
+#> [[1]]
+#> [1] 1
+#> 
+#> [[2]]
+#> [1] "a"
 ```
 
 A nested list
@@ -185,18 +188,18 @@ A nested list
 ```r
 mylist <- list(1, list("a","b","c"))
 mylist
-## [[1]]
-## [1] 1
-## 
-## [[2]]
-## [[2]][[1]]
-## [1] "a"
-## 
-## [[2]][[2]]
-## [1] "b"
-## 
-## [[2]][[3]]
-## [1] "c"
+#> [[1]]
+#> [1] 1
+#> 
+#> [[2]]
+#> [[2]][[1]]
+#> [1] "a"
+#> 
+#> [[2]][[2]]
+#> [1] "b"
+#> 
+#> [[2]][[3]]
+#> [1] "c"
 ```
 
 Just like vectors, you can do operations on each element of the list. However, since lists can be nested you have to worry about what level of nesting you want to manipulate.
@@ -206,9 +209,9 @@ For example, if we take the `mylist` list from above, and perform the following:
 
 ```r
 length(mylist[1])
-## [1] 1
+#> [1] 1
 length(mylist[2])
-## [1] 1
+#> [1] 1
 ```
 
 This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Indeed there are
@@ -216,7 +219,7 @@ This gives a length of 1 for each element of the list. But wait, aren't there th
 
 ```r
 length(mylist[2][[1]])
-## [1] 3
+#> [1] 3
 ```
 
 ## <a href="#indexing" name="indexing"/>#</a> Indexing
@@ -239,7 +242,7 @@ We can index to each of those 3 numbers by the sequence of its place in the vect
 
 ```r
 bb[2]
-## [1] 6
+#> [1] 6
 ```
 
 You can also have a named vector. What's that?  A named vector is like `bb` above, but each of the three elements has a name.
@@ -249,10 +252,10 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 bb <- c(5,6,7)
 names(bb) <- c("hey","hello","wadup")
 bb
-##   hey hello wadup 
-##     5     6     7
+#>   hey hello wadup 
+#>     5     6     7
 names(bb)
-## [1] "hey"   "hello" "wadup"
+#> [1] "hey"   "hello" "wadup"
 ```
 
 With a named vector we can get to each element in the vector using its name with a single set, or double set of brackets to get the value, or the value and name, respectively.
@@ -260,14 +263,14 @@ With a named vector we can get to each element in the vector using its name with
 
 ```r
 bb["hello"]
-## hello 
-##     6
+#> hello 
+#>     6
 ```
 
 
 ```r
 bb[["hello"]]
-## [1] 6
+#> [1] 6
 ```
 
 Fun.
@@ -288,8 +291,8 @@ We can index to the first item in the list, including its name, by
 
 ```r
 mylist[1]
-## $foo
-## [1] 1
+#> $foo
+#> [1] 1
 ```
 
 Or equivalently
@@ -297,8 +300,8 @@ Or equivalently
 
 ```r
 mylist["foo"]
-## $foo
-## [1] 1
+#> $foo
+#> [1] 1
 ```
 
 And get just the value by using two `[`
@@ -306,7 +309,7 @@ And get just the value by using two `[`
 
 ```r
 mylist[[1]]
-## [1] 1
+#> [1] 1
 ```
 
 Or equivalently
@@ -314,7 +317,7 @@ Or equivalently
 
 ```r
 mylist[["foo"]]
-## [1] 1
+#> [1] 1
 ```
 
 And get the second item in `mylist` by
@@ -322,28 +325,28 @@ And get the second item in `mylist` by
 
 ```r
 mylist[2] # or mylist["bar"]
-## $bar
-## $bar[[1]]
-## [1] "a"
-## 
-## $bar[[2]]
-## [1] "b"
-## 
-## $bar[[3]]
-## [1] "c"
+#> $bar
+#> $bar[[1]]
+#> [1] "a"
+#> 
+#> $bar[[2]]
+#> [1] "b"
+#> 
+#> $bar[[3]]
+#> [1] "c"
 ```
 
 
 ```r
 mylist[[2]] # or mylist[["bar"]]
-## [[1]]
-## [1] "a"
-## 
-## [[2]]
-## [1] "b"
-## 
-## [[3]]
-## [1] "c"
+#> [[1]]
+#> [1] "a"
+#> 
+#> [[2]]
+#> [1] "b"
+#> 
+#> [[3]]
+#> [1] "c"
 ```
 
 And get to the individual elements within `bar` by
@@ -351,8 +354,8 @@ And get to the individual elements within `bar` by
 
 ```r
 mylist[[2]][1]
-## [[1]]
-## [1] "a"
+#> [[1]]
+#> [1] "a"
 ```
 
 And so on to get to what you need.
@@ -366,13 +369,13 @@ Indexing on a `data.frame` and `matrix` is similar. Both have two things to inde
 
 ```r
 head(iris)
-##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa
+#>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#> 1          5.1         3.5          1.4         0.2  setosa
+#> 2          4.9         3.0          1.4         0.2  setosa
+#> 3          4.7         3.2          1.3         0.2  setosa
+#> 4          4.6         3.1          1.5         0.2  setosa
+#> 5          5.0         3.6          1.4         0.2  setosa
+#> 6          5.4         3.9          1.7         0.4  setosa
 ```
 
 You can index to the third row and second column by doing
@@ -380,7 +383,7 @@ You can index to the third row and second column by doing
 
 ```r
 iris[3,2]
-## [1] 3.2
+#> [1] 3.2
 ```
 
 You can also use names to index if you have named rows or columns. For example,
@@ -388,8 +391,8 @@ You can also use names to index if you have named rows or columns. For example,
 
 ```r
 iris[2,"Species"]
-## [1] setosa
-## Levels: setosa versicolor virginica
+#> [1] setosa
+#> Levels: setosa versicolor virginica
 ```
 
 You can also use the `$` symbol to index to a column, like
@@ -397,9 +400,9 @@ You can also use the `$` symbol to index to a column, like
 
 ```r
 mtcars$mpg
-##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
-## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
-## [29] 15.8 19.7 15.0 21.4
+#>  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+#> [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+#> [29] 15.8 19.7 15.0 21.4
 ```
 
 ## <a href="#functions" name="functions"/>#</a> Functions
@@ -411,7 +414,7 @@ Functions are written like this
 
 ```r
 foo <- function(){
-  writeLines("I hate dogs")
+  writeLines("I strongly dislike dogs")
 }
 ```
 
@@ -423,7 +426,7 @@ foo()
 ```
 
 ```
-## I hate dogs
+#> I strongly dislike dogs
 ```
 
 Yay! Dumb dogs.
@@ -440,7 +443,7 @@ foo <- function(mess){
 
 ```r
 foo("I strongly dislike dogs")
-## I strongly dislike dogs
+#> I strongly dislike dogs
 ```
 
 And set parameters to default values.
@@ -455,9 +458,9 @@ foo <- function(mess = "I strongly dislike dogs"){
 
 ```r
 foo()
-## I strongly dislike dogs
+#> I strongly dislike dogs
 foo("Well, I dislike most dogs, but I like the one in my house")
-## Well, I dislike most dogs, but I like the one in my house
+#> Well, I dislike most dogs, but I like the one in my house
 ```
 
 Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this Google the _DRY principle_.
@@ -510,13 +513,13 @@ mtcars %>% subset(cyl < 6) %>% head()
 ```
 
 ```
-##                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
-## Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
-## Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
-## Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
-## Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
-## Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
-## Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+#>                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+#> Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+#> Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+#> Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+#> Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+#> Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+#> Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
 ```
 
 Alternatively, we could avoid pipes:
@@ -527,13 +530,13 @@ head( subset(mtcars, cyl < 6) )
 ```
 
 ```
-##                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
-## Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
-## Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
-## Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
-## Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
-## Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
-## Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+#>                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+#> Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+#> Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+#> Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+#> Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+#> Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+#> Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
 ```
 
 Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we're going to manipulate (the `mtcars` data.frame), then subsets the data.frame to take rows with the `cyl` column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (`mtcars`), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.
@@ -575,40 +578,28 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
-```
-
-```
-## 
-## Attaching package: 'cowsay'
-## 
-## The following object is masked _by_ '.GlobalEnv':
-## 
-##     animals
-```
-
-```r
 say("catfact", "cat")
 ```
 
 ```
-## 
-##  -------------- 
-## Most cats adore sardines. 
-##  --------------
-##     \
-##       \
-##         \
-##             |\___/|
-##           ==) ^Y^ (==
-##             \  ^  /
-##              )=*=(
-##             /     \
-##             |     |
-##            /| | | |\
-##            \| | |_|/\
-##       jgs  //_// ___/
-##                \_)
-## 
+#> 
+#>  -------------- 
+#> Siamese kittens are born white because of the heat inside the mother's uterus before birth. This heat keeps the kittens' hair from darkening on the points. 
+#>  --------------
+#>     \
+#>       \
+#>         \
+#>             |\___/|
+#>           ==) ^Y^ (==
+#>             \  ^  /
+#>              )=*=(
+#>             /     \
+#>             |     |
+#>            /| | | |\
+#>            \| | |_|/\
+#>       jgs  //_// ___/
+#>                \_)
+#> 
 ```
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
@@ -640,22 +631,22 @@ getcutecat <- function(x){
 }
 ```
 
-300 pixels
+150 pixels
 
 
 ```r
-getcutecat(300)
-## ![](http://placekitten.com/g/300/300)
+getcutecat(150)
+#> ![](http://placekitten.com/g/150/150)
 ```
 
-![some kittens](http://placekitten.com/g/300/300)
+![some kittens](http://placekitten.com/g/150/150)
 
 250 pixels
 
 
 ```r
 getcutecat(250)
-## ![](http://placekitten.com/g/250/250)
+#> ![](http://placekitten.com/g/250/250)
 ```
 
 ![some kittens](http://placekitten.com/g/250/250)
@@ -677,7 +668,7 @@ getdoge <- function(x){
 
 ```r
 getdoge(c("wow", "suchhostility", "bemoreinclusive"))
-## ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
+#> ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
 ```
 
 <img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400"/>
@@ -731,13 +722,13 @@ Let's put the seventh item in `wikiCatNameTables` into an object and see what we
 ```r
 famousCats <- wikiCatNameTables[[7]]
 head(famousCats)
-##        Cat Name Made Famous By
-## 1 Amelia Gabble The Aristocats
-## 2       Berlioz The Aristocats
-## 3        Carlos      Marmaduke
-## 4           Cat      Peg + Cat
-## 5   Chinese Cat The Aristocats
-## 6         Diana    Sailor Moon
+#>        Cat Name Made Famous By
+#> 1 Amelia Gabble The Aristocats
+#> 2       Berlioz The Aristocats
+#> 3        Carlos      Marmaduke
+#> 4           Cat      Peg + Cat
+#> 5   Chinese Cat The Aristocats
+#> 6         Diana    Sailor Moon
 ```
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!

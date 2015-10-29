@@ -102,7 +102,14 @@
       </div>
 
       <div class="container content">
-        ## An intro to R for new programmers
+        ```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>"
+)
+```
+
+
+## An intro to R for new programmers
 
 This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any language for that matter, you won't be tainted by other programming languages with different ways of doing things. This is good - we can teach you the R way of doing things.
 
@@ -110,7 +117,7 @@ This is an introduction to R. I promise this will be fun.  Since you have never 
 
 ## jsforcats?
 
-Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefully Max doesn't mind.
+Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefully [Max](http://maxogden.com/) doesn't mind.
 
 ## List of things
 
@@ -392,7 +399,7 @@ Functions are written like this
 
 ```{r}
 foo <- function(){
-  writeLines("I hate dogs")
+  writeLines("I strongly dislike dogs")
 }
 ```
 
@@ -549,13 +556,13 @@ getcutecat <- function(x){
 }
 ```
 
-300 pixels
+150 pixels
 
 ```{r, collapse=TRUE}
-getcutecat(300)
+getcutecat(150)
 ```
 
-![some kittens](http://placekitten.com/g/300/300)
+![some kittens](http://placekitten.com/g/150/150)
 
 250 pixels
 
