@@ -477,7 +477,7 @@ foo<span class="p">(</span><span class="s">&quot;Well, I dislike most dogs, but 
 <li><code>.rda</code>, <code>.rds</code>, <code>.RData</code> compressed files are useful, but for reproducibility purposes, use non-R specific file formats like <code>.csv</code>, <code>.xml</code>, <code>.json</code>, etc.</li>
 </ul>
 
-<h2><a href="#data" name="data"/>#</a> Data from the web</h2>
+<h2><a href="#data" name="data"/>#</a> Data from the web: pictures</h2>
 
 <p>This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That&#39;s the point of the internet after all - to serve cat pictures.</p>
 
@@ -488,10 +488,16 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
 </code></pre></div>
 <p>Now let&#39;s get a cat fact!</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span><span class="s">&quot;cowsay&quot;</span><span class="p">)</span>
-say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## 
+## Attaching package: &#39;cowsay&#39;
+## 
+## The following object is masked _by_ &#39;.GlobalEnv&#39;:
+## 
+##     animals
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## 
 ##  -------------- 
-## It has been scientifically proven that stroking a cat can lower one&#39;s blood pressure. 
+## Most cats adore sardines. 
 ##  --------------
 ##     \
 ##       \
@@ -560,6 +566,46 @@ say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class
 <p><img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400"/></p>
 
 <p><strong><em>Now, back to your regular, cat-dominated tutorial.</em></strong></p>
+
+<h2><a href="#dataNames" name="dataNames"/>#</a> Data from the web: names</h2>
+
+<p>Besides pictures, R is also really good at scraping data from websites! Here, we&#39;ll look at the names of famous cats that are listed on Wikipedia. </p>
+
+<p>First, we&#39;ll have to load some helpful packages.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span><span class="s">&quot;httr&quot;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span><span class="s">&quot;XML&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the <code>XML</code> package can translate those webpages into useful objects in our environment. </p>
+
+<p>Here, we&#39;ll use the <code>GET()</code> function from the <code>httr</code> package to save the source code of the page in an object. </p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">wikiCatNamePage <span class="o">&lt;-</span> GET<span class="p">(</span><span class="s">&quot;https://en.wikipedia.org/wiki/Popular_cat_names&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Cool! We have the website in an object!</p>
+
+<p>But...looking at <code>wikiCatNamePage</code>, it doesn&#39;t seem like R will understand what we want to do! This is where we use the <code>content()</code> function from the httr package--it&#39;s really good at translating the page so R can use it. That&#39;s what we&#39;ll do in this next command:</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">parsedWikiCatNamePage <span class="o">&lt;-</span> content<span class="p">(</span>wikiCatNamePage<span class="p">)</span>
+</code></pre></div>
+<p>Alright! Now we&#39;ve translated the website code so that a different function, <code>readHTMLTable()</code>, will be able to pull the tables that we want. </p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">wikiCatNameTables <span class="o">&lt;-</span> readHTMLTable<span class="p">(</span>parsedWikiCatNamePage<span class="p">)</span>
+</code></pre></div>
+<p>It looks like the function stored seven different things in the object, <code>wikiCatNameTables</code>. Looking at the webpage, I like the table from the subsection called <em>Cultural references to the naming of cats</em>. My favorite is Tom, from Tom and Jerry! </p>
+
+<p>If we use <code>str(wikiCatNameTables)</code>, we&#39;ll see that <code>wikiCatNameTables</code> is a list with seven items. It looks like the seventh item is the one with our data--we&#39;re almost done! The <code>str()</code> function shows too much information because of how <code>wikiCatNameTables</code> is organized, so the output isn&#39;t shown here. You should try it, though!</p>
+
+<p>Let&#39;s put the seventh item in <code>wikiCatNameTables</code> into an object and see what we get:</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">famousCats <span class="o">&lt;-</span> wikiCatNameTables<span class="p">[[</span><span class="m">7</span><span class="p">]]</span>
+<span class="kp">head</span><span class="p">(</span>famousCats<span class="p">)</span>
+<span class="c1">##        Cat Name Made Famous By</span>
+<span class="c1">## 1 Amelia Gabble The Aristocats</span>
+<span class="c1">## 2       Berlioz The Aristocats</span>
+<span class="c1">## 3        Carlos      Marmaduke</span>
+<span class="c1">## 4           Cat      Peg + Cat</span>
+<span class="c1">## 5   Chinese Cat The Aristocats</span>
+<span class="c1">## 6         Diana    Sailor Moon</span>
+</code></pre></div>
+<p>Wow! We did it! And the data looks great! Give yourself a pat on the back!</p>
+
+<p>If you&#39;re interested in learning more about scraping webpages, you should also check out the <code>rvest</code> and <code>xml2</code> packages. They are designed to be as cat-friendly as possible! </p>
 
 <h2><a href="#reading" name="reading"/>#</a> Reading</h2>
 
