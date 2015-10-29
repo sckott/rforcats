@@ -1,6 +1,7 @@
 ---
+title: "Home"
+output: word_document
 layout: default
-title: Home
 ---
 
 ## An intro to R for new programmers
@@ -403,7 +404,7 @@ There are a few R gotchas to avoid cat friends.
 * Do ask lots of questions on StackOverflow (use the `[r]` tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and [include a reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example)!
 * `.rda`, `.rds`, `.RData` compressed files are useful, but for reproducibility purposes, use non-R specific file formats like `.csv`, `.xml`, `.json`, etc.
 
-## <a href="#data" name="data"/>#</a> Data from the web
+## <a href="#data" name="data"/>#</a> Data from the web: pictures
 
 This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That's the point of the internet after all - to serve cat pictures.
 
@@ -486,6 +487,54 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 <img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400"/>
 
 ***Now, back to your regular, cat-dominated tutorial.***
+
+## <a href="#dataNames" name="dataNames"/>#</a> Data from the web: names
+
+
+Besides pictures, R is also really good at scraping data from websites! Here, we'll look at the names of famous cats that are listed on Wikipedia. 
+
+First, we'll have to load some helpful packages.
+```{r scrapePackages, collapse=TRUE}
+library(httr)
+library(XML)
+```
+
+Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the XML package can translate those webpages into useful objects in our environment. 
+
+Here, we'll use the `GET()` function from the httr package to save the source code of the page in an object. 
+
+```{r getPage, collapse=TRUE}
+wikiCatNamePage <- GET("https://en.wikipedia.org/wiki/Popular_cat_names")
+```
+
+Cool! We have the website in an object!
+
+But...looking at `wikiCatNamePage`, it doesn't seem like R will understand what we want to do! This is where we use the `content()` function from the httr package--it's really good at translating the page so R can use it. That's what we'll do in this next command:
+
+```{r htmlParse, collapse=TRUE}
+parsedWikiCatNamePage <- content(wikiCatNamePage)
+```
+
+Alright! Now we've translated the website code so that a different function, `readHTMLTable()`, will be able to pull the tables that we want. 
+
+```{r tableParse, collapse=TRUE}
+wikiCatNameTables <- readHTMLTable(parsedWikiCatNamePage)
+```
+
+It looks like the function stored seven different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called "Cultural references to the naming of cats". My favorite is Tom, from Tom and Jerry! 
+
+If we use `str(wikiCatNameTables`, we'll see that `wikiCatNameTables` is a list with seven items. It looks like the seventh item is the one with our data--we're almost done! The `str()` function shows too much information because of how `wikiCatNameTables` is organized, so the output isn't shown here. You should try it, though!
+
+Let's put the seventh item in `wikiCatNameTables` into an object and see what we get:
+
+```{r makeFamous, collapse=TRUE}
+famousCats <- wikiCatNameTables[[7]]
+famousCats
+```
+
+Wow! We did it! And the data looks great! Give yourself a pat on the back!
+
+If you're interested in learning more about scraping webpages, you should also check out the `rvest` package. It's designed to be as cat-friendly as possible! For example, you can use the `html()` function from `rvest` to parse HTML.
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 
