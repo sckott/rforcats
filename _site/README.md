@@ -11,6 +11,7 @@ Inspired by [jsforcats.com](http://jsforcats.com/) - __rforcats__ is aimed at te
 * Noam Ross [@noamross](https://github.com/noamross)
 * Zach Stednick [@stedy](https://github.com/stedy)
 * Jeffrey Hollister [@jhollist](https://github.com/jhollist)
+* mustafaascha [@mustafaascha](https://github.com/mustafaascha)
 * You?
 
 ### cats
