@@ -32,7 +32,6 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 * [Reading](#reading)
 * [Does this site suck?](#makeitbetter)
 
-
 ## <a href="#rconsole" name="rconsole">#</a> R console
 
 Writing code is fun. Since you're a cat, not having opposable thumbs may be a bit of an issue, but surely you're clever enough to find a way around that.
@@ -178,7 +177,7 @@ Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat
 list(1, "a")
 #> [[1]]
 #> [1] 1
-#>
+#> 
 #> [[2]]
 #> [1] "a"
 ```
@@ -191,14 +190,14 @@ mylist <- list(1, list("a","b","c"))
 mylist
 #> [[1]]
 #> [1] 1
-#>
+#> 
 #> [[2]]
 #> [[2]][[1]]
 #> [1] "a"
-#>
+#> 
 #> [[2]][[2]]
 #> [1] "b"
-#>
+#> 
 #> [[2]][[3]]
 #> [1] "c"
 ```
@@ -253,7 +252,7 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 bb <- c(5,6,7)
 names(bb) <- c("hey","hello","wadup")
 bb
-#>   hey hello wadup
+#>   hey hello wadup 
 #>     5     6     7
 names(bb)
 #> [1] "hey"   "hello" "wadup"
@@ -264,7 +263,7 @@ With a named vector we can get to each element in the vector using its name with
 
 ```r
 bb["hello"]
-#> hello
+#> hello 
 #>     6
 ```
 
@@ -329,10 +328,10 @@ mylist[2] # or mylist["bar"]
 #> $bar
 #> $bar[[1]]
 #> [1] "a"
-#>
+#> 
 #> $bar[[2]]
 #> [1] "b"
-#>
+#> 
 #> $bar[[3]]
 #> [1] "c"
 ```
@@ -342,10 +341,10 @@ mylist[2] # or mylist["bar"]
 mylist[[2]] # or mylist[["bar"]]
 #> [[1]]
 #> [1] "a"
-#>
+#> 
 #> [[2]]
 #> [1] "b"
-#>
+#> 
 #> [[3]]
 #> [1] "c"
 ```
@@ -579,27 +578,13 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
-```
-
-```
-#>
-#> Attaching package: 'cowsay'
-```
-
-```
-#> The following object is masked _by_ '.GlobalEnv':
-#>
-#>     animals
-```
-
-```r
 say("catfact", "cat")
 ```
 
 ```
-#>
-#>  --------------
-#> The way you treat kittens in the early stages of it's life will render it's personality traits later in life.
+#> 
+#>  -------------- 
+#> The female cat reaches sexual maturity at around 6 to 10 months and the male cat between 9 and 12 months. 
 #>  --------------
 #>     \
 #>       \
@@ -614,7 +599,7 @@ say("catfact", "cat")
 #>            \| | |_|/\
 #>       jgs  //_// ___/
 #>                \_)
-#>
+#> 
 ```
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 

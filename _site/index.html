@@ -140,190 +140,212 @@
 
 <p>You can do math:</p>
 
-<pre><code class="language-r">1 + 1
-#&gt; [1] 2
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="m">1</span> <span class="o">+</span> <span class="m">1</span>
+<span class="c1">#&gt; [1] 2
+</span></code></pre>
+</div>
 
 <p>Strings are always fun to start with, type a set of letters together within quotes and the console will print it back to you</p>
 
-<pre><code class="language-r">"Hello Mr Tickles"
-#&gt; [1] "Hello Mr Tickles"
-"This is a string"
-#&gt; [1] "This is a string"
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s2">"Hello Mr Tickles"</span>
+<span class="c1">#&gt; [1] "Hello Mr Tickles"
+</span><span class="s2">"This is a string"</span>
+<span class="c1">#&gt; [1] "This is a string"
+</span></code></pre>
+</div>
 <p>Double quotes and single quotes are more or less interchangable, but is better practice to stick with double quotes.</p>
 
 <p>Another thing you’ll want to do as a cat using R is assign things to a name so that you can use it later. Think of this as being if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).</p>
 
-<p>Assign the number 5 to the name <code>mynumber</code></p>
+<p>Assign the number 5 to the name <code class="highlighter-rouge">mynumber</code></p>
 
-<pre><code class="language-r">mynumber &lt;- 5
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mynumber</span> <span class="o">&lt;-</span> <span class="m">5</span>
 </code></pre>
+</div>
 
-<p>Later you can use <code>mynumber</code>, like adding it to another number</p>
+<p>Later you can use <code class="highlighter-rouge">mynumber</code>, like adding it to another number</p>
 
-<pre><code class="language-r">mynumber + 1
-#&gt; [1] 6
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mynumber</span> <span class="o">+</span> <span class="m">1</span>
+<span class="c1">#&gt; [1] 6
+</span></code></pre>
+</div>
 
 <p>Sweet!</p>
 
 <h2 id="a-hrefvectors-namevectorsa-vectors"><a href="#vectors" name="vectors">#</a> Vectors</h2>
 
-<p>Vectors are one of the simplest and common objects in R. Think of a vector like a cat’s tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all <code>numeric</code>, all <code>character</code>, all <code>factor</code>, etc.</p>
+<p>Vectors are one of the simplest and common objects in R. Think of a vector like a cat’s tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all <code class="highlighter-rouge">numeric</code>, all <code class="highlighter-rouge">character</code>, all <code class="highlighter-rouge">factor</code>, etc.</p>
 
-<p>But wait, how do we make a vector? The easiest way is to use a function called <code>c</code>. So <code>c(5,6,7)</code> will create a vector of numbers 5, 6, and 7. Let’s try to put a <code>character</code> and a <code>numeric</code> together.</p>
+<p>But wait, how do we make a vector? The easiest way is to use a function called <code class="highlighter-rouge">c</code>. So <code class="highlighter-rouge">c(5,6,7)</code> will create a vector of numbers 5, 6, and 7. Let’s try to put a <code class="highlighter-rouge">character</code> and a <code class="highlighter-rouge">numeric</code> together.</p>
 
-<pre><code class="language-r">c("hello", 5)
-#&gt; [1] "hello" "5"
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">c</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<span class="c1">#&gt; [1] "hello" "5"
+</span></code></pre>
+</div>
 
-<p>Notice how the output of the above converted the 5 to a character type with quotes around the <code>5</code> to make it <code>"5"</code>, i.e., or an object of type <em>character</em>.
+<p>Notice how the output of the above converted the 5 to a character type with quotes around the <code class="highlighter-rouge">5</code> to make it <code class="highlighter-rouge">"5"</code>, i.e., or an object of type <em>character</em>.
 But we can happily make a vector of the same type of information, like</p>
 
-<pre><code class="language-r">c(5, 8, 200, 1, 1.5, 0.9)
-#&gt; [1]   5.0   8.0 200.0   1.0   1.5   0.9
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1.5</span><span class="p">,</span> <span class="m">0.9</span><span class="p">)</span>
+<span class="c1">#&gt; [1]   5.0   8.0 200.0   1.0   1.5   0.9
+</span></code></pre>
+</div>
 
 <p>Vectors are handy because they can be combined to make other R objects, such as lists (see <a href="#lists">lists</a> below), and <a href="#dataframes">data frames</a>.</p>
 
 <p>In addition, you can do something to each part of the vector. Let’s say you have a vector of three types of animals:</p>
 
-<pre><code class="language-r">animals &lt;- c("birds","squirrels","fish")
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">animals</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"birds"</span><span class="p">,</span><span class="s2">"squirrels"</span><span class="p">,</span><span class="s2">"fish"</span><span class="p">)</span>
 </code></pre>
+</div>
 
 <p>You can add something to each of them like</p>
 
-<pre><code class="language-r">paste(animals, "are silly")
-#&gt; [1] "birds are silly"     "squirrels are silly" "fish are silly"
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">paste</span><span class="p">(</span><span class="n">animals</span><span class="p">,</span> <span class="s2">"are silly"</span><span class="p">)</span>
+<span class="c1">#&gt; [1] "birds are silly"     "squirrels are silly" "fish are silly"
+</span></code></pre>
+</div>
 
 <h2 id="a-hrefdataframes-namedataframesa-data-frames"><a href="#dataframes" name="dataframes">#</a> Data frames</h2>
 
-<p>A <code>data.frame</code> is one of the most commonly used objects in R. Just think of a <code>data.frame</code> like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the <code>data.frame</code> in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of <code>numeric</code> type, the second a <code>factor</code>, and the third <code>character</code>.</p>
+<p>A <code class="highlighter-rouge">data.frame</code> is one of the most commonly used objects in R. Just think of a <code class="highlighter-rouge">data.frame</code> like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the <code class="highlighter-rouge">data.frame</code> in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of <code class="highlighter-rouge">numeric</code> type, the second a <code class="highlighter-rouge">factor</code>, and the third <code class="highlighter-rouge">character</code>.</p>
 
-<pre><code class="language-r">df &lt;- data.frame(hey=c(5,6,7),
-           there=as.factor(c("a","b","c")),
-           fella=c("blue","brown","green"))
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">df</span> <span class="o">&lt;-</span> <span class="n">data.frame</span><span class="p">(</span><span class="n">hey</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">),</span>
+           <span class="n">there</span><span class="o">=</span><span class="n">as.factor</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">)),</span>
+           <span class="n">fella</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s2">"blue"</span><span class="p">,</span><span class="s2">"brown"</span><span class="p">,</span><span class="s2">"green"</span><span class="p">))</span>
 </code></pre>
+</div>
 
-<pre><code class="language-r">df
-#&gt;   hey there fella
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">df</span>
+<span class="c1">#&gt;   hey there fella
 #&gt; 1   5     a  blue
 #&gt; 2   6     b brown
 #&gt; 3   7     c green
-</code></pre>
+</span></code></pre>
+</div>
 
-<p>Notice that the first <em>column</em> of numbers are actually row names, and are not part of the <code>data.frame</code> <em>per se</em>, though are part of the <em>metadata</em> for the <code>data.frame</code>.</p>
+<p>Notice that the first <em>column</em> of numbers are actually row names, and are not part of the <code class="highlighter-rouge">data.frame</code> <em>per se</em>, though are part of the <em>metadata</em> for the <code class="highlighter-rouge">data.frame</code>.</p>
 
-<p>We can quickly get a sense for the type of data in the <code>df</code> object by using the function <code>str</code>, which gives information on the types of data in each column.</p>
+<p>We can quickly get a sense for the type of data in the <code class="highlighter-rouge">df</code> object by using the function <code class="highlighter-rouge">str</code>, which gives information on the types of data in each column.</p>
 
-<pre><code class="language-r">str(df)
-#&gt; 'data.frame':	3 obs. of  3 variables:
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">str</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1">#&gt; 'data.frame':	3 obs. of  3 variables:
 #&gt;  $ hey  : num  5 6 7
 #&gt;  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
 #&gt;  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
-</code></pre>
+</span></code></pre>
+</div>
 
 <p><strong>Matrices</strong></p>
 
-<p>Think of a matrix in R like a <code>data.frame</code> with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a two-dimensional array.</p>
+<p>Think of a matrix in R like a <code class="highlighter-rouge">data.frame</code> with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a two-dimensional array.</p>
 
-<pre><code class="language-r">mat &lt;- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3)
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mat</span> <span class="o">&lt;-</span> <span class="n">matrix</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">13</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
 </code></pre>
+</div>
 
-<pre><code class="language-r">mat
-#&gt;      [,1] [,2] [,3]
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mat</span>
+<span class="c1">#&gt;      [,1] [,2] [,3]
 #&gt; [1,]    1    3   12
 #&gt; [2,]    2   11   13
-</code></pre>
+</span></code></pre>
+</div>
 
 <h2 id="a-hreflists-namelistsa-lists"><a href="#lists" name="lists">#</a> Lists</h2>
 
-<p>Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only <code>character</code> for example), lists can hold for example, a <code>data.frame</code> and a <code>numeric</code>, or a <code>data.frame</code> and another <code>list</code>!  The way we make a list is via the function <code>list</code></p>
+<p>Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only <code class="highlighter-rouge">character</code> for example), lists can hold for example, a <code class="highlighter-rouge">data.frame</code> and a <code class="highlighter-rouge">numeric</code>, or a <code class="highlighter-rouge">data.frame</code> and another <code class="highlighter-rouge">list</code>!  The way we make a list is via the function <code class="highlighter-rouge">list</code></p>
 
-<pre><code class="language-r">list(1, "a")
-#&gt; [[1]]
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span>
+<span class="c1">#&gt; [[1]]
 #&gt; [1] 1
-#&gt;
+#&gt; 
 #&gt; [[2]]
 #&gt; [1] "a"
-</code></pre>
+</span></code></pre>
+</div>
 
 <p>A nested list</p>
 
-<pre><code class="language-r">mylist &lt;- list(1, list("a","b","c"))
-mylist
-#&gt; [[1]]
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span> <span class="o">&lt;-</span> <span class="n">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">list</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">))</span>
+<span class="n">mylist</span>
+<span class="c1">#&gt; [[1]]
 #&gt; [1] 1
-#&gt;
+#&gt; 
 #&gt; [[2]]
 #&gt; [[2]][[1]]
 #&gt; [1] "a"
-#&gt;
+#&gt; 
 #&gt; [[2]][[2]]
 #&gt; [1] "b"
-#&gt;
+#&gt; 
 #&gt; [[2]][[3]]
 #&gt; [1] "c"
-</code></pre>
+</span></code></pre>
+</div>
 
 <p>Just like vectors, you can do operations on each element of the list. However, since lists can be nested you have to worry about what level of nesting you want to manipulate.</p>
 
-<p>For example, if we take the <code>mylist</code> list from above, and perform the following:</p>
+<p>For example, if we take the <code class="highlighter-rouge">mylist</code> list from above, and perform the following:</p>
 
-<pre><code class="language-r">length(mylist[1])
-#&gt; [1] 1
-length(mylist[2])
-#&gt; [1] 1
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">length</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="m">1</span><span class="p">])</span>
+<span class="c1">#&gt; [1] 1
+</span><span class="n">length</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="m">2</span><span class="p">])</span>
+<span class="c1">#&gt; [1] 1
+</span></code></pre>
+</div>
 
 <p>This gives a length of 1 for each element of the list. But wait, aren’t there three things in the second slot of the list (“a”,”b”,”c”)?  Indeed there are</p>
 
-<pre><code class="language-r">length(mylist[2][[1]])
-#&gt; [1] 3
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">length</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="m">2</span><span class="p">][[</span><span class="m">1</span><span class="p">]])</span>
+<span class="c1">#&gt; [1] 3
+</span></code></pre>
+</div>
 
 <h2 id="a-hrefindexing-nameindexinga-indexing"><a href="#indexing" name="indexing">#</a> Indexing</h2>
 
-<p>Okay, so let’s say you have made a <code>vector</code>, <code>list</code>, or <code>data.frame</code>. How do you get to the things in them? Its slightly different for each one.</p>
+<p>Okay, so let’s say you have made a <code class="highlighter-rouge">vector</code>, <code class="highlighter-rouge">list</code>, or <code class="highlighter-rouge">data.frame</code>. How do you get to the things in them? Its slightly different for each one.</p>
 
-<p>There is a general way to index objects in R that can be used across <code>vectors</code>, <code>lists</code>, and <code>data.frame</code>.  That is the square bracket: <code>[]</code>.  For some objects you can index by the sequence number (e.g., <code>5</code>) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., <code>kitty</code>).</p>
+<p>There is a general way to index objects in R that can be used across <code class="highlighter-rouge">vectors</code>, <code class="highlighter-rouge">lists</code>, and <code class="highlighter-rouge">data.frame</code>.  That is the square bracket: <code class="highlighter-rouge">[]</code>.  For some objects you can index by the sequence number (e.g., <code class="highlighter-rouge">5</code>) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., <code class="highlighter-rouge">kitty</code>).</p>
 
 <p><strong>vectors</strong></p>
 
-<p>Vectors only have one dimension, as we said above. So with <code>[]</code> there is only one number to give here. For example, let’s say we have the vector</p>
+<p>Vectors only have one dimension, as we said above. So with <code class="highlighter-rouge">[]</code> there is only one number to give here. For example, let’s say we have the vector</p>
 
-<pre><code class="language-r">bb &lt;- c(5,6,7)
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">bb</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
 </code></pre>
+</div>
 
 <p>We can index to each of those 3 numbers by the sequence of its place in the vector. Get the 6 by doing</p>
 
-<pre><code class="language-r">bb[2]
-#&gt; [1] 6
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">bb</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+<span class="c1">#&gt; [1] 6
+</span></code></pre>
+</div>
 
-<p>You can also have a named vector. What’s that?  A named vector is like <code>bb</code> above, but each of the three elements has a name.</p>
+<p>You can also have a named vector. What’s that?  A named vector is like <code class="highlighter-rouge">bb</code> above, but each of the three elements has a name.</p>
 
-<pre><code class="language-r">bb &lt;- c(5,6,7)
-names(bb) &lt;- c("hey","hello","wadup")
-bb
-#&gt;   hey hello wadup
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">bb</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
+<span class="n">names</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s2">"hey"</span><span class="p">,</span><span class="s2">"hello"</span><span class="p">,</span><span class="s2">"wadup"</span><span class="p">)</span>
+<span class="n">bb</span>
+<span class="c1">#&gt;   hey hello wadup 
 #&gt;     5     6     7
-names(bb)
-#&gt; [1] "hey"   "hello" "wadup"
-</code></pre>
+</span><span class="n">names</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span>
+<span class="c1">#&gt; [1] "hey"   "hello" "wadup"
+</span></code></pre>
+</div>
 
 <p>With a named vector we can get to each element in the vector using its name with a single set, or double set of brackets to get the value, or the value and name, respectively.</p>
 
-<pre><code class="language-r">bb["hello"]
-#&gt; hello
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">bb</span><span class="p">[</span><span class="s2">"hello"</span><span class="p">]</span>
+<span class="c1">#&gt; hello 
 #&gt;     6
-</code></pre>
+</span></code></pre>
+</div>
 
-<pre><code class="language-r">bb[["hello"]]
-#&gt; [1] 6
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">bb</span><span class="p">[[</span><span class="s2">"hello"</span><span class="p">]]</span>
+<span class="c1">#&gt; [1] 6
+</span></code></pre>
+</div>
 
 <p>Fun.</p>
 
@@ -331,68 +353,76 @@ names(bb)
 
 <p>Indexing on lists is similar to vectors. A huge difference though is that lists can be nested. So there could be infinite things within each slot of a list.</p>
 
-<p>For example, let’s say we have the nested list from above <code>mylist</code></p>
+<p>For example, let’s say we have the nested list from above <code class="highlighter-rouge">mylist</code></p>
 
-<pre><code class="language-r">mylist &lt;- list(foo=1, bar=list("a","b","c"))
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span> <span class="o">&lt;-</span> <span class="n">list</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="n">list</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">))</span>
 </code></pre>
+</div>
 
 <p>We can index to the first item in the list, including its name, by</p>
 
-<pre><code class="language-r">mylist[1]
-#&gt; $foo
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="c1">#&gt; $foo
 #&gt; [1] 1
-</code></pre>
+</span></code></pre>
+</div>
 
 <p>Or equivalently</p>
 
-<pre><code class="language-r">mylist["foo"]
-#&gt; $foo
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span><span class="p">[</span><span class="s2">"foo"</span><span class="p">]</span>
+<span class="c1">#&gt; $foo
 #&gt; [1] 1
-</code></pre>
+</span></code></pre>
+</div>
 
-<p>And get just the value by using two <code>[</code></p>
+<p>And get just the value by using two <code class="highlighter-rouge">[</code></p>
 
-<pre><code class="language-r">mylist[[1]]
-#&gt; [1] 1
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+<span class="c1">#&gt; [1] 1
+</span></code></pre>
+</div>
 
 <p>Or equivalently</p>
 
-<pre><code class="language-r">mylist[["foo"]]
-#&gt; [1] 1
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span><span class="p">[[</span><span class="s2">"foo"</span><span class="p">]]</span>
+<span class="c1">#&gt; [1] 1
+</span></code></pre>
+</div>
 
-<p>And get the second item in <code>mylist</code> by</p>
+<p>And get the second item in <code class="highlighter-rouge">mylist</code> by</p>
 
-<pre><code class="language-r">mylist[2] # or mylist["bar"]
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="c1"># or mylist["bar"]
 #&gt; $bar
 #&gt; $bar[[1]]
 #&gt; [1] "a"
-#&gt;
+#&gt; 
 #&gt; $bar[[2]]
 #&gt; [1] "b"
-#&gt;
+#&gt; 
 #&gt; $bar[[3]]
 #&gt; [1] "c"
-</code></pre>
+</span></code></pre>
+</div>
 
-<pre><code class="language-r">mylist[[2]] # or mylist[["bar"]]
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="c1"># or mylist[["bar"]]
 #&gt; [[1]]
 #&gt; [1] "a"
-#&gt;
+#&gt; 
 #&gt; [[2]]
 #&gt; [1] "b"
-#&gt;
+#&gt; 
 #&gt; [[3]]
 #&gt; [1] "c"
-</code></pre>
+</span></code></pre>
+</div>
 
-<p>And get to the individual elements within <code>bar</code> by</p>
+<p>And get to the individual elements within <code class="highlighter-rouge">bar</code> by</p>
 
-<pre><code class="language-r">mylist[[2]][1]
-#&gt; [[1]]
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span><span class="p">[[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="p">]</span>
+<span class="c1">#&gt; [[1]]
 #&gt; [1] "a"
-</code></pre>
+</span></code></pre>
+</div>
 
 <p>And so on to get to what you need.</p>
 
@@ -400,38 +430,42 @@ names(bb)
 
 <p><strong>data.frame and matrix</strong></p>
 
-<p>Indexing on a <code>data.frame</code> and <code>matrix</code> is similar. Both have two things to index on: rows and columns. Within <code>[,]</code>, the part before the comma is for rows, and the part after the comma for columns. So if you have a data frame <code>iris</code> in R,</p>
+<p>Indexing on a <code class="highlighter-rouge">data.frame</code> and <code class="highlighter-rouge">matrix</code> is similar. Both have two things to index on: rows and columns. Within <code class="highlighter-rouge">[,]</code>, the part before the comma is for rows, and the part after the comma for columns. So if you have a data frame <code class="highlighter-rouge">iris</code> in R,</p>
 
-<pre><code class="language-r">head(iris)
-#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+<span class="c1">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 #&gt; 1          5.1         3.5          1.4         0.2  setosa
 #&gt; 2          4.9         3.0          1.4         0.2  setosa
 #&gt; 3          4.7         3.2          1.3         0.2  setosa
 #&gt; 4          4.6         3.1          1.5         0.2  setosa
 #&gt; 5          5.0         3.6          1.4         0.2  setosa
 #&gt; 6          5.4         3.9          1.7         0.4  setosa
-</code></pre>
+</span></code></pre>
+</div>
 
 <p>You can index to the third row and second column by doing</p>
 
-<pre><code class="language-r">iris[3,2]
-#&gt; [1] 3.2
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">iris</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+<span class="c1">#&gt; [1] 3.2
+</span></code></pre>
+</div>
 
 <p>You can also use names to index if you have named rows or columns. For example,</p>
 
-<pre><code class="language-r">iris[2,"Species"]
-#&gt; [1] setosa
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">iris</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="s2">"Species"</span><span class="p">]</span>
+<span class="c1">#&gt; [1] setosa
 #&gt; Levels: setosa versicolor virginica
-</code></pre>
+</span></code></pre>
+</div>
 
-<p>You can also use the <code>$</code> symbol to index to a column, like</p>
+<p>You can also use the <code class="highlighter-rouge">$</code> symbol to index to a column, like</p>
 
-<pre><code class="language-r">mtcars$mpg
-#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span>
+<span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
 #&gt; [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
 #&gt; [29] 15.8 19.7 15.0 21.4
-</code></pre>
+</span></code></pre>
+</div>
 
 <h2 id="a-hreffunctions-namefunctionsa-functions"><a href="#functions" name="functions">#</a> Functions</h2>
 
@@ -439,44 +473,51 @@ names(bb)
 
 <p>Functions are written like this</p>
 
-<pre><code class="language-r">foo &lt;- function(){
-  writeLines("I strongly dislike dogs")
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">foo</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(){</span>
+  <span class="n">writeLines</span><span class="p">(</span><span class="s2">"I strongly dislike dogs"</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p>After defining this function we can then call it later like this</p>
 
-<pre><code class="language-r">foo()
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">foo</span><span class="p">()</span>
 </code></pre>
+</div>
 
-<pre><code>#&gt; I strongly dislike dogs
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt; I strongly dislike dogs
 </code></pre>
+</div>
 
 <p>Yay! Dumb dogs.</p>
 
-<p>The <code>foo</code> function was pretty simple. We can also pass in parameters to the function.</p>
+<p>The <code class="highlighter-rouge">foo</code> function was pretty simple. We can also pass in parameters to the function.</p>
 
-<pre><code class="language-r">foo &lt;- function(mess){
-  writeLines(mess)
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">foo</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">mess</span><span class="p">){</span>
+  <span class="n">writeLines</span><span class="p">(</span><span class="n">mess</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<pre><code class="language-r">foo("I strongly dislike dogs")
-#&gt; I strongly dislike dogs
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">foo</span><span class="p">(</span><span class="s2">"I strongly dislike dogs"</span><span class="p">)</span>
+<span class="c1">#&gt; I strongly dislike dogs
+</span></code></pre>
+</div>
 
 <p>And set parameters to default values.</p>
 
-<pre><code class="language-r">foo &lt;- function(mess = "I strongly dislike dogs"){
-  writeLines(mess)
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">foo</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">mess</span> <span class="o">=</span> <span class="s2">"I strongly dislike dogs"</span><span class="p">){</span>
+  <span class="n">writeLines</span><span class="p">(</span><span class="n">mess</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<pre><code class="language-r">foo()
-#&gt; I strongly dislike dogs
-foo("Well, I dislike most dogs, but I like the one in my house")
-#&gt; Well, I dislike most dogs, but I like the one in my house
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">foo</span><span class="p">()</span>
+<span class="c1">#&gt; I strongly dislike dogs
+</span><span class="n">foo</span><span class="p">(</span><span class="s2">"Well, I dislike most dogs, but I like the one in my house"</span><span class="p">)</span>
+<span class="c1">#&gt; Well, I dislike most dogs, but I like the one in my house
+</span></code></pre>
+</div>
 
 <p>Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this Google the <em>DRY principle</em>.</p>
 
@@ -494,9 +535,9 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 
 <p>The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OS X.</p>
 
-<p>Installation is super easy. Do <code>install.packages("package_name")</code>, where <code>package_name</code> is the name of the package you want to install. Remember that the package name is case sensitive! Or if you’re using RStudio you can go to the <em>Packages</em> pane.</p>
+<p>Installation is super easy. Do <code class="highlighter-rouge">install.packages("package_name")</code>, where <code class="highlighter-rouge">package_name</code> is the name of the package you want to install. Remember that the package name is case sensitive! Or if you’re using RStudio you can go to the <em>Packages</em> pane.</p>
 
-<p>Once the package is installed you have to load the package in to your R session. That’s easy too! Do <code>library('package_name')</code>, or if you’re in RStudio go to the <em>Packages</em> pane.</p>
+<p>Once the package is installed you have to load the package in to your R session. That’s easy too! Do <code class="highlighter-rouge">library('package_name')</code>, or if you’re in RStudio go to the <em>Packages</em> pane.</p>
 
 <p><em>Note: Package creation is out of scope for this site, but Hadley has made it much easier with <a href="https://github.com/hadley/devtools">devtools</a>.</em></p>
 
@@ -506,24 +547,27 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 
 <p>Pipes are not in base R, but are a concept you should know about as a cat.</p>
 
-<p>The R package <a href="https://cran.rstudio.com/web/packages/magrittr">magrittr</a> introduced pipe operators. There are many, but we’ll just focus on <code>%&gt;%</code>. This allows you to pipe a value forward into an expression or function call, like <code>x %&gt;% f</code>, rather than <code>f(x)</code>, if <code>f()</code> is a function.</p>
+<p>The R package <a href="https://cran.rstudio.com/web/packages/magrittr">magrittr</a> introduced pipe operators. There are many, but we’ll just focus on <code class="highlighter-rouge">%&gt;%</code>. This allows you to pipe a value forward into an expression or function call, like <code class="highlighter-rouge">x %&gt;% f</code>, rather than <code class="highlighter-rouge">f(x)</code>, if <code class="highlighter-rouge">f()</code> is a function.</p>
 
-<p>First, let’s install <code>magrittr</code>:</p>
+<p>First, let’s install <code class="highlighter-rouge">magrittr</code>:</p>
 
-<pre><code class="language-r">install.packages("magrittr")
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"magrittr"</span><span class="p">)</span>
 </code></pre>
+</div>
 
 <p>Then load the package so we can use it in the R session:</p>
 
-<pre><code class="language-r">library("magrittr")
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"magrittr"</span><span class="p">)</span>
 </code></pre>
+</div>
 
 <p>Why should you care about this? This concept can make writing code and understanding it simpler. Take for example this case:</p>
 
-<pre><code class="language-r">mtcars %&gt;% subset(cyl &lt; 6) %&gt;% head()
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mtcars</span> <span class="o">%&gt;%</span> <span class="n">subset</span><span class="p">(</span><span class="n">cyl</span> <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">head</span><span class="p">()</span>
 </code></pre>
+</div>
 
-<pre><code>#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
 #&gt; Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
 #&gt; Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
 #&gt; Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
@@ -531,13 +575,15 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 #&gt; Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
 #&gt; Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
 </code></pre>
+</div>
 
 <p>Alternatively, we could avoid pipes:</p>
 
-<pre><code class="language-r">head( subset(mtcars, cyl &lt; 6) )
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span> <span class="n">subset</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="n">cyl</span> <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="p">)</span>
 </code></pre>
+</div>
 
-<pre><code>#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
 #&gt; Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
 #&gt; Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
 #&gt; Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
@@ -545,8 +591,9 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 #&gt; Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
 #&gt; Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
 </code></pre>
+</div>
 
-<p>Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we’re going to manipulate (the <code>mtcars</code> data.frame), then subsets the data.frame to take rows with the <code>cyl</code> column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (<code>mtcars</code>), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.</p>
+<p>Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we’re going to manipulate (the <code class="highlighter-rouge">mtcars</code> data.frame), then subsets the data.frame to take rows with the <code class="highlighter-rouge">cyl</code> column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (<code class="highlighter-rouge">mtcars</code>), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.</p>
 
 <p>Pipe are increasingly being integrated into various R packages. One of the more popular ones is <a href="https://cran.rstudio.com/web/packages/dplyr">dplyr</a>, which allows you to manipulate data.frames.</p>
 
@@ -555,52 +602,43 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 <p>There are a few R gotchas to avoid cat friends.</p>
 
 <ul>
-  <li><code>attach()</code>: This attaches an object to the search path. Like fleas, these can be hard to live with and harder to get rid of.</li>
-  <li>When doing <code>library()</code> or <code>require()</code> use the package name in quotes as package name without quotes is easier, but can cause problems.</li>
+  <li><code class="highlighter-rouge">attach()</code>: This attaches an object to the search path. Like fleas, these can be hard to live with and harder to get rid of.</li>
+  <li>When doing <code class="highlighter-rouge">library()</code> or <code class="highlighter-rouge">require()</code> use the package name in quotes as package name without quotes is easier, but can cause problems.</li>
   <li>Make sure to keep your claws trimmed so they don’t get stuck in spaces between the keys.</li>
 </ul>
 
 <h2 id="a-hrefdodos-namedodosa-do-dos-for-cats-using-r"><a href="#dodos" name="dodos">#</a> Do do’s for cats using R</h2>
 
 <ul>
-  <li>Do combine code and text with <code>Markdown</code> or <code>LaTeX</code> to have reproducible documents, using <code>knitr</code>.</li>
-  <li>When googling for R help, use <code>cran</code>, not <code>r</code></li>
-  <li>When asking questions on Twitter/Appdotnet/G+/etc. use <code>#rstats</code></li>
-  <li>Do ask lots of questions on StackOverflow (use the <code>[r]</code> tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and <a href="http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example">include a reproducible example</a>!</li>
-  <li><code>.rda</code>, <code>.rds</code>, <code>.RData</code> compressed files are useful, but for reproducibility purposes, use non-R specific file formats like <code>.csv</code>, <code>.xml</code>, <code>.json</code>, etc.</li>
+  <li>Do combine code and text with <code class="highlighter-rouge">Markdown</code> or <code class="highlighter-rouge">LaTeX</code> to have reproducible documents, using <code class="highlighter-rouge">knitr</code>.</li>
+  <li>When googling for R help, use <code class="highlighter-rouge">cran</code>, not <code class="highlighter-rouge">r</code></li>
+  <li>When asking questions on Twitter/Appdotnet/G+/etc. use <code class="highlighter-rouge">#rstats</code></li>
+  <li>Do ask lots of questions on StackOverflow (use the <code class="highlighter-rouge">[r]</code> tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and <a href="http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example">include a reproducible example</a>!</li>
+  <li><code class="highlighter-rouge">.rda</code>, <code class="highlighter-rouge">.rds</code>, <code class="highlighter-rouge">.RData</code> compressed files are useful, but for reproducibility purposes, use non-R specific file formats like <code class="highlighter-rouge">.csv</code>, <code class="highlighter-rouge">.xml</code>, <code class="highlighter-rouge">.json</code>, etc.</li>
 </ul>
 
 <h2 id="a-hrefdata-namedataa-data-from-the-web-pictures"><a href="#data" name="data">#</a> Data from the web: pictures</h2>
 
 <p>This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That’s the point of the internet after all - to serve cat pictures.</p>
 
-<p>Install <code>cowsay</code></p>
+<p>Install <code class="highlighter-rouge">cowsay</code></p>
 
-<pre><code class="language-r">install.packages("devtools")
-library("devtools")
-install_github("sckott/cowsay")
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span>
+<span class="n">install_github</span><span class="p">(</span><span class="s2">"sckott/cowsay"</span><span class="p">)</span>
 </code></pre>
+</div>
 
 <p>Now let’s get a cat fact!</p>
 
-<pre><code class="language-r">library("cowsay")
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"cowsay"</span><span class="p">)</span>
+<span class="n">say</span><span class="p">(</span><span class="s2">"catfact"</span><span class="p">,</span> <span class="s2">"cat"</span><span class="p">)</span>
 </code></pre>
+</div>
 
-<pre><code>#&gt;
-#&gt; Attaching package: 'cowsay'
-</code></pre>
-
-<pre><code>#&gt; The following object is masked _by_ '.GlobalEnv':
-#&gt;
-#&gt;     animals
-</code></pre>
-
-<pre><code class="language-r">say("catfact", "cat")
-</code></pre>
-
-<pre><code>#&gt;
-#&gt;  --------------
-#&gt; The way you treat kittens in the early stages of it's life will render it's personality traits later in life.
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt; 
+#&gt;  -------------- 
+#&gt; The female cat reaches sexual maturity at around 6 to 10 months and the male cat between 9 and 12 months. 
 #&gt;  --------------
 #&gt;     \
 #&gt;       \
@@ -615,17 +653,19 @@ install_github("sckott/cowsay")
 #&gt;            \| | |_|/\
 #&gt;       jgs  //_// ___/
 #&gt;                \_)
-#&gt;
+#&gt; 
 </code></pre>
-<p>A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code>say</code> function looks like sorta like this:</p>
+</div>
+<p>A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code class="highlighter-rouge">say</code> function looks like sorta like this:</p>
 
-<pre><code class="language-coffee">say &lt;- function(what, by, type){
-  &lt;== some ascii art ==&gt;
-  url &lt;- "http://catfacts-api.appspot.com/api/facts?number=1"
-  what &lt;- fromJSON(url)$facts
-  message(sprintf(by, what))
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">say</span> <span class="o">&lt;-</span> <span class="nx">function</span><span class="p">(</span><span class="nx">what</span><span class="p">,</span> <span class="k">by</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
+  <span class="o">&lt;==</span> <span class="nx">some</span> <span class="nx">ascii</span> <span class="nx">art</span> <span class="o">==&gt;</span>
+  <span class="nx">url</span> <span class="o">&lt;-</span> <span class="s">"http://catfacts-api.appspot.com/api/facts?number=1"</span>
+  <span class="nx">what</span> <span class="o">&lt;-</span> <span class="nx">fromJSON</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span><span class="nx">$facts</span>
+  <span class="nx">message</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="k">by</span><span class="p">,</span> <span class="nx">what</span><span class="p">))</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p>The first line is a bunch of ascii characters to make a cat. The second line defines the url for the cat facts API. The third line retrieves one cat fact from the cat facts API. And the fourth line prints the messages with a cat.</p>
 
@@ -637,28 +677,31 @@ install_github("sckott/cowsay")
 
 <p><strong>Another example</strong></p>
 
-<p>Above, we learned about writing functions. Let’s create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website <a href="http://placekitten.com/">placekitten.com</a>. This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, <code>http://placekitten.com/g/300/300</code> gives an image that is 300 by 300 pixels.</p>
+<p>Above, we learned about writing functions. Let’s create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website <a href="http://placekitten.com/">placekitten.com</a>. This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, <code class="highlighter-rouge">http://placekitten.com/g/300/300</code> gives an image that is 300 by 300 pixels.</p>
 
-<pre><code class="language-r">getcutecat &lt;- function(x){
-  writeLines(
-    sprintf("![](http://placekitten.com/g/%s/%s)", x, x)
-  )
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">getcutecat</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+  <span class="n">writeLines</span><span class="p">(</span>
+    <span class="n">sprintf</span><span class="p">(</span><span class="s2">"![](http://placekitten.com/g/%s/%s)"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p>150 pixels</p>
 
-<pre><code class="language-r">getcutecat(150)
-#&gt; ![](http://placekitten.com/g/150/150)
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">getcutecat</span><span class="p">(</span><span class="m">150</span><span class="p">)</span>
+<span class="c1">#&gt; ![](http://placekitten.com/g/150/150)
+</span></code></pre>
+</div>
 
 <p><img src="http://placekitten.com/g/150/150" alt="some kittens" /></p>
 
 <p>250 pixels</p>
 
-<pre><code class="language-r">getcutecat(250)
-#&gt; ![](http://placekitten.com/g/250/250)
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">getcutecat</span><span class="p">(</span><span class="m">250</span><span class="p">)</span>
+<span class="c1">#&gt; ![](http://placekitten.com/g/250/250)
+</span></code></pre>
+</div>
 
 <p><img src="http://placekitten.com/g/250/250" alt="some kittens" /></p>
 
@@ -666,17 +709,19 @@ install_github("sckott/cowsay")
 
 <p>R and web APIs are open to all sorts of animals.  For instance, the <a href="http://dogr.io">dogr.io</a> service will create a “doge” style meme for you when provided with text.  Let’s write another function to call this API:</p>
 
-<pre><code class="language-r">getdoge &lt;- function(x){
-  x = paste(x, collapse="/")
-  writeLines(
-    sprintf("![](http://dogr.io/%s.png)", x)
-  )
-}
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">getdoge</span> <span class="o">&lt;-</span> <span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">collapse</span><span class="o">=</span><span class="s2">"/"</span><span class="p">)</span>
+  <span class="n">writeLines</span><span class="p">(</span>
+    <span class="n">sprintf</span><span class="p">(</span><span class="s2">"![](http://dogr.io/%s.png)"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<pre><code class="language-r">getdoge(c("wow", "suchhostility", "bemoreinclusive"))
-#&gt; ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">getdoge</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s2">"wow"</span><span class="p">,</span> <span class="s2">"suchhostility"</span><span class="p">,</span> <span class="s2">"bemoreinclusive"</span><span class="p">))</span>
+<span class="c1">#&gt; ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
+</span></code></pre>
+</div>
 
 <p><img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400" /></p>
 
@@ -688,45 +733,50 @@ install_github("sckott/cowsay")
 
 <p>First, we’ll have to load some helpful packages.</p>
 
-<pre><code class="language-r">library("httr")
-library("XML")
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"httr"</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="s2">"XML"</span><span class="p">)</span>
 </code></pre>
+</div>
 
-<p>Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the <code>XML</code> package can translate those webpages into useful objects in our environment.</p>
+<p>Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the <code class="highlighter-rouge">XML</code> package can translate those webpages into useful objects in our environment.</p>
 
-<p>Here, we’ll use the <code>GET()</code> function from the <code>httr</code> package to save the source code of the page in an object.</p>
+<p>Here, we’ll use the <code class="highlighter-rouge">GET()</code> function from the <code class="highlighter-rouge">httr</code> package to save the source code of the page in an object.</p>
 
-<pre><code class="language-r">wikiCatNamePage &lt;- GET("https://en.wikipedia.org/wiki/Popular_cat_names")
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">wikiCatNamePage</span> <span class="o">&lt;-</span> <span class="n">GET</span><span class="p">(</span><span class="s2">"https://en.wikipedia.org/wiki/Popular_cat_names"</span><span class="p">)</span>
 </code></pre>
+</div>
 
 <p>Cool! We have the website in an object!</p>
 
-<p>But…looking at <code>wikiCatNamePage</code>, it doesn’t seem like R will understand what we want to do! This is where we use the <code>content()</code> function from the httr package–it’s really good at translating the page so R can use it. That’s what we’ll do in this next command:</p>
+<p>But…looking at <code class="highlighter-rouge">wikiCatNamePage</code>, it doesn’t seem like R will understand what we want to do! This is where we use the <code class="highlighter-rouge">content()</code> function from the httr package–it’s really good at translating the page so R can use it. That’s what we’ll do in this next command:</p>
 
-<pre><code class="language-r">parsedWikiCatNamePage &lt;- content(wikiCatNamePage)
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">parsedWikiCatNamePage</span> <span class="o">&lt;-</span> <span class="n">content</span><span class="p">(</span><span class="n">wikiCatNamePage</span><span class="p">)</span>
 </code></pre>
+</div>
 
-<p>Alright! Now we’ve translated the website code so that a different function, <code>readHTMLTable()</code>, will be able to pull the tables that we want.</p>
+<p>Alright! Now we’ve translated the website code so that a different function, <code class="highlighter-rouge">readHTMLTable()</code>, will be able to pull the tables that we want.</p>
 
-<pre><code class="language-r">wikiCatNameTables &lt;- readHTMLTable(parsedWikiCatNamePage)
-#&gt; Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'readHTMLTable' for signature '"xml_document"'
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">wikiCatNameTables</span> <span class="o">&lt;-</span> <span class="n">readHTMLTable</span><span class="p">(</span><span class="n">parsedWikiCatNamePage</span><span class="p">)</span>
+<span class="c1">#&gt; Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'readHTMLTable' for signature '"xml_document"'
+</span></code></pre>
+</div>
 
-<p>It looks like the function stored seven different things in the object, <code>wikiCatNameTables</code>. Looking at the webpage, I like the table from the subsection called <em>Cultural references to the naming of cats</em>. My favorite is Tom, from Tom and Jerry!</p>
+<p>It looks like the function stored seven different things in the object, <code class="highlighter-rouge">wikiCatNameTables</code>. Looking at the webpage, I like the table from the subsection called <em>Cultural references to the naming of cats</em>. My favorite is Tom, from Tom and Jerry!</p>
 
-<p>If we use <code>str(wikiCatNameTables)</code>, we’ll see that <code>wikiCatNameTables</code> is a list with seven items. It looks like the seventh item is the one with our data–we’re almost done! The <code>str()</code> function shows too much information because of how <code>wikiCatNameTables</code> is organized, so the output isn’t shown here. You should try it, though!</p>
+<p>If we use <code class="highlighter-rouge">str(wikiCatNameTables)</code>, we’ll see that <code class="highlighter-rouge">wikiCatNameTables</code> is a list with seven items. It looks like the seventh item is the one with our data–we’re almost done! The <code class="highlighter-rouge">str()</code> function shows too much information because of how <code class="highlighter-rouge">wikiCatNameTables</code> is organized, so the output isn’t shown here. You should try it, though!</p>
 
-<p>Let’s put the seventh item in <code>wikiCatNameTables</code> into an object and see what we get:</p>
+<p>Let’s put the seventh item in <code class="highlighter-rouge">wikiCatNameTables</code> into an object and see what we get:</p>
 
-<pre><code class="language-r">famousCats &lt;- wikiCatNameTables[[7]]
-#&gt; Error in eval(expr, envir, enclos): object 'wikiCatNameTables' not found
-head(famousCats)
-#&gt; Error in head(famousCats): object 'famousCats' not found
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">famousCats</span> <span class="o">&lt;-</span> <span class="n">wikiCatNameTables</span><span class="p">[[</span><span class="m">7</span><span class="p">]]</span>
+<span class="c1">#&gt; Error in eval(expr, envir, enclos): object 'wikiCatNameTables' not found
+</span><span class="n">head</span><span class="p">(</span><span class="n">famousCats</span><span class="p">)</span>
+<span class="c1">#&gt; Error in head(famousCats): object 'famousCats' not found
+</span></code></pre>
+</div>
 
 <p>Wow! We did it! And the data looks great! Give yourself a pat on the back!</p>
 
-<p>If you’re interested in learning more about scraping webpages, you should also check out the <code>rvest</code> and <code>xml2</code> packages. They are designed to be as cat-friendly as possible!</p>
+<p>If you’re interested in learning more about scraping webpages, you should also check out the <code class="highlighter-rouge">rvest</code> and <code class="highlighter-rouge">xml2</code> packages. They are designed to be as cat-friendly as possible!</p>
 
 <h2 id="a-hrefreading-namereadinga-reading"><a href="#reading" name="reading">#</a> Reading</h2>
 
