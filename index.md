@@ -473,7 +473,7 @@ A lot of the functionality in R is in extensions to the language, called package
 * Incorporate documentation
 * Lessen conflicts with functions in other packages (don't worry about why for now, but if you want to know [go here](http://adv-r.had.co.nz/Namespaces.html))
 
-Most people that make R packages share them on a site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](http://cran.r-project.org/).
+Most people that make R packages share them on a site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](https://cran.rstudio.com/).
 
 The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OS X.
 
@@ -481,7 +481,7 @@ Installation is super easy. Do `install.packages("package_name")`, where `packag
 
 Once the package is installed you have to load the package in to your R session. That's easy too! Do `library('package_name')`, or if you're in RStudio go to the _Packages_ pane.
 
-_Note: Package creation is out of scope for this site, but Hadley has made it much easier with [devtools](https://github/com/hadley/devtools)._
+_Note: Package creation is out of scope for this site, but Hadley has made it much easier with [devtools](https://github.com/hadley/devtools)._
 
 ## <a href="#pipes" name="pipes"/>#</a> Pipes
 
@@ -489,7 +489,7 @@ _Note: Package creation is out of scope for this site, but Hadley has made it mu
 
 Pipes are not in base R, but are a concept you should know about as a cat.
 
-The R package [magrittr](http://cran.r-project.org/web/packages/magrittr/index.html) introduced pipe operators. There are many, but we'll just focus on `%>%`. This allows you to pipe a value forward into an expression or function call, like `x %>% f`, rather than `f(x)`, if `f()` is a function.
+The R package [magrittr](https://cran.rstudio.com/web/packages/magrittr) introduced pipe operators. There are many, but we'll just focus on `%>%`. This allows you to pipe a value forward into an expression or function call, like `x %>% f`, rather than `f(x)`, if `f()` is a function.
 
 First, let's install `magrittr`:
 
@@ -541,7 +541,7 @@ head( subset(mtcars, cyl < 6) )
 
 Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we're going to manipulate (the `mtcars` data.frame), then subsets the data.frame to take rows with the `cyl` column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (`mtcars`), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.
 
-Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](http://cran.r-project.org/web/packages/dplyr/index.html), which allows you to manipulate data.frames.
+Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](https://cran.rstudio.com/web/packages/dplyr), which allows you to manipulate data.frames.
 
 
 ## <a href="#nonos" name="nonos"/>#</a> No no's for cats using R
@@ -578,13 +578,27 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
+```
+
+```
+#> 
+#> Attaching package: 'cowsay'
+```
+
+```
+#> The following object is masked _by_ '.GlobalEnv':
+#> 
+#>     animals
+```
+
+```r
 say("catfact", "cat")
 ```
 
 ```
 #> 
 #>  -------------- 
-#> Siamese kittens are born white because of the heat inside the mother's uterus before birth. This heat keeps the kittens' hair from darkening on the points. 
+#> The way you treat kittens in the early stages of it's life will render it's personality traits later in life. 
 #>  --------------
 #>     \
 #>       \
@@ -678,7 +692,7 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 ## <a href="#dataNames" name="dataNames"/>#</a> Data from the web: names
 
 
-Besides pictures, R is also really good at scraping data from websites! Here, we'll look at the names of famous cats that are listed on Wikipedia. 
+Besides pictures, R is also really good at scraping data from websites! Here, we'll look at the names of famous cats that are listed on Wikipedia.
 
 First, we'll have to load some helpful packages.
 
@@ -687,9 +701,9 @@ library("httr")
 library("XML")
 ```
 
-Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the `XML` package can translate those webpages into useful objects in our environment. 
+Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the `XML` package can translate those webpages into useful objects in our environment.
 
-Here, we'll use the `GET()` function from the `httr` package to save the source code of the page in an object. 
+Here, we'll use the `GET()` function from the `httr` package to save the source code of the page in an object.
 
 
 ```r
@@ -705,14 +719,15 @@ But...looking at `wikiCatNamePage`, it doesn't seem like R will understand what 
 parsedWikiCatNamePage <- content(wikiCatNamePage)
 ```
 
-Alright! Now we've translated the website code so that a different function, `readHTMLTable()`, will be able to pull the tables that we want. 
+Alright! Now we've translated the website code so that a different function, `readHTMLTable()`, will be able to pull the tables that we want.
 
 
 ```r
 wikiCatNameTables <- readHTMLTable(parsedWikiCatNamePage)
+#> Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'readHTMLTable' for signature '"xml_document"'
 ```
 
-It looks like the function stored seven different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called _Cultural references to the naming of cats_. My favorite is Tom, from Tom and Jerry! 
+It looks like the function stored seven different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called _Cultural references to the naming of cats_. My favorite is Tom, from Tom and Jerry!
 
 If we use `str(wikiCatNameTables)`, we'll see that `wikiCatNameTables` is a list with seven items. It looks like the seventh item is the one with our data--we're almost done! The `str()` function shows too much information because of how `wikiCatNameTables` is organized, so the output isn't shown here. You should try it, though!
 
@@ -721,19 +736,14 @@ Let's put the seventh item in `wikiCatNameTables` into an object and see what we
 
 ```r
 famousCats <- wikiCatNameTables[[7]]
+#> Error in eval(expr, envir, enclos): object 'wikiCatNameTables' not found
 head(famousCats)
-#>        Cat Name Made Famous By
-#> 1 Amelia Gabble The Aristocats
-#> 2       Berlioz The Aristocats
-#> 3        Carlos      Marmaduke
-#> 4           Cat      Peg + Cat
-#> 5   Chinese Cat The Aristocats
-#> 6         Diana    Sailor Moon
+#> Error in head(famousCats): object 'famousCats' not found
 ```
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!
 
-If you're interested in learning more about scraping webpages, you should also check out the `rvest` and `xml2` packages. They are designed to be as cat-friendly as possible! 
+If you're interested in learning more about scraping webpages, you should also check out the `rvest` and `xml2` packages. They are designed to be as cat-friendly as possible!
 
 ## <a href="#reading" name="reading"/>#</a> Reading
 
