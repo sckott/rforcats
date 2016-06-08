@@ -32,7 +32,8 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 * [Reading](#reading)
 * [Does this site suck?](#makeitbetter)
 
-## <a href="#rconsole" name="rconsole"/>#</a> R console
+
+## <a href="#rconsole" name="rconsole">#</a> R console
 
 Writing code is fun. Since you're a cat, not having opposable thumbs may be a bit of an issue, but surely you're clever enough to find a way around that.
 
@@ -79,7 +80,7 @@ mynumber + 1
 Sweet!
 
 
-## <a href="#vectors" name="vectors"/>#</a> Vectors
+## <a href="#vectors" name="vectors">#</a> Vectors
 
 Vectors are one of the simplest and common objects in R. Think of a vector like a cat's tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all `numeric`, all `character`, all `factor`, etc.
 
@@ -117,7 +118,7 @@ paste(animals, "are silly")
 #> [1] "birds are silly"     "squirrels are silly" "fish are silly"
 ```
 
-## <a href="#dataframes" name="dataframes"/>#</a> Data frames
+## <a href="#dataframes" name="dataframes">#</a> Data frames
 
 A `data.frame` is one of the most commonly used objects in R. Just think of a `data.frame` like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the `data.frame` in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of `numeric` type, the second a `factor`, and the third `character`.
 
@@ -168,7 +169,7 @@ mat
 #> [2,]    2   11   13
 ```
 
-## <a href="#lists" name="lists"/>#</a> Lists
+## <a href="#lists" name="lists">#</a> Lists
 
 Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only `character` for example), lists can hold for example, a `data.frame` and a `numeric`, or a `data.frame` and another `list`!  The way we make a list is via the function `list`
 
@@ -177,7 +178,7 @@ Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat
 list(1, "a")
 #> [[1]]
 #> [1] 1
-#> 
+#>
 #> [[2]]
 #> [1] "a"
 ```
@@ -190,14 +191,14 @@ mylist <- list(1, list("a","b","c"))
 mylist
 #> [[1]]
 #> [1] 1
-#> 
+#>
 #> [[2]]
 #> [[2]][[1]]
 #> [1] "a"
-#> 
+#>
 #> [[2]][[2]]
 #> [1] "b"
-#> 
+#>
 #> [[2]][[3]]
 #> [1] "c"
 ```
@@ -222,7 +223,7 @@ length(mylist[2][[1]])
 #> [1] 3
 ```
 
-## <a href="#indexing" name="indexing"/>#</a> Indexing
+## <a href="#indexing" name="indexing">#</a> Indexing
 
 Okay, so let's say you have made a `vector`, `list`, or `data.frame`. How do you get to the things in them? Its slightly different for each one.
 
@@ -252,7 +253,7 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 bb <- c(5,6,7)
 names(bb) <- c("hey","hello","wadup")
 bb
-#>   hey hello wadup 
+#>   hey hello wadup
 #>     5     6     7
 names(bb)
 #> [1] "hey"   "hello" "wadup"
@@ -263,7 +264,7 @@ With a named vector we can get to each element in the vector using its name with
 
 ```r
 bb["hello"]
-#> hello 
+#> hello
 #>     6
 ```
 
@@ -328,10 +329,10 @@ mylist[2] # or mylist["bar"]
 #> $bar
 #> $bar[[1]]
 #> [1] "a"
-#> 
+#>
 #> $bar[[2]]
 #> [1] "b"
-#> 
+#>
 #> $bar[[3]]
 #> [1] "c"
 ```
@@ -341,10 +342,10 @@ mylist[2] # or mylist["bar"]
 mylist[[2]] # or mylist[["bar"]]
 #> [[1]]
 #> [1] "a"
-#> 
+#>
 #> [[2]]
 #> [1] "b"
-#> 
+#>
 #> [[3]]
 #> [1] "c"
 ```
@@ -405,7 +406,7 @@ mtcars$mpg
 #> [29] 15.8 19.7 15.0 21.4
 ```
 
-## <a href="#functions" name="functions"/>#</a> Functions
+## <a href="#functions" name="functions">#</a> Functions
 
 Cats are the type of feline to love functions. Functions make your life easier by allowing you to generalize many lines of code, and avoiding repeating yourself. Functions make your work tidier - just like cats like it.
 
@@ -465,7 +466,7 @@ foo("Well, I dislike most dogs, but I like the one in my house")
 
 Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this Google the _DRY principle_.
 
-## <a href="#packages" name="packages"/>#</a> Using packages
+## <a href="#packages" name="packages">#</a> Using packages
 
 A lot of the functionality in R is in extensions to the language, called packages. Since you're a cat, you can think of packages like boxes that you put a bunch of code in. Since you are putting code in this box you probably don't want to sit in it :). These boxes generally hold a similar set of functions (see [functions](#functions) above). A package allows you and others to
 
@@ -483,7 +484,7 @@ Once the package is installed you have to load the package in to your R session.
 
 _Note: Package creation is out of scope for this site, but Hadley has made it much easier with [devtools](https://github.com/hadley/devtools)._
 
-## <a href="#pipes" name="pipes"/>#</a> Pipes
+## <a href="#pipes" name="pipes">#</a> Pipes
 
 <img src="http://media.giphy.com/media/7fLGzTYkX3hO8/giphy.gif" width="300">
 
@@ -544,7 +545,7 @@ Both solutions above give the same result, but the first with pipes is more intu
 Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](https://cran.rstudio.com/web/packages/dplyr), which allows you to manipulate data.frames.
 
 
-## <a href="#nonos" name="nonos"/>#</a> No no's for cats using R
+## <a href="#nonos" name="nonos">#</a> No no's for cats using R
 
 There are a few R gotchas to avoid cat friends.
 
@@ -552,7 +553,7 @@ There are a few R gotchas to avoid cat friends.
 * When doing `library()` or `require()` use the package name in quotes as package name without quotes is easier, but can cause problems.
 * Make sure to keep your claws trimmed so they don't get stuck in spaces between the keys.
 
-## <a href="#dodos" name="dodos"/>#</a> Do do's for cats using R
+## <a href="#dodos" name="dodos">#</a> Do do's for cats using R
 
 * Do combine code and text with `Markdown` or `LaTeX` to have reproducible documents, using `knitr`.
 * When googling for R help, use `cran`, not `r`
@@ -560,7 +561,7 @@ There are a few R gotchas to avoid cat friends.
 * Do ask lots of questions on StackOverflow (use the `[r]` tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and [include a reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example)!
 * `.rda`, `.rds`, `.RData` compressed files are useful, but for reproducibility purposes, use non-R specific file formats like `.csv`, `.xml`, `.json`, etc.
 
-## <a href="#data" name="data"/>#</a> Data from the web: pictures
+## <a href="#data" name="data">#</a> Data from the web: pictures
 
 This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That's the point of the internet after all - to serve cat pictures.
 
@@ -581,13 +582,13 @@ library("cowsay")
 ```
 
 ```
-#> 
+#>
 #> Attaching package: 'cowsay'
 ```
 
 ```
 #> The following object is masked _by_ '.GlobalEnv':
-#> 
+#>
 #>     animals
 ```
 
@@ -596,9 +597,9 @@ say("catfact", "cat")
 ```
 
 ```
-#> 
-#>  -------------- 
-#> The way you treat kittens in the early stages of it's life will render it's personality traits later in life. 
+#>
+#>  --------------
+#> The way you treat kittens in the early stages of it's life will render it's personality traits later in life.
 #>  --------------
 #>     \
 #>       \
@@ -613,7 +614,7 @@ say("catfact", "cat")
 #>            \| | |_|/\
 #>       jgs  //_// ___/
 #>                \_)
-#> 
+#>
 ```
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
@@ -665,7 +666,7 @@ getcutecat(250)
 
 ![some kittens](http://placekitten.com/g/250/250)
 
-## <a href="#doge" name="doge"/>#</a> ***Hey! R is not just for cats!*** - dogs
+## <a href="#doge" name="doge">#</a> ***Hey! R is not just for cats!*** - dogs
 
 R and web APIs are open to all sorts of animals.  For instance, the [dogr.io](http://dogr.io) service will create a "doge" style meme for you when provided with text.  Let's write another function to call this API:
 
@@ -689,7 +690,7 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 
 ***Now, back to your regular, cat-dominated tutorial.***
 
-## <a href="#dataNames" name="dataNames"/>#</a> Data from the web: names
+## <a href="#dataNames" name="dataNames">#</a> Data from the web: names
 
 
 Besides pictures, R is also really good at scraping data from websites! Here, we'll look at the names of famous cats that are listed on Wikipedia.
@@ -745,7 +746,7 @@ Wow! We did it! And the data looks great! Give yourself a pat on the back!
 
 If you're interested in learning more about scraping webpages, you should also check out the `rvest` and `xml2` packages. They are designed to be as cat-friendly as possible!
 
-## <a href="#reading" name="reading"/>#</a> Reading
+## <a href="#reading" name="reading">#</a> Reading
 
 After this basic intro you'll want to do more, such as:
 
@@ -755,12 +756,12 @@ And for even more advanced R:
 
 * [Advanced R, by Hadley Wickham](http://adv-r.had.co.nz/)
 
-## <a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better
+## <a href="#makeitbetter" name="makeitbetter">#</a> Make it better
 
 Contribute by following [these instructions](/Contribute).
 
-## <a href="#catslover" name="catslover"/>#</a> Cat's love R
+## <a href="#catslover" name="catslover">#</a> Cat's love R
 
 <img src="assets/img/leo_giffed.gif" width="300">
 
-## <a href="#license" name="license"/>#</a> License
+## <a href="#license" name="license">#</a> License

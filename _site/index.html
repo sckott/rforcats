@@ -102,239 +102,298 @@
       </div>
 
       <div class="container content">
-        <h2>An intro to R for new programmers</h2>
+        <h2 id="an-intro-to-r-for-new-programmers">An intro to R for new programmers</h2>
 
-<p>This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any language for that matter, you won&#39;t be tainted by other programming languages with different ways of doing things. This is good - we can teach you the R way of doing things.</p>
+<p>This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any language for that matter, you won’t be tainted by other programming languages with different ways of doing things. This is good - we can teach you the R way of doing things.</p>
 
-<p><img src="/assets/img/programmer.png" width="300"></p>
+<p><img src="/assets/img/programmer.png" width="300" /></p>
 
-<h2>jsforcats?</h2>
+<h2 id="jsforcats">jsforcats?</h2>
 
-<p>Yep, this is a total rip off of <a href="http://jsforcats.com">JSforcats.com</a> - hopefully <a href="http://maxogden.com/">Max</a> doesn&#39;t mind.</p>
+<p>Yep, this is a total rip off of <a href="http://jsforcats.com">JSforcats.com</a> - hopefully <a href="http://maxogden.com/">Max</a> doesn’t mind.</p>
 
-<h2>List of things</h2>
+<h2 id="list-of-things">List of things</h2>
 
 <ul>
-<li><a href="#rconsole">Using the R console - let&#39;s dig our claws in</a></li>
-<li><a href="#vectors">vectors - the basic R data structure</a></li>
-<li><a href="#dataframes">data frames - weird but familiar</a></li>
-<li><a href="#lists">lists</a></li>
-<li><a href="#indexing">indexing</a></li>
-<li><a href="#functions">functions</a></li>
-<li><a href="#pipes">pipes</a></li>
-<li><a href="#packages">Using packages</a></li>
-<li><a href="#nonos">No no&#39;s for cats using R</a></li>
-<li><a href="#dodos">Do do&#39;s for cats - or things to do</a></li>
-<li><a href="#data">Open data from the web! Cat&#39;s love open data</a></li>
-<li><a href="#reading">Reading</a></li>
-<li><a href="#makeitbetter">Does this site suck?</a></li>
+  <li><a href="#rconsole">Using the R console - let’s dig our claws in</a></li>
+  <li><a href="#vectors">vectors - the basic R data structure</a></li>
+  <li><a href="#dataframes">data frames - weird but familiar</a></li>
+  <li><a href="#lists">lists</a></li>
+  <li><a href="#indexing">indexing</a></li>
+  <li><a href="#functions">functions</a></li>
+  <li><a href="#pipes">pipes</a></li>
+  <li><a href="#packages">Using packages</a></li>
+  <li><a href="#nonos">No no’s for cats using R</a></li>
+  <li><a href="#dodos">Do do’s for cats - or things to do</a></li>
+  <li><a href="#data">Open data from the web! Cat’s love open data</a></li>
+  <li><a href="#reading">Reading</a></li>
+  <li><a href="#makeitbetter">Does this site suck?</a></li>
 </ul>
 
-<h2><a href="#rconsole" name="rconsole"/>#</a> R console</h2>
+<h2 id="a-hrefrconsole-namerconsolea-r-console"><a href="#rconsole" name="rconsole">#</a> R console</h2>
 
-<p>Writing code is fun. Since you&#39;re a cat, not having opposable thumbs may be a bit of an issue, but surely you&#39;re clever enough to find a way around that.</p>
+<p>Writing code is fun. Since you’re a cat, not having opposable thumbs may be a bit of an issue, but surely you’re clever enough to find a way around that.</p>
 
-<p>So open up R, and you&#39;ll see something like this:</p>
+<p>So open up R, and you’ll see something like this:</p>
 
-<p><img src="/assets/img/console.png" width="550" border="1"></p>
+<p><img src="/assets/img/console.png" width="550" border="1" /></p>
 
 <p>You can do math:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="m">1</span> <span class="o">+</span> <span class="m">1</span>
-<span class="c1">#&gt; [1] 2</span>
-</code></pre></div>
+
+<pre><code class="language-r">1 + 1
+#&gt; [1] 2
+</code></pre>
+
 <p>Strings are always fun to start with, type a set of letters together within quotes and the console will print it back to you</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="s">&quot;Hello Mr Tickles&quot;</span>
-<span class="c1">#&gt; [1] &quot;Hello Mr Tickles&quot;</span>
-<span class="s">&quot;This is a string&quot;</span>
-<span class="c1">#&gt; [1] &quot;This is a string&quot;</span>
-</code></pre></div>
+
+<pre><code class="language-r">"Hello Mr Tickles"
+#&gt; [1] "Hello Mr Tickles"
+"This is a string"
+#&gt; [1] "This is a string"
+</code></pre>
 <p>Double quotes and single quotes are more or less interchangable, but is better practice to stick with double quotes.</p>
 
-<p>Another thing you&#39;ll want to do as a cat using R is assign things to a name so that you can use it later. Think of this as being if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).</p>
+<p>Another thing you’ll want to do as a cat using R is assign things to a name so that you can use it later. Think of this as being if you were a chipmunk and you buried a nut in the ground to dig up later. You can assign anything in R to a name, then use it later (in the current R session of course :)).</p>
 
 <p>Assign the number 5 to the name <code>mynumber</code></p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mynumber <span class="o">&lt;-</span> <span class="m">5</span>
-</code></pre></div>
+
+<pre><code class="language-r">mynumber &lt;- 5
+</code></pre>
+
 <p>Later you can use <code>mynumber</code>, like adding it to another number</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mynumber <span class="o">+</span> <span class="m">1</span>
-<span class="c1">#&gt; [1] 6</span>
-</code></pre></div>
+
+<pre><code class="language-r">mynumber + 1
+#&gt; [1] 6
+</code></pre>
+
 <p>Sweet!</p>
 
-<h2><a href="#vectors" name="vectors"/>#</a> Vectors</h2>
+<h2 id="a-hrefvectors-namevectorsa-vectors"><a href="#vectors" name="vectors">#</a> Vectors</h2>
 
-<p>Vectors are one of the simplest and common objects in R. Think of a vector like a cat&#39;s tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all <code>numeric</code>, all <code>character</code>, all <code>factor</code>, etc.</p>
+<p>Vectors are one of the simplest and common objects in R. Think of a vector like a cat’s tail.  Some are short. Some are long. But they are are pretty much the same width - that is, they can only contain a single data type. So a vector can only have all <code>numeric</code>, all <code>character</code>, all <code>factor</code>, etc.</p>
 
-<p>But wait, how do we make a vector? The easiest way is to use a function called <code>c</code>. So <code>c(5,6,7)</code> will create a vector of numbers 5, 6, and 7. Let&#39;s try to put a <code>character</code> and a <code>numeric</code> together.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kt">c</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
-<span class="c1">#&gt; [1] &quot;hello&quot; &quot;5&quot;</span>
-</code></pre></div>
-<p>Notice how the output of the above converted the 5 to a character type with quotes around the <code>5</code> to make it <code>&quot;5&quot;</code>, i.e., or an object of type <em>character</em>.
+<p>But wait, how do we make a vector? The easiest way is to use a function called <code>c</code>. So <code>c(5,6,7)</code> will create a vector of numbers 5, 6, and 7. Let’s try to put a <code>character</code> and a <code>numeric</code> together.</p>
+
+<pre><code class="language-r">c("hello", 5)
+#&gt; [1] "hello" "5"
+</code></pre>
+
+<p>Notice how the output of the above converted the 5 to a character type with quotes around the <code>5</code> to make it <code>"5"</code>, i.e., or an object of type <em>character</em>.
 But we can happily make a vector of the same type of information, like</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1.5</span><span class="p">,</span> <span class="m">0.9</span><span class="p">)</span>
-<span class="c1">#&gt; [1]   5.0   8.0 200.0   1.0   1.5   0.9</span>
-</code></pre></div>
+
+<pre><code class="language-r">c(5, 8, 200, 1, 1.5, 0.9)
+#&gt; [1]   5.0   8.0 200.0   1.0   1.5   0.9
+</code></pre>
+
 <p>Vectors are handy because they can be combined to make other R objects, such as lists (see <a href="#lists">lists</a> below), and <a href="#dataframes">data frames</a>.</p>
 
-<p>In addition, you can do something to each part of the vector. Let&#39;s say you have a vector of three types of animals:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">animals <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;birds&quot;</span><span class="p">,</span><span class="s">&quot;squirrels&quot;</span><span class="p">,</span><span class="s">&quot;fish&quot;</span><span class="p">)</span>
-</code></pre></div>
+<p>In addition, you can do something to each part of the vector. Let’s say you have a vector of three types of animals:</p>
+
+<pre><code class="language-r">animals &lt;- c("birds","squirrels","fish")
+</code></pre>
+
 <p>You can add something to each of them like</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">paste</span><span class="p">(</span>animals<span class="p">,</span> <span class="s">&quot;are silly&quot;</span><span class="p">)</span>
-<span class="c1">#&gt; [1] &quot;birds are silly&quot;     &quot;squirrels are silly&quot; &quot;fish are silly&quot;</span>
-</code></pre></div>
-<h2><a href="#dataframes" name="dataframes"/>#</a> Data frames</h2>
+
+<pre><code class="language-r">paste(animals, "are silly")
+#&gt; [1] "birds are silly"     "squirrels are silly" "fish are silly"
+</code></pre>
+
+<h2 id="a-hrefdataframes-namedataframesa-data-frames"><a href="#dataframes" name="dataframes">#</a> Data frames</h2>
 
 <p>A <code>data.frame</code> is one of the most commonly used objects in R. Just think of a <code>data.frame</code> like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the <code>data.frame</code> in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of <code>numeric</code> type, the second a <code>factor</code>, and the third <code>character</code>.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">df <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>hey<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">),</span>
-           there<span class="o">=</span><span class="kp">as.factor</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">)),</span>
-           fella<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="s">&quot;brown&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df
-<span class="c1">#&gt;   hey there fella</span>
-<span class="c1">#&gt; 1   5     a  blue</span>
-<span class="c1">#&gt; 2   6     b brown</span>
-<span class="c1">#&gt; 3   7     c green</span>
-</code></pre></div>
+
+<pre><code class="language-r">df &lt;- data.frame(hey=c(5,6,7),
+           there=as.factor(c("a","b","c")),
+           fella=c("blue","brown","green"))
+</code></pre>
+
+<pre><code class="language-r">df
+#&gt;   hey there fella
+#&gt; 1   5     a  blue
+#&gt; 2   6     b brown
+#&gt; 3   7     c green
+</code></pre>
+
 <p>Notice that the first <em>column</em> of numbers are actually row names, and are not part of the <code>data.frame</code> <em>per se</em>, though are part of the <em>metadata</em> for the <code>data.frame</code>.</p>
 
 <p>We can quickly get a sense for the type of data in the <code>df</code> object by using the function <code>str</code>, which gives information on the types of data in each column.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">str<span class="p">(</span>df<span class="p">)</span>
-<span class="c1">#&gt; &#39;data.frame&#39;:    3 obs. of  3 variables:</span>
-<span class="c1">#&gt;  $ hey  : num  5 6 7</span>
-<span class="c1">#&gt;  $ there: Factor w/ 3 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;: 1 2 3</span>
-<span class="c1">#&gt;  $ fella: Factor w/ 3 levels &quot;blue&quot;,&quot;brown&quot;,..: 1 2 3</span>
-</code></pre></div>
+
+<pre><code class="language-r">str(df)
+#&gt; 'data.frame':	3 obs. of  3 variables:
+#&gt;  $ hey  : num  5 6 7
+#&gt;  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
+#&gt;  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
+</code></pre>
+
 <p><strong>Matrices</strong></p>
 
 <p>Think of a matrix in R like a <code>data.frame</code> with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a two-dimensional array.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mat <span class="o">&lt;-</span> <span class="kt">matrix</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span> <span class="m">11</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">13</span><span class="p">),</span> nrow <span class="o">=</span> <span class="m">2</span><span class="p">,</span> ncol <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">mat
-<span class="c1">#&gt;      [,1] [,2] [,3]</span>
-<span class="c1">#&gt; [1,]    1    3   12</span>
-<span class="c1">#&gt; [2,]    2   11   13</span>
-</code></pre></div>
-<h2><a href="#lists" name="lists"/>#</a> Lists</h2>
+
+<pre><code class="language-r">mat &lt;- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3)
+</code></pre>
+
+<pre><code class="language-r">mat
+#&gt;      [,1] [,2] [,3]
+#&gt; [1,]    1    3   12
+#&gt; [2,]    2   11   13
+</code></pre>
+
+<h2 id="a-hreflists-namelistsa-lists"><a href="#lists" name="lists">#</a> Lists</h2>
 
 <p>Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat tail analogy again, lists are like cat tails in that they can be short or long, but they can also vary in width. That is, they can hold any type of object. Whereas vectors can only hold one type of object (only <code>character</code> for example), lists can hold for example, a <code>data.frame</code> and a <code>numeric</code>, or a <code>data.frame</code> and another <code>list</code>!  The way we make a list is via the function <code>list</code></p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kt">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">)</span>
-<span class="c1">#&gt; [[1]]</span>
-<span class="c1">#&gt; [1] 1</span>
-<span class="c1">#&gt; </span>
-<span class="c1">#&gt; [[2]]</span>
-<span class="c1">#&gt; [1] &quot;a&quot;</span>
-</code></pre></div>
+
+<pre><code class="language-r">list(1, "a")
+#&gt; [[1]]
+#&gt; [1] 1
+#&gt;
+#&gt; [[2]]
+#&gt; [1] "a"
+</code></pre>
+
 <p>A nested list</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="kt">list</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
+
+<pre><code class="language-r">mylist &lt;- list(1, list("a","b","c"))
 mylist
-<span class="c1">#&gt; [[1]]</span>
-<span class="c1">#&gt; [1] 1</span>
-<span class="c1">#&gt; </span>
-<span class="c1">#&gt; [[2]]</span>
-<span class="c1">#&gt; [[2]][[1]]</span>
-<span class="c1">#&gt; [1] &quot;a&quot;</span>
-<span class="c1">#&gt; </span>
-<span class="c1">#&gt; [[2]][[2]]</span>
-<span class="c1">#&gt; [1] &quot;b&quot;</span>
-<span class="c1">#&gt; </span>
-<span class="c1">#&gt; [[2]][[3]]</span>
-<span class="c1">#&gt; [1] &quot;c&quot;</span>
-</code></pre></div>
+#&gt; [[1]]
+#&gt; [1] 1
+#&gt;
+#&gt; [[2]]
+#&gt; [[2]][[1]]
+#&gt; [1] "a"
+#&gt;
+#&gt; [[2]][[2]]
+#&gt; [1] "b"
+#&gt;
+#&gt; [[2]][[3]]
+#&gt; [1] "c"
+</code></pre>
+
 <p>Just like vectors, you can do operations on each element of the list. However, since lists can be nested you have to worry about what level of nesting you want to manipulate.</p>
 
 <p>For example, if we take the <code>mylist</code> list from above, and perform the following:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">length</span><span class="p">(</span>mylist<span class="p">[</span><span class="m">1</span><span class="p">])</span>
-<span class="c1">#&gt; [1] 1</span>
-<span class="kp">length</span><span class="p">(</span>mylist<span class="p">[</span><span class="m">2</span><span class="p">])</span>
-<span class="c1">#&gt; [1] 1</span>
-</code></pre></div>
-<p>This gives a length of 1 for each element of the list. But wait, aren&#39;t there three things in the second slot of the list (&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)?  Indeed there are</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">length</span><span class="p">(</span>mylist<span class="p">[</span><span class="m">2</span><span class="p">][[</span><span class="m">1</span><span class="p">]])</span>
-<span class="c1">#&gt; [1] 3</span>
-</code></pre></div>
-<h2><a href="#indexing" name="indexing"/>#</a> Indexing</h2>
 
-<p>Okay, so let&#39;s say you have made a <code>vector</code>, <code>list</code>, or <code>data.frame</code>. How do you get to the things in them? Its slightly different for each one.</p>
+<pre><code class="language-r">length(mylist[1])
+#&gt; [1] 1
+length(mylist[2])
+#&gt; [1] 1
+</code></pre>
+
+<p>This gives a length of 1 for each element of the list. But wait, aren’t there three things in the second slot of the list (“a”,”b”,”c”)?  Indeed there are</p>
+
+<pre><code class="language-r">length(mylist[2][[1]])
+#&gt; [1] 3
+</code></pre>
+
+<h2 id="a-hrefindexing-nameindexinga-indexing"><a href="#indexing" name="indexing">#</a> Indexing</h2>
+
+<p>Okay, so let’s say you have made a <code>vector</code>, <code>list</code>, or <code>data.frame</code>. How do you get to the things in them? Its slightly different for each one.</p>
 
 <p>There is a general way to index objects in R that can be used across <code>vectors</code>, <code>lists</code>, and <code>data.frame</code>.  That is the square bracket: <code>[]</code>.  For some objects you can index by the sequence number (e.g., <code>5</code>) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., <code>kitty</code>).</p>
 
 <p><strong>vectors</strong></p>
 
-<p>Vectors only have one dimension, as we said above. So with <code>[]</code> there is only one number to give here. For example, let&#39;s say we have the vector</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">bb <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
-</code></pre></div>
+<p>Vectors only have one dimension, as we said above. So with <code>[]</code> there is only one number to give here. For example, let’s say we have the vector</p>
+
+<pre><code class="language-r">bb &lt;- c(5,6,7)
+</code></pre>
+
 <p>We can index to each of those 3 numbers by the sequence of its place in the vector. Get the 6 by doing</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[</span><span class="m">2</span><span class="p">]</span>
-<span class="c1">#&gt; [1] 6</span>
-</code></pre></div>
-<p>You can also have a named vector. What&#39;s that?  A named vector is like <code>bb</code> above, but each of the three elements has a name.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">bb <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
-<span class="kp">names</span><span class="p">(</span>bb<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;hey&quot;</span><span class="p">,</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="s">&quot;wadup&quot;</span><span class="p">)</span>
+
+<pre><code class="language-r">bb[2]
+#&gt; [1] 6
+</code></pre>
+
+<p>You can also have a named vector. What’s that?  A named vector is like <code>bb</code> above, but each of the three elements has a name.</p>
+
+<pre><code class="language-r">bb &lt;- c(5,6,7)
+names(bb) &lt;- c("hey","hello","wadup")
 bb
-<span class="c1">#&gt;   hey hello wadup </span>
-<span class="c1">#&gt;     5     6     7</span>
-<span class="kp">names</span><span class="p">(</span>bb<span class="p">)</span>
-<span class="c1">#&gt; [1] &quot;hey&quot;   &quot;hello&quot; &quot;wadup&quot;</span>
-</code></pre></div>
+#&gt;   hey hello wadup
+#&gt;     5     6     7
+names(bb)
+#&gt; [1] "hey"   "hello" "wadup"
+</code></pre>
+
 <p>With a named vector we can get to each element in the vector using its name with a single set, or double set of brackets to get the value, or the value and name, respectively.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[</span><span class="s">&quot;hello&quot;</span><span class="p">]</span>
-<span class="c1">#&gt; hello </span>
-<span class="c1">#&gt;     6</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">bb<span class="p">[[</span><span class="s">&quot;hello&quot;</span><span class="p">]]</span>
-<span class="c1">#&gt; [1] 6</span>
-</code></pre></div>
+
+<pre><code class="language-r">bb["hello"]
+#&gt; hello
+#&gt;     6
+</code></pre>
+
+<pre><code class="language-r">bb[["hello"]]
+#&gt; [1] 6
+</code></pre>
+
 <p>Fun.</p>
 
 <p><strong>lists</strong></p>
 
 <p>Indexing on lists is similar to vectors. A huge difference though is that lists can be nested. So there could be infinite things within each slot of a list.</p>
 
-<p>For example, let&#39;s say we have the nested list from above <code>mylist</code></p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span>foo<span class="o">=</span><span class="m">1</span><span class="p">,</span> bar<span class="o">=</span><span class="kt">list</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p">))</span>
-</code></pre></div>
+<p>For example, let’s say we have the nested list from above <code>mylist</code></p>
+
+<pre><code class="language-r">mylist &lt;- list(foo=1, bar=list("a","b","c"))
+</code></pre>
+
 <p>We can index to the first item in the list, including its name, by</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="m">1</span><span class="p">]</span>
-<span class="c1">#&gt; $foo</span>
-<span class="c1">#&gt; [1] 1</span>
-</code></pre></div>
+
+<pre><code class="language-r">mylist[1]
+#&gt; $foo
+#&gt; [1] 1
+</code></pre>
+
 <p>Or equivalently</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">]</span>
-<span class="c1">#&gt; $foo</span>
-<span class="c1">#&gt; [1] 1</span>
-</code></pre></div>
+
+<pre><code class="language-r">mylist["foo"]
+#&gt; $foo
+#&gt; [1] 1
+</code></pre>
+
 <p>And get just the value by using two <code>[</code></p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
-<span class="c1">#&gt; [1] 1</span>
-</code></pre></div>
+
+<pre><code class="language-r">mylist[[1]]
+#&gt; [1] 1
+</code></pre>
+
 <p>Or equivalently</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="s">&quot;foo&quot;</span><span class="p">]]</span>
-<span class="c1">#&gt; [1] 1</span>
-</code></pre></div>
+
+<pre><code class="language-r">mylist[["foo"]]
+#&gt; [1] 1
+</code></pre>
+
 <p>And get the second item in <code>mylist</code> by</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="c1"># or mylist[&quot;bar&quot;]</span>
-<span class="c1">#&gt; $bar</span>
-<span class="c1">#&gt; $bar[[1]]</span>
-<span class="c1">#&gt; [1] &quot;a&quot;</span>
-<span class="c1">#&gt; </span>
-<span class="c1">#&gt; $bar[[2]]</span>
-<span class="c1">#&gt; [1] &quot;b&quot;</span>
-<span class="c1">#&gt; </span>
-<span class="c1">#&gt; $bar[[3]]</span>
-<span class="c1">#&gt; [1] &quot;c&quot;</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="c1"># or mylist[[&quot;bar&quot;]]</span>
-<span class="c1">#&gt; [[1]]</span>
-<span class="c1">#&gt; [1] &quot;a&quot;</span>
-<span class="c1">#&gt; </span>
-<span class="c1">#&gt; [[2]]</span>
-<span class="c1">#&gt; [1] &quot;b&quot;</span>
-<span class="c1">#&gt; </span>
-<span class="c1">#&gt; [[3]]</span>
-<span class="c1">#&gt; [1] &quot;c&quot;</span>
-</code></pre></div>
+
+<pre><code class="language-r">mylist[2] # or mylist["bar"]
+#&gt; $bar
+#&gt; $bar[[1]]
+#&gt; [1] "a"
+#&gt;
+#&gt; $bar[[2]]
+#&gt; [1] "b"
+#&gt;
+#&gt; $bar[[3]]
+#&gt; [1] "c"
+</code></pre>
+
+<pre><code class="language-r">mylist[[2]] # or mylist[["bar"]]
+#&gt; [[1]]
+#&gt; [1] "a"
+#&gt;
+#&gt; [[2]]
+#&gt; [1] "b"
+#&gt;
+#&gt; [[3]]
+#&gt; [1] "c"
+</code></pre>
+
 <p>And get to the individual elements within <code>bar</code> by</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mylist<span class="p">[[</span><span class="m">2</span><span class="p">]][</span><span class="m">1</span><span class="p">]</span>
-<span class="c1">#&gt; [[1]]</span>
-<span class="c1">#&gt; [1] &quot;a&quot;</span>
-</code></pre></div>
+
+<pre><code class="language-r">mylist[[2]][1]
+#&gt; [[1]]
+#&gt; [1] "a"
+</code></pre>
+
 <p>And so on to get to what you need.</p>
 
 <p>There are a number of convenience functions to make working with lists easier, but you can learn about those later.</p>
@@ -342,161 +401,206 @@ bb
 <p><strong>data.frame and matrix</strong></p>
 
 <p>Indexing on a <code>data.frame</code> and <code>matrix</code> is similar. Both have two things to index on: rows and columns. Within <code>[,]</code>, the part before the comma is for rows, and the part after the comma for columns. So if you have a data frame <code>iris</code> in R,</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span>iris<span class="p">)</span>
-<span class="c1">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
-<span class="c1">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
-<span class="c1">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
-<span class="c1">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span>
-<span class="c1">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span>
-<span class="c1">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span>
-<span class="c1">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span>
-</code></pre></div>
+
+<pre><code class="language-r">head(iris)
+#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#&gt; 1          5.1         3.5          1.4         0.2  setosa
+#&gt; 2          4.9         3.0          1.4         0.2  setosa
+#&gt; 3          4.7         3.2          1.3         0.2  setosa
+#&gt; 4          4.6         3.1          1.5         0.2  setosa
+#&gt; 5          5.0         3.6          1.4         0.2  setosa
+#&gt; 6          5.4         3.9          1.7         0.4  setosa
+</code></pre>
+
 <p>You can index to the third row and second column by doing</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">iris<span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
-<span class="c1">#&gt; [1] 3.2</span>
-</code></pre></div>
+
+<pre><code class="language-r">iris[3,2]
+#&gt; [1] 3.2
+</code></pre>
+
 <p>You can also use names to index if you have named rows or columns. For example,</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">iris<span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="s">&quot;Species&quot;</span><span class="p">]</span>
-<span class="c1">#&gt; [1] setosa</span>
-<span class="c1">#&gt; Levels: setosa versicolor virginica</span>
-</code></pre></div>
+
+<pre><code class="language-r">iris[2,"Species"]
+#&gt; [1] setosa
+#&gt; Levels: setosa versicolor virginica
+</code></pre>
+
 <p>You can also use the <code>$</code> symbol to index to a column, like</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mtcars<span class="o">$</span>mpg
-<span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2</span>
-<span class="c1">#&gt; [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span>
-<span class="c1">#&gt; [29] 15.8 19.7 15.0 21.4</span>
-</code></pre></div>
-<h2><a href="#functions" name="functions"/>#</a> Functions</h2>
+
+<pre><code class="language-r">mtcars$mpg
+#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+#&gt; [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+#&gt; [29] 15.8 19.7 15.0 21.4
+</code></pre>
+
+<h2 id="a-hreffunctions-namefunctionsa-functions"><a href="#functions" name="functions">#</a> Functions</h2>
 
 <p>Cats are the type of feline to love functions. Functions make your life easier by allowing you to generalize many lines of code, and avoiding repeating yourself. Functions make your work tidier - just like cats like it.</p>
 
 <p>Functions are written like this</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(){</span>
-  <span class="kp">writeLines</span><span class="p">(</span><span class="s">&quot;I strongly dislike dogs&quot;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+
+<pre><code class="language-r">foo &lt;- function(){
+  writeLines("I strongly dislike dogs")
+}
+</code></pre>
+
 <p>After defining this function we can then call it later like this</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">foo<span class="p">()</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt; I strongly dislike dogs
-</code></pre></div>
+
+<pre><code class="language-r">foo()
+</code></pre>
+
+<pre><code>#&gt; I strongly dislike dogs
+</code></pre>
+
 <p>Yay! Dumb dogs.</p>
 
 <p>The <code>foo</code> function was pretty simple. We can also pass in parameters to the function.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>mess<span class="p">){</span>
-  <span class="kp">writeLines</span><span class="p">(</span>mess<span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">foo<span class="p">(</span><span class="s">&quot;I strongly dislike dogs&quot;</span><span class="p">)</span>
-<span class="c1">#&gt; I strongly dislike dogs</span>
-</code></pre></div>
+
+<pre><code class="language-r">foo &lt;- function(mess){
+  writeLines(mess)
+}
+</code></pre>
+
+<pre><code class="language-r">foo("I strongly dislike dogs")
+#&gt; I strongly dislike dogs
+</code></pre>
+
 <p>And set parameters to default values.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">foo <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>mess <span class="o">=</span> <span class="s">&quot;I strongly dislike dogs&quot;</span><span class="p">){</span>
-  <span class="kp">writeLines</span><span class="p">(</span>mess<span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">foo<span class="p">()</span>
-<span class="c1">#&gt; I strongly dislike dogs</span>
-foo<span class="p">(</span><span class="s">&quot;Well, I dislike most dogs, but I like the one in my house&quot;</span><span class="p">)</span>
-<span class="c1">#&gt; Well, I dislike most dogs, but I like the one in my house</span>
-</code></pre></div>
+
+<pre><code class="language-r">foo &lt;- function(mess = "I strongly dislike dogs"){
+  writeLines(mess)
+}
+</code></pre>
+
+<pre><code class="language-r">foo()
+#&gt; I strongly dislike dogs
+foo("Well, I dislike most dogs, but I like the one in my house")
+#&gt; Well, I dislike most dogs, but I like the one in my house
+</code></pre>
+
 <p>Generally, if you are writing more than 3 lines of code to do any particular task you may as well write a function to do that task, making it reusable and (hopefully) more general. For more justification for this Google the <em>DRY principle</em>.</p>
 
-<h2><a href="#packages" name="packages"/>#</a> Using packages</h2>
+<h2 id="a-hrefpackages-namepackagesa-using-packages"><a href="#packages" name="packages">#</a> Using packages</h2>
 
-<p>A lot of the functionality in R is in extensions to the language, called packages. Since you&#39;re a cat, you can think of packages like boxes that you put a bunch of code in. Since you are putting code in this box you probably don&#39;t want to sit in it :). These boxes generally hold a similar set of functions (see <a href="#functions">functions</a> above). A package allows you and others to</p>
+<p>A lot of the functionality in R is in extensions to the language, called packages. Since you’re a cat, you can think of packages like boxes that you put a bunch of code in. Since you are putting code in this box you probably don’t want to sit in it :). These boxes generally hold a similar set of functions (see <a href="#functions">functions</a> above). A package allows you and others to</p>
 
 <ul>
-<li>Easily install and load the code</li>
-<li>Incorporate documentation</li>
-<li>Lessen conflicts with functions in other packages (don&#39;t worry about why for now, but if you want to know <a href="http://adv-r.had.co.nz/Namespaces.html">go here</a>)</li>
+  <li>Easily install and load the code</li>
+  <li>Incorporate documentation</li>
+  <li>Lessen conflicts with functions in other packages (don’t worry about why for now, but if you want to know <a href="http://adv-r.had.co.nz/Namespaces.html">go here</a>)</li>
 </ul>
 
-<p>Most people that make R packages share them on a site on the interwebs called CRAN (don&#39;t worry about what it stands for) here <a href="https://cran.rstudio.com/">CRAN</a>.</p>
+<p>Most people that make R packages share them on a site on the interwebs called CRAN (don’t worry about what it stands for) here <a href="https://cran.rstudio.com/">CRAN</a>.</p>
 
 <p>The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OS X.</p>
 
-<p>Installation is super easy. Do <code>install.packages(&quot;package_name&quot;)</code>, where <code>package_name</code> is the name of the package you want to install. Remember that the package name is case sensitive! Or if you&#39;re using RStudio you can go to the <em>Packages</em> pane.</p>
+<p>Installation is super easy. Do <code>install.packages("package_name")</code>, where <code>package_name</code> is the name of the package you want to install. Remember that the package name is case sensitive! Or if you’re using RStudio you can go to the <em>Packages</em> pane.</p>
 
-<p>Once the package is installed you have to load the package in to your R session. That&#39;s easy too! Do <code>library(&#39;package_name&#39;)</code>, or if you&#39;re in RStudio go to the <em>Packages</em> pane.</p>
+<p>Once the package is installed you have to load the package in to your R session. That’s easy too! Do <code>library('package_name')</code>, or if you’re in RStudio go to the <em>Packages</em> pane.</p>
 
 <p><em>Note: Package creation is out of scope for this site, but Hadley has made it much easier with <a href="https://github.com/hadley/devtools">devtools</a>.</em></p>
 
-<h2><a href="#pipes" name="pipes"/>#</a> Pipes</h2>
+<h2 id="a-hrefpipes-namepipesa-pipes"><a href="#pipes" name="pipes">#</a> Pipes</h2>
 
-<p><img src="http://media.giphy.com/media/7fLGzTYkX3hO8/giphy.gif" width="300"></p>
+<p><img src="http://media.giphy.com/media/7fLGzTYkX3hO8/giphy.gif" width="300" /></p>
 
 <p>Pipes are not in base R, but are a concept you should know about as a cat.</p>
 
-<p>The R package <a href="https://cran.rstudio.com/web/packages/magrittr">magrittr</a> introduced pipe operators. There are many, but we&#39;ll just focus on <code>%&gt;%</code>. This allows you to pipe a value forward into an expression or function call, like <code>x %&gt;% f</code>, rather than <code>f(x)</code>, if <code>f()</code> is a function.</p>
+<p>The R package <a href="https://cran.rstudio.com/web/packages/magrittr">magrittr</a> introduced pipe operators. There are many, but we’ll just focus on <code>%&gt;%</code>. This allows you to pipe a value forward into an expression or function call, like <code>x %&gt;% f</code>, rather than <code>f(x)</code>, if <code>f()</code> is a function.</p>
 
-<p>First, let&#39;s install <code>magrittr</code>:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&quot;magrittr&quot;</span><span class="p">)</span>
-</code></pre></div>
+<p>First, let’s install <code>magrittr</code>:</p>
+
+<pre><code class="language-r">install.packages("magrittr")
+</code></pre>
+
 <p>Then load the package so we can use it in the R session:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span><span class="s">&quot;magrittr&quot;</span><span class="p">)</span>
-</code></pre></div>
+
+<pre><code class="language-r">library("magrittr")
+</code></pre>
+
 <p>Why should you care about this? This concept can make writing code and understanding it simpler. Take for example this case:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">mtcars <span class="o">%&gt;%</span> <span class="kp">subset</span><span class="p">(</span>cyl <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="kp">head</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+
+<pre><code class="language-r">mtcars %&gt;% subset(cyl &lt; 6) %&gt;% head()
+</code></pre>
+
+<pre><code>#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
 #&gt; Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
 #&gt; Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
 #&gt; Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
 #&gt; Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
 #&gt; Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
 #&gt; Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
-</code></pre></div>
+</code></pre>
+
 <p>Alternatively, we could avoid pipes:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span> <span class="kp">subset</span><span class="p">(</span>mtcars<span class="p">,</span> cyl <span class="o">&lt;</span> <span class="m">6</span><span class="p">)</span> <span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+
+<pre><code class="language-r">head( subset(mtcars, cyl &lt; 6) )
+</code></pre>
+
+<pre><code>#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
 #&gt; Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
 #&gt; Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
 #&gt; Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
 #&gt; Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
 #&gt; Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
 #&gt; Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
-</code></pre></div>
-<p>Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we&#39;re going to manipulate (the <code>mtcars</code> data.frame), then subsets the data.frame to take rows with the <code>cyl</code> column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (<code>mtcars</code>), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.</p>
+</code></pre>
+
+<p>Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we’re going to manipulate (the <code>mtcars</code> data.frame), then subsets the data.frame to take rows with the <code>cyl</code> column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (<code>mtcars</code>), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.</p>
 
 <p>Pipe are increasingly being integrated into various R packages. One of the more popular ones is <a href="https://cran.rstudio.com/web/packages/dplyr">dplyr</a>, which allows you to manipulate data.frames.</p>
 
-<h2><a href="#nonos" name="nonos"/>#</a> No no&#39;s for cats using R</h2>
+<h2 id="a-hrefnonos-namenonosa-no-nos-for-cats-using-r"><a href="#nonos" name="nonos">#</a> No no’s for cats using R</h2>
 
 <p>There are a few R gotchas to avoid cat friends.</p>
 
 <ul>
-<li><code>attach()</code>: This attaches an object to the search path. Like fleas, these can be hard to live with and harder to get rid of.</li>
-<li>When doing <code>library()</code> or <code>require()</code> use the package name in quotes as package name without quotes is easier, but can cause problems.</li>
-<li>Make sure to keep your claws trimmed so they don&#39;t get stuck in spaces between the keys.</li>
+  <li><code>attach()</code>: This attaches an object to the search path. Like fleas, these can be hard to live with and harder to get rid of.</li>
+  <li>When doing <code>library()</code> or <code>require()</code> use the package name in quotes as package name without quotes is easier, but can cause problems.</li>
+  <li>Make sure to keep your claws trimmed so they don’t get stuck in spaces between the keys.</li>
 </ul>
 
-<h2><a href="#dodos" name="dodos"/>#</a> Do do&#39;s for cats using R</h2>
+<h2 id="a-hrefdodos-namedodosa-do-dos-for-cats-using-r"><a href="#dodos" name="dodos">#</a> Do do’s for cats using R</h2>
 
 <ul>
-<li>Do combine code and text with <code>Markdown</code> or <code>LaTeX</code> to have reproducible documents, using <code>knitr</code>.</li>
-<li>When googling for R help, use <code>cran</code>, not <code>r</code></li>
-<li>When asking questions on Twitter/Appdotnet/G+/etc. use <code>#rstats</code></li>
-<li>Do ask lots of questions on StackOverflow (use the <code>[r]</code> tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and <a href="http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example">include a reproducible example</a>!</li>
-<li><code>.rda</code>, <code>.rds</code>, <code>.RData</code> compressed files are useful, but for reproducibility purposes, use non-R specific file formats like <code>.csv</code>, <code>.xml</code>, <code>.json</code>, etc.</li>
+  <li>Do combine code and text with <code>Markdown</code> or <code>LaTeX</code> to have reproducible documents, using <code>knitr</code>.</li>
+  <li>When googling for R help, use <code>cran</code>, not <code>r</code></li>
+  <li>When asking questions on Twitter/Appdotnet/G+/etc. use <code>#rstats</code></li>
+  <li>Do ask lots of questions on StackOverflow (use the <code>[r]</code> tag), Twitter (does this need saying), etc. But make sure to do your research before asking, and <a href="http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example">include a reproducible example</a>!</li>
+  <li><code>.rda</code>, <code>.rds</code>, <code>.RData</code> compressed files are useful, but for reproducibility purposes, use non-R specific file formats like <code>.csv</code>, <code>.xml</code>, <code>.json</code>, etc.</li>
 </ul>
 
-<h2><a href="#data" name="data"/>#</a> Data from the web: pictures</h2>
+<h2 id="a-hrefdata-namedataa-data-from-the-web-pictures"><a href="#data" name="data">#</a> Data from the web: pictures</h2>
 
-<p>This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That&#39;s the point of the internet after all - to serve cat pictures.</p>
+<p>This is sort of an advanced R topic, but hey, how else do we get cute cat pictures? That’s the point of the internet after all - to serve cat pictures.</p>
 
 <p>Install <code>cowsay</code></p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">install.packages<span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
-install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>Now let&#39;s get a cat fact!</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span><span class="s">&quot;cowsay&quot;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt; 
-#&gt; Attaching package: &#39;cowsay&#39;
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt; The following object is masked _by_ &#39;.GlobalEnv&#39;:
-#&gt; 
+
+<pre><code class="language-r">install.packages("devtools")
+library("devtools")
+install_github("sckott/cowsay")
+</code></pre>
+
+<p>Now let’s get a cat fact!</p>
+
+<pre><code class="language-r">library("cowsay")
+</code></pre>
+
+<pre><code>#&gt;
+#&gt; Attaching package: 'cowsay'
+</code></pre>
+
+<pre><code>#&gt; The following object is masked _by_ '.GlobalEnv':
+#&gt;
 #&gt;     animals
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">say<span class="p">(</span><span class="s">&quot;catfact&quot;</span><span class="p">,</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">#&gt; 
-#&gt;  -------------- 
-#&gt; The way you treat kittens in the early stages of it&#39;s life will render it&#39;s personality traits later in life. 
+</code></pre>
+
+<pre><code class="language-r">say("catfact", "cat")
+</code></pre>
+
+<pre><code>#&gt;
+#&gt;  --------------
+#&gt; The way you treat kittens in the early stages of it's life will render it's personality traits later in life.
 #&gt;  --------------
 #&gt;     \
 #&gt;       \
@@ -511,120 +615,142 @@ install_github<span class="p">(</span><span class="s">&quot;sckott/cowsay&quot;<
 #&gt;            \| | |_|/\
 #&gt;       jgs  //_// ___/
 #&gt;                \_)
-#&gt; 
-</code></pre></div>
+#&gt;
+</code></pre>
 <p>A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code>say</code> function looks like sorta like this:</p>
-<div class="highlight"><pre><code class="language-coffee" data-lang="coffee"><span class="nx">say</span> <span class="o">&lt;-</span> <span class="nx">function</span><span class="p">(</span><span class="nx">what</span><span class="p">,</span> <span class="k">by</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
-  <span class="o">&lt;==</span> <span class="nx">some</span> <span class="nx">ascii</span> <span class="nx">art</span> <span class="o">==&gt;</span>
-  <span class="nx">url</span> <span class="o">&lt;-</span> <span class="s">&quot;http://catfacts-api.appspot.com/api/facts?number=1&quot;</span>
-  <span class="nx">what</span> <span class="o">&lt;-</span> <span class="nx">fromJSON</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span><span class="nx">$facts</span>
-  <span class="nx">message</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="k">by</span><span class="p">,</span> <span class="nx">what</span><span class="p">))</span>
-<span class="p">}</span>
-</code></pre></div>
+
+<pre><code class="language-coffee">say &lt;- function(what, by, type){
+  &lt;== some ascii art ==&gt;
+  url &lt;- "http://catfacts-api.appspot.com/api/facts?number=1"
+  what &lt;- fromJSON(url)$facts
+  message(sprintf(by, what))
+}
+</code></pre>
+
 <p>The first line is a bunch of ascii characters to make a cat. The second line defines the url for the cat facts API. The third line retrieves one cat fact from the cat facts API. And the fourth line prints the messages with a cat.</p>
 
 <blockquote>
-<p>But what is an API? I&#39;m a cat, I only drink water or milk (preferably milk) - but at least I&#39;ve heard of an IPA. What the rat&#39;s ass (yum) is an API?</p>
+  <p>But what is an API? I’m a cat, I only drink water or milk (preferably milk) - but at least I’ve heard of an IPA. What the rat’s ass (yum) is an API?</p>
 </blockquote>
 
-<p>Okay, here goes. An API stands for Application Programming Interface. It&#39;s just a set of instructions for two computers to talk to each other. It&#39;s sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don&#39;t know each other, then best of luck to you Mr. Tickles.</p>
+<p>Okay, here goes. An API stands for Application Programming Interface. It’s just a set of instructions for two computers to talk to each other. It’s sorta like if you run into another cat and if you both knew beforehand a lot about each other, you would have a sense for how to behave - if you don’t know each other, then best of luck to you Mr. Tickles.</p>
 
 <p><strong>Another example</strong></p>
 
-<p>Above, we learned about writing functions. Let&#39;s create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website <a href="http://placekitten.com/">placekitten.com</a>. This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, <code>http://placekitten.com/g/300/300</code> gives an image that is 300 by 300 pixels.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">getcutecat <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
-  <span class="kp">writeLines</span><span class="p">(</span>
-    <span class="kp">sprintf</span><span class="p">(</span><span class="s">&quot;![](http://placekitten.com/g/%s/%s)&quot;</span><span class="p">,</span> x<span class="p">,</span> x<span class="p">)</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>Above, we learned about writing functions. Let’s create a function to generate a markdown image link for a cute cat in various sizes (by pixels) from the website <a href="http://placekitten.com/">placekitten.com</a>. This is a awesome, but simple web service. You just use ask for the image size by adding two numbers at the end. For example, <code>http://placekitten.com/g/300/300</code> gives an image that is 300 by 300 pixels.</p>
+
+<pre><code class="language-r">getcutecat &lt;- function(x){
+  writeLines(
+    sprintf("![](http://placekitten.com/g/%s/%s)", x, x)
+  )
+}
+</code></pre>
+
 <p>150 pixels</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">150</span><span class="p">)</span>
-<span class="c1">#&gt; ![](http://placekitten.com/g/150/150)</span>
-</code></pre></div>
-<p><img src="http://placekitten.com/g/150/150" alt="some kittens"></p>
+
+<pre><code class="language-r">getcutecat(150)
+#&gt; ![](http://placekitten.com/g/150/150)
+</code></pre>
+
+<p><img src="http://placekitten.com/g/150/150" alt="some kittens" /></p>
 
 <p>250 pixels</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">getcutecat<span class="p">(</span><span class="m">250</span><span class="p">)</span>
-<span class="c1">#&gt; ![](http://placekitten.com/g/250/250)</span>
-</code></pre></div>
-<p><img src="http://placekitten.com/g/250/250" alt="some kittens"></p>
 
-<h2><a href="#doge" name="doge"/>#</a> <strong><em>Hey! R is not just for cats!</em></strong> - dogs</h2>
+<pre><code class="language-r">getcutecat(250)
+#&gt; ![](http://placekitten.com/g/250/250)
+</code></pre>
 
-<p>R and web APIs are open to all sorts of animals.  For instance, the <a href="http://dogr.io">dogr.io</a> service will create a &quot;doge&quot; style meme for you when provided with text.  Let&#39;s write another function to call this API:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">getdoge <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
-  x <span class="o">=</span> <span class="kp">paste</span><span class="p">(</span>x<span class="p">,</span> collapse<span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
-  <span class="kp">writeLines</span><span class="p">(</span>
-    <span class="kp">sprintf</span><span class="p">(</span><span class="s">&quot;![](http://dogr.io/%s.png)&quot;</span><span class="p">,</span> x<span class="p">)</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">getdoge<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;wow&quot;</span><span class="p">,</span> <span class="s">&quot;suchhostility&quot;</span><span class="p">,</span> <span class="s">&quot;bemoreinclusive&quot;</span><span class="p">))</span>
-<span class="c1">#&gt; ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)</span>
-</code></pre></div>
-<p><img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400"/></p>
+<p><img src="http://placekitten.com/g/250/250" alt="some kittens" /></p>
+
+<h2 id="a-hrefdoge-namedogea-hey-r-is-not-just-for-cats---dogs"><a href="#doge" name="doge">#</a> <strong><em>Hey! R is not just for cats!</em></strong> - dogs</h2>
+
+<p>R and web APIs are open to all sorts of animals.  For instance, the <a href="http://dogr.io">dogr.io</a> service will create a “doge” style meme for you when provided with text.  Let’s write another function to call this API:</p>
+
+<pre><code class="language-r">getdoge &lt;- function(x){
+  x = paste(x, collapse="/")
+  writeLines(
+    sprintf("![](http://dogr.io/%s.png)", x)
+  )
+}
+</code></pre>
+
+<pre><code class="language-r">getdoge(c("wow", "suchhostility", "bemoreinclusive"))
+#&gt; ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
+</code></pre>
+
+<p><img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400" /></p>
 
 <p><strong><em>Now, back to your regular, cat-dominated tutorial.</em></strong></p>
 
-<h2><a href="#dataNames" name="dataNames"/>#</a> Data from the web: names</h2>
+<h2 id="a-hrefdatanames-namedatanamesa-data-from-the-web-names"><a href="#dataNames" name="dataNames">#</a> Data from the web: names</h2>
 
-<p>Besides pictures, R is also really good at scraping data from websites! Here, we&#39;ll look at the names of famous cats that are listed on Wikipedia.</p>
+<p>Besides pictures, R is also really good at scraping data from websites! Here, we’ll look at the names of famous cats that are listed on Wikipedia.</p>
 
-<p>First, we&#39;ll have to load some helpful packages.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span><span class="s">&quot;httr&quot;</span><span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span><span class="s">&quot;XML&quot;</span><span class="p">)</span>
-</code></pre></div>
+<p>First, we’ll have to load some helpful packages.</p>
+
+<pre><code class="language-r">library("httr")
+library("XML")
+</code></pre>
+
 <p>Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the <code>XML</code> package can translate those webpages into useful objects in our environment.</p>
 
-<p>Here, we&#39;ll use the <code>GET()</code> function from the <code>httr</code> package to save the source code of the page in an object.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">wikiCatNamePage <span class="o">&lt;-</span> GET<span class="p">(</span><span class="s">&quot;https://en.wikipedia.org/wiki/Popular_cat_names&quot;</span><span class="p">)</span>
-</code></pre></div>
+<p>Here, we’ll use the <code>GET()</code> function from the <code>httr</code> package to save the source code of the page in an object.</p>
+
+<pre><code class="language-r">wikiCatNamePage &lt;- GET("https://en.wikipedia.org/wiki/Popular_cat_names")
+</code></pre>
+
 <p>Cool! We have the website in an object!</p>
 
-<p>But...looking at <code>wikiCatNamePage</code>, it doesn&#39;t seem like R will understand what we want to do! This is where we use the <code>content()</code> function from the httr package--it&#39;s really good at translating the page so R can use it. That&#39;s what we&#39;ll do in this next command:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">parsedWikiCatNamePage <span class="o">&lt;-</span> content<span class="p">(</span>wikiCatNamePage<span class="p">)</span>
-</code></pre></div>
-<p>Alright! Now we&#39;ve translated the website code so that a different function, <code>readHTMLTable()</code>, will be able to pull the tables that we want.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">wikiCatNameTables <span class="o">&lt;-</span> readHTMLTable<span class="p">(</span>parsedWikiCatNamePage<span class="p">)</span>
-<span class="c1">#&gt; Error in (function (classes, fdef, mtable) : unable to find an inherited method for function &#39;readHTMLTable&#39; for signature &#39;&quot;xml_document&quot;&#39;</span>
-</code></pre></div>
+<p>But…looking at <code>wikiCatNamePage</code>, it doesn’t seem like R will understand what we want to do! This is where we use the <code>content()</code> function from the httr package–it’s really good at translating the page so R can use it. That’s what we’ll do in this next command:</p>
+
+<pre><code class="language-r">parsedWikiCatNamePage &lt;- content(wikiCatNamePage)
+</code></pre>
+
+<p>Alright! Now we’ve translated the website code so that a different function, <code>readHTMLTable()</code>, will be able to pull the tables that we want.</p>
+
+<pre><code class="language-r">wikiCatNameTables &lt;- readHTMLTable(parsedWikiCatNamePage)
+#&gt; Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'readHTMLTable' for signature '"xml_document"'
+</code></pre>
+
 <p>It looks like the function stored seven different things in the object, <code>wikiCatNameTables</code>. Looking at the webpage, I like the table from the subsection called <em>Cultural references to the naming of cats</em>. My favorite is Tom, from Tom and Jerry!</p>
 
-<p>If we use <code>str(wikiCatNameTables)</code>, we&#39;ll see that <code>wikiCatNameTables</code> is a list with seven items. It looks like the seventh item is the one with our data--we&#39;re almost done! The <code>str()</code> function shows too much information because of how <code>wikiCatNameTables</code> is organized, so the output isn&#39;t shown here. You should try it, though!</p>
+<p>If we use <code>str(wikiCatNameTables)</code>, we’ll see that <code>wikiCatNameTables</code> is a list with seven items. It looks like the seventh item is the one with our data–we’re almost done! The <code>str()</code> function shows too much information because of how <code>wikiCatNameTables</code> is organized, so the output isn’t shown here. You should try it, though!</p>
 
-<p>Let&#39;s put the seventh item in <code>wikiCatNameTables</code> into an object and see what we get:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">famousCats <span class="o">&lt;-</span> wikiCatNameTables<span class="p">[[</span><span class="m">7</span><span class="p">]]</span>
-<span class="c1">#&gt; Error in eval(expr, envir, enclos): object &#39;wikiCatNameTables&#39; not found</span>
-<span class="kp">head</span><span class="p">(</span>famousCats<span class="p">)</span>
-<span class="c1">#&gt; Error in head(famousCats): object &#39;famousCats&#39; not found</span>
-</code></pre></div>
+<p>Let’s put the seventh item in <code>wikiCatNameTables</code> into an object and see what we get:</p>
+
+<pre><code class="language-r">famousCats &lt;- wikiCatNameTables[[7]]
+#&gt; Error in eval(expr, envir, enclos): object 'wikiCatNameTables' not found
+head(famousCats)
+#&gt; Error in head(famousCats): object 'famousCats' not found
+</code></pre>
+
 <p>Wow! We did it! And the data looks great! Give yourself a pat on the back!</p>
 
-<p>If you&#39;re interested in learning more about scraping webpages, you should also check out the <code>rvest</code> and <code>xml2</code> packages. They are designed to be as cat-friendly as possible!</p>
+<p>If you’re interested in learning more about scraping webpages, you should also check out the <code>rvest</code> and <code>xml2</code> packages. They are designed to be as cat-friendly as possible!</p>
 
-<h2><a href="#reading" name="reading"/>#</a> Reading</h2>
+<h2 id="a-hrefreading-namereadinga-reading"><a href="#reading" name="reading">#</a> Reading</h2>
 
-<p>After this basic intro you&#39;ll want to do more, such as:</p>
+<p>After this basic intro you’ll want to do more, such as:</p>
 
 <ul>
-<li>What do you think should go here? say so <a href="https://github.com/sckott/rforcats/issues">here</a></li>
+  <li>What do you think should go here? say so <a href="https://github.com/sckott/rforcats/issues">here</a></li>
 </ul>
 
 <p>And for even more advanced R:</p>
 
 <ul>
-<li><a href="http://adv-r.had.co.nz/">Advanced R, by Hadley Wickham</a></li>
+  <li><a href="http://adv-r.had.co.nz/">Advanced R, by Hadley Wickham</a></li>
 </ul>
 
-<h2><a href="#makeitbetter" name="makeitbetter"/>#</a> Make it better</h2>
+<h2 id="a-hrefmakeitbetter-namemakeitbettera-make-it-better"><a href="#makeitbetter" name="makeitbetter">#</a> Make it better</h2>
 
 <p>Contribute by following <a href="/Contribute">these instructions</a>.</p>
 
-<h2><a href="#catslover" name="catslover"/>#</a> Cat&#39;s love R</h2>
+<h2 id="a-hrefcatslover-namecatslovera-cats-love-r"><a href="#catslover" name="catslover">#</a> Cat’s love R</h2>
 
-<p><img src="assets/img/leo_giffed.gif" width="300"></p>
+<p><img src="assets/img/leo_giffed.gif" width="300" /></p>
 
-<h2><a href="#license" name="license"/>#</a> License</h2>
+<h2 id="a-hreflicense-namelicensea-license"><a href="#license" name="license">#</a> License</h2>
 
 
     <!-- CC0 license image -->

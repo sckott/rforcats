@@ -135,7 +135,7 @@ Yep, this is a total rip off of [JSforcats.com](http://jsforcats.com) - hopefull
 * [Reading](#reading)
 * [Does this site suck?](#makeitbetter)
 
-## <a href="#rconsole" name="rconsole"/>#</a> R console
+## <a href="#rconsole" name="rconsole"/>%23</a> R console
 
 Writing code is fun. Since you're a cat, not having opposable thumbs may be a bit of an issue, but surely you're clever enough to find a way around that.
 
