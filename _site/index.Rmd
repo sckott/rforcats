@@ -108,6 +108,12 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r echo=FALSE}
+# install pkgs if not installed already
+invisible(lapply(c('magrittr', 'httr', 'rvest', 'cowsay'), function(x) {
+  if (!requireNamespace(x, quietly = TRUE)) install.packages(x, quiet = TRUE)
+}))
+```
 
 ## An intro to R for new programmers
 
@@ -446,7 +452,7 @@ A lot of the functionality in R is in extensions to the language, called package
 * Incorporate documentation
 * Lessen conflicts with functions in other packages (don't worry about why for now, but if you want to know [go here](http://adv-r.had.co.nz/Namespaces.html))
 
-Most people that make R packages share them on a site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](https://cran.rstudio.com/).
+Most people that make R packages share them on a site on the interwebs called [CRAN](https://cran.rstudio.com/) (don't worry about what it stands for).
 
 The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OS X.
 
@@ -516,9 +522,7 @@ This is sort of an advanced R topic, but hey, how else do we get cute cat pictur
 Install `cowsay`
 
 ```{r data1, eval=FALSE}
-install.packages("devtools")
-library("devtools")
-install_github("sckott/cowsay")
+install.packages("cowsay")
 ```
 
 Now let's get a cat fact!
@@ -527,9 +531,10 @@ Now let's get a cat fact!
 library("cowsay")
 say("catfact", "cat")
 ```
+
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
-```coffee
+```r
 say <- function(what, by, type){
   <== some ascii art ==>
   url <- "http://catfacts-api.appspot.com/api/facts?number=1"
@@ -599,16 +604,17 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 Besides pictures, R is also really good at scraping data from websites! Here, we'll look at the names of famous cats that are listed on Wikipedia.
 
 First, we'll have to load some helpful packages.
-```{r scrapePackages, collapse=TRUE}
+
+```{r message=FALSE}
 library("httr")
-library("XML")
+library("rvest")
 ```
 
 Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the `XML` package can translate those webpages into useful objects in our environment.
 
 Here, we'll use the `GET()` function from the `httr` package to save the source code of the page in an object.
 
-```{r getPage, collapse=TRUE}
+```{r getPage}
 wikiCatNamePage <- GET("https://en.wikipedia.org/wiki/Popular_cat_names")
 ```
 
@@ -616,30 +622,30 @@ Cool! We have the website in an object!
 
 But...looking at `wikiCatNamePage`, it doesn't seem like R will understand what we want to do! This is where we use the `content()` function from the httr package--it's really good at translating the page so R can use it. That's what we'll do in this next command:
 
-```{r htmlParse, collapse=TRUE}
-parsedWikiCatNamePage <- content(wikiCatNamePage)
+```{r htmlParse}
+parsedWikiCatNamePage <- httr::content(wikiCatNamePage)
 ```
 
-Alright! Now we've translated the website code so that a different function, `readHTMLTable()`, will be able to pull the tables that we want.
+Alright! Now we've translated the website code so that a different function, `html_table()`, will be able to pull the tables that we want.
 
-```{r tableParse, collapse=TRUE}
-wikiCatNameTables <- readHTMLTable(parsedWikiCatNamePage)
+```{r tableParse}
+wikiCatNameTables <- html_table(parsedWikiCatNamePage, fill = TRUE)
 ```
 
-It looks like the function stored seven different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called _Cultural references to the naming of cats_. My favorite is Tom, from Tom and Jerry!
+It looks like the function stored six different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called _Cultural references to the naming of cats_. My favorite is Tom, from Tom and Jerry!
 
-If we use `str(wikiCatNameTables)`, we'll see that `wikiCatNameTables` is a list with seven items. It looks like the seventh item is the one with our data--we're almost done! The `str()` function shows too much information because of how `wikiCatNameTables` is organized, so the output isn't shown here. You should try it, though!
+If we use `str(wikiCatNameTables)`, we'll see that `wikiCatNameTables` is a list with six items. It looks like the sixth item is the one with our data--we're almost done! The `str()` function shows too much information because of how `wikiCatNameTables` is organized, so the output isn't shown here. You should try it, though!
 
-Let's put the seventh item in `wikiCatNameTables` into an object and see what we get:
+Let's put the sixth item in `wikiCatNameTables` into an object and see what we get:
 
-```{r makeFamous, collapse=TRUE}
-famousCats <- wikiCatNameTables[[7]]
+```{r makeFamous}
+famousCats <- wikiCatNameTables[[6]]
 head(famousCats)
 ```
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!
 
-If you're interested in learning more about scraping webpages, you should also check out the `rvest` and `xml2` packages. They are designed to be as cat-friendly as possible!
+If you're interested in learning more about scraping webpages, you should check out tutorials for `rvest` and `xml2` packages. They are designed to be as cat-friendly as possible!
 
 ## <a href="#reading" name="reading">#</a> Reading
 

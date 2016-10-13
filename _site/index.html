@@ -531,7 +531,7 @@ But we can happily make a vector of the same type of information, like</p>
   <li>Lessen conflicts with functions in other packages (don’t worry about why for now, but if you want to know <a href="http://adv-r.had.co.nz/Namespaces.html">go here</a>)</li>
 </ul>
 
-<p>Most people that make R packages share them on a site on the interwebs called CRAN (don’t worry about what it stands for) here <a href="https://cran.rstudio.com/">CRAN</a>.</p>
+<p>Most people that make R packages share them on a site on the interwebs called <a href="https://cran.rstudio.com/">CRAN</a> (don’t worry about what it stands for).</p>
 
 <p>The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OS X.</p>
 
@@ -623,16 +623,28 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>Install <code class="highlighter-rouge">cowsay</code></p>
 
-<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span><span class="w">
-</span><span class="n">library</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span><span class="w">
-</span><span class="n">install_github</span><span class="p">(</span><span class="s2">"sckott/cowsay"</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"cowsay"</span><span class="p">)</span><span class="w">
 </span></code></pre>
 </div>
 
 <p>Now let’s get a cat fact!</p>
 
 <div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"cowsay"</span><span class="p">)</span><span class="w">
-</span><span class="n">say</span><span class="p">(</span><span class="s2">"catfact"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cat"</span><span class="p">)</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt; 
+#&gt; Attaching package: 'cowsay'
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt; The following object is masked _by_ '.GlobalEnv':
+#&gt; 
+#&gt;     animals
+</code></pre>
+</div>
+
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">say</span><span class="p">(</span><span class="s2">"catfact"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cat"</span><span class="p">)</span><span class="w">
 </span></code></pre>
 </div>
 
@@ -656,15 +668,16 @@ But we can happily make a vector of the same type of information, like</p>
 #&gt; 
 </code></pre>
 </div>
+
 <p>A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The <code class="highlighter-rouge">say</code> function looks like sorta like this:</p>
 
-<div class="language-coffee highlighter-rouge"><pre class="highlight"><code><span class="nx">say</span> <span class="o">&lt;-</span> <span class="nx">function</span><span class="p">(</span><span class="nx">what</span><span class="p">,</span> <span class="k">by</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
-  <span class="o">&lt;==</span> <span class="nx">some</span> <span class="nx">ascii</span> <span class="nx">art</span> <span class="o">==&gt;</span>
-  <span class="nx">url</span> <span class="o">&lt;-</span> <span class="s">"http://catfacts-api.appspot.com/api/facts?number=1"</span>
-  <span class="nx">what</span> <span class="o">&lt;-</span> <span class="nx">fromJSON</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span><span class="nx">$facts</span>
-  <span class="nx">message</span><span class="p">(</span><span class="nx">sprintf</span><span class="p">(</span><span class="k">by</span><span class="p">,</span> <span class="nx">what</span><span class="p">))</span>
-<span class="p">}</span>
-</code></pre>
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">say</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">what</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">){</span><span class="w">
+  </span><span class="o">&lt;==</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">ascii</span><span class="w"> </span><span class="n">art</span><span class="w"> </span><span class="o">==&gt;</span><span class="w">
+  </span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"http://catfacts-api.appspot.com/api/facts?number=1"</span><span class="w">
+  </span><span class="n">what</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fromJSON</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">$</span><span class="n">facts</span><span class="w">
+  </span><span class="n">message</span><span class="p">(</span><span class="n">sprintf</span><span class="p">(</span><span class="n">by</span><span class="p">,</span><span class="w"> </span><span class="n">what</span><span class="p">))</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <p>The first line is a bunch of ascii characters to make a cat. The second line defines the url for the cat facts API. The third line retrieves one cat fact from the cat facts API. And the fourth line prints the messages with a cat.</p>
@@ -734,7 +747,7 @@ But we can happily make a vector of the same type of information, like</p>
 <p>First, we’ll have to load some helpful packages.</p>
 
 <div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"httr"</span><span class="p">)</span><span class="w">
-</span><span class="n">library</span><span class="p">(</span><span class="s2">"XML"</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="s2">"rvest"</span><span class="p">)</span><span class="w">
 </span></code></pre>
 </div>
 
@@ -750,33 +763,40 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>But…looking at <code class="highlighter-rouge">wikiCatNamePage</code>, it doesn’t seem like R will understand what we want to do! This is where we use the <code class="highlighter-rouge">content()</code> function from the httr package–it’s really good at translating the page so R can use it. That’s what we’ll do in this next command:</p>
 
-<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">parsedWikiCatNamePage</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">wikiCatNamePage</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">parsedWikiCatNamePage</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">httr</span><span class="o">::</span><span class="n">content</span><span class="p">(</span><span class="n">wikiCatNamePage</span><span class="p">)</span><span class="w">
 </span></code></pre>
 </div>
 
-<p>Alright! Now we’ve translated the website code so that a different function, <code class="highlighter-rouge">readHTMLTable()</code>, will be able to pull the tables that we want.</p>
+<p>Alright! Now we’ve translated the website code so that a different function, <code class="highlighter-rouge">html_table()</code>, will be able to pull the tables that we want.</p>
 
-<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">wikiCatNameTables</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">readHTMLTable</span><span class="p">(</span><span class="n">parsedWikiCatNamePage</span><span class="p">)</span><span class="w">
-</span><span class="c1">#&gt; Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'readHTMLTable' for signature '"xml_document"'
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">wikiCatNameTables</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">html_table</span><span class="p">(</span><span class="n">parsedWikiCatNamePage</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 </span></code></pre>
 </div>
 
-<p>It looks like the function stored seven different things in the object, <code class="highlighter-rouge">wikiCatNameTables</code>. Looking at the webpage, I like the table from the subsection called <em>Cultural references to the naming of cats</em>. My favorite is Tom, from Tom and Jerry!</p>
+<p>It looks like the function stored six different things in the object, <code class="highlighter-rouge">wikiCatNameTables</code>. Looking at the webpage, I like the table from the subsection called <em>Cultural references to the naming of cats</em>. My favorite is Tom, from Tom and Jerry!</p>
 
-<p>If we use <code class="highlighter-rouge">str(wikiCatNameTables)</code>, we’ll see that <code class="highlighter-rouge">wikiCatNameTables</code> is a list with seven items. It looks like the seventh item is the one with our data–we’re almost done! The <code class="highlighter-rouge">str()</code> function shows too much information because of how <code class="highlighter-rouge">wikiCatNameTables</code> is organized, so the output isn’t shown here. You should try it, though!</p>
+<p>If we use <code class="highlighter-rouge">str(wikiCatNameTables)</code>, we’ll see that <code class="highlighter-rouge">wikiCatNameTables</code> is a list with six items. It looks like the sixth item is the one with our data–we’re almost done! The <code class="highlighter-rouge">str()</code> function shows too much information because of how <code class="highlighter-rouge">wikiCatNameTables</code> is organized, so the output isn’t shown here. You should try it, though!</p>
 
-<p>Let’s put the seventh item in <code class="highlighter-rouge">wikiCatNameTables</code> into an object and see what we get:</p>
+<p>Let’s put the sixth item in <code class="highlighter-rouge">wikiCatNameTables</code> into an object and see what we get:</p>
 
-<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">famousCats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">wikiCatNameTables</span><span class="p">[[</span><span class="m">7</span><span class="p">]]</span><span class="w">
-</span><span class="c1">#&gt; Error in eval(expr, envir, enclos): object 'wikiCatNameTables' not found
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">famousCats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">wikiCatNameTables</span><span class="p">[[</span><span class="m">6</span><span class="p">]]</span><span class="w">
 </span><span class="n">head</span><span class="p">(</span><span class="n">famousCats</span><span class="p">)</span><span class="w">
-</span><span class="c1">#&gt; Error in head(famousCats): object 'famousCats' not found
 </span></code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt;        Cat Name Made Famous By
+#&gt; 1 Amelia Gabble The Aristocats
+#&gt; 2       Berlioz The Aristocats
+#&gt; 3        Carlos      Marmaduke
+#&gt; 4           Cat      Peg + Cat
+#&gt; 5   Chinese Cat The Aristocats
+#&gt; 6         Diana    Sailor Moon
+</code></pre>
 </div>
 
 <p>Wow! We did it! And the data looks great! Give yourself a pat on the back!</p>
 
-<p>If you’re interested in learning more about scraping webpages, you should also check out the <code class="highlighter-rouge">rvest</code> and <code class="highlighter-rouge">xml2</code> packages. They are designed to be as cat-friendly as possible!</p>
+<p>If you’re interested in learning more about scraping webpages, you should check out tutorials for <code class="highlighter-rouge">rvest</code> and <code class="highlighter-rouge">xml2</code> packages. They are designed to be as cat-friendly as possible!</p>
 
 <h2 id="a-hrefreading-namereadinga-reading"><a href="#reading" name="reading">#</a> Reading</h2>
 

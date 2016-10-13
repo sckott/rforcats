@@ -6,6 +6,7 @@ layout: default
 
 
 
+
 ## An intro to R for new programmers
 
 This is an introduction to R. I promise this will be fun.  Since you have never used a programming language before, or any language for that matter, you won't be tainted by other programming languages with different ways of doing things. This is good - we can teach you the R way of doing things.
@@ -473,7 +474,7 @@ A lot of the functionality in R is in extensions to the language, called package
 * Incorporate documentation
 * Lessen conflicts with functions in other packages (don't worry about why for now, but if you want to know [go here](http://adv-r.had.co.nz/Namespaces.html))
 
-Most people that make R packages share them on a site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](https://cran.rstudio.com/).
+Most people that make R packages share them on a site on the interwebs called [CRAN](https://cran.rstudio.com/) (don't worry about what it stands for).
 
 The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OS X.
 
@@ -568,9 +569,7 @@ Install `cowsay`
 
 
 ```r
-install.packages("devtools")
-library("devtools")
-install_github("sckott/cowsay")
+install.packages("cowsay")
 ```
 
 Now let's get a cat fact!
@@ -578,6 +577,20 @@ Now let's get a cat fact!
 
 ```r
 library("cowsay")
+```
+
+```
+#> 
+#> Attaching package: 'cowsay'
+```
+
+```
+#> The following object is masked _by_ '.GlobalEnv':
+#> 
+#>     animals
+```
+
+```r
 say("catfact", "cat")
 ```
 
@@ -601,9 +614,10 @@ say("catfact", "cat")
 #>                \_)
 #> 
 ```
+
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
 
-```coffee
+```r
 say <- function(what, by, type){
   <== some ascii art ==>
   url <- "http://catfacts-api.appspot.com/api/facts?number=1"
@@ -682,9 +696,10 @@ Besides pictures, R is also really good at scraping data from websites! Here, we
 
 First, we'll have to load some helpful packages.
 
+
 ```r
 library("httr")
-library("XML")
+library("rvest")
 ```
 
 Each of these packages will help us do different things. The httr package has really helpful functions for grabbing the data from websites, and the `XML` package can translate those webpages into useful objects in our environment.
@@ -702,34 +717,41 @@ But...looking at `wikiCatNamePage`, it doesn't seem like R will understand what 
 
 
 ```r
-parsedWikiCatNamePage <- content(wikiCatNamePage)
+parsedWikiCatNamePage <- httr::content(wikiCatNamePage)
 ```
 
-Alright! Now we've translated the website code so that a different function, `readHTMLTable()`, will be able to pull the tables that we want.
+Alright! Now we've translated the website code so that a different function, `html_table()`, will be able to pull the tables that we want.
 
 
 ```r
-wikiCatNameTables <- readHTMLTable(parsedWikiCatNamePage)
-#> Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'readHTMLTable' for signature '"xml_document"'
+wikiCatNameTables <- html_table(parsedWikiCatNamePage, fill = TRUE)
 ```
 
-It looks like the function stored seven different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called _Cultural references to the naming of cats_. My favorite is Tom, from Tom and Jerry!
+It looks like the function stored six different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called _Cultural references to the naming of cats_. My favorite is Tom, from Tom and Jerry!
 
-If we use `str(wikiCatNameTables)`, we'll see that `wikiCatNameTables` is a list with seven items. It looks like the seventh item is the one with our data--we're almost done! The `str()` function shows too much information because of how `wikiCatNameTables` is organized, so the output isn't shown here. You should try it, though!
+If we use `str(wikiCatNameTables)`, we'll see that `wikiCatNameTables` is a list with six items. It looks like the sixth item is the one with our data--we're almost done! The `str()` function shows too much information because of how `wikiCatNameTables` is organized, so the output isn't shown here. You should try it, though!
 
-Let's put the seventh item in `wikiCatNameTables` into an object and see what we get:
+Let's put the sixth item in `wikiCatNameTables` into an object and see what we get:
 
 
 ```r
-famousCats <- wikiCatNameTables[[7]]
-#> Error in eval(expr, envir, enclos): object 'wikiCatNameTables' not found
+famousCats <- wikiCatNameTables[[6]]
 head(famousCats)
-#> Error in head(famousCats): object 'famousCats' not found
+```
+
+```
+#>        Cat Name Made Famous By
+#> 1 Amelia Gabble The Aristocats
+#> 2       Berlioz The Aristocats
+#> 3        Carlos      Marmaduke
+#> 4           Cat      Peg + Cat
+#> 5   Chinese Cat The Aristocats
+#> 6         Diana    Sailor Moon
 ```
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!
 
-If you're interested in learning more about scraping webpages, you should also check out the `rvest` and `xml2` packages. They are designed to be as cat-friendly as possible!
+If you're interested in learning more about scraping webpages, you should check out tutorials for `rvest` and `xml2` packages. They are designed to be as cat-friendly as possible!
 
 ## <a href="#reading" name="reading">#</a> Reading
 
