@@ -347,7 +347,7 @@ A lot of the functionality in R is in extensions to the language, called package
 * Incorporate documentation
 * Lessen conflicts with functions in other packages (don't worry about why for now, but if you want to know [go here](http://adv-r.had.co.nz/Namespaces.html))
 
-Most people that make R packages share them on a site on the interwebs called CRAN (don't worry about what it stands for) here [CRAN](https://cran.rstudio.com/).
+Most people that make R packages share them on a site on the interwebs called [CRAN](https://cran.rstudio.com/) (don't worry about what it stands for).
 
 The humans behind CRAN have done a good job making sure that in most cases packages you install from CRAN will work on your computer, whether Linux, Windows, or OS X.
 
