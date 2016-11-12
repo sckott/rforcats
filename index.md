@@ -178,7 +178,7 @@ Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat
 list(1, "a")
 #> [[1]]
 #> [1] 1
-#> 
+#>
 #> [[2]]
 #> [1] "a"
 ```
@@ -191,14 +191,14 @@ mylist <- list(1, list("a","b","c"))
 mylist
 #> [[1]]
 #> [1] 1
-#> 
+#>
 #> [[2]]
 #> [[2]][[1]]
 #> [1] "a"
-#> 
+#>
 #> [[2]][[2]]
 #> [1] "b"
-#> 
+#>
 #> [[2]][[3]]
 #> [1] "c"
 ```
@@ -253,7 +253,7 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 bb <- c(5,6,7)
 names(bb) <- c("hey","hello","wadup")
 bb
-#>   hey hello wadup 
+#>   hey hello wadup
 #>     5     6     7
 names(bb)
 #> [1] "hey"   "hello" "wadup"
@@ -264,7 +264,7 @@ With a named vector we can get to each element in the vector using its name with
 
 ```r
 bb["hello"]
-#> hello 
+#> hello
 #>     6
 ```
 
@@ -329,10 +329,10 @@ mylist[2] # or mylist["bar"]
 #> $bar
 #> $bar[[1]]
 #> [1] "a"
-#> 
+#>
 #> $bar[[2]]
 #> [1] "b"
-#> 
+#>
 #> $bar[[3]]
 #> [1] "c"
 ```
@@ -342,10 +342,10 @@ mylist[2] # or mylist["bar"]
 mylist[[2]] # or mylist[["bar"]]
 #> [[1]]
 #> [1] "a"
-#> 
+#>
 #> [[2]]
 #> [1] "b"
-#> 
+#>
 #> [[3]]
 #> [1] "c"
 ```
@@ -580,13 +580,13 @@ library("cowsay")
 ```
 
 ```
-#> 
+#>
 #> Attaching package: 'cowsay'
 ```
 
 ```
 #> The following object is masked _by_ '.GlobalEnv':
-#> 
+#>
 #>     animals
 ```
 
@@ -595,9 +595,9 @@ say("catfact", "cat")
 ```
 
 ```
-#> 
-#>  -------------- 
-#> When your cats rubs up against you, she is actually marking you as "hers" with her scent. If your cat pushes his face against your head, it is a sign of acceptance and affection. 
+#>
+#>  --------------
+#> When your cats rubs up against you, she is actually marking you as "hers" with her scent. If your cat pushes his face against your head, it is a sign of acceptance and affection.
 #>  --------------
 #>     \
 #>       \
@@ -612,7 +612,7 @@ say("catfact", "cat")
 #>            \| | |_|/\
 #>       jgs  //_// ___/
 #>                \_)
-#> 
+#>
 ```
 
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
