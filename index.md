@@ -486,7 +486,7 @@ _Note: Package creation is out of scope for this site, but Hadley has made it mu
 
 ## <a href="#pipes" name="pipes">#</a> Pipes
 
-<img src="http://media.giphy.com/media/7fLGzTYkX3hO8/giphy.gif" width="300">
+<img src="/assets/img/pipe_gif.gif" width="300">
 
 Pipes are not in base R, but are a concept you should know about as a cat.
 
@@ -597,7 +597,7 @@ say("catfact", "cat")
 ```
 #> 
 #>  -------------- 
-#> The female cat reaches sexual maturity at around 6 to 10 months and the male cat between 9 and 12 months. 
+#> When your cats rubs up against you, she is actually marking you as "hers" with her scent. If your cat pushes his face against your head, it is a sign of acceptance and affection. 
 #>  --------------
 #>     \
 #>       \
@@ -653,7 +653,7 @@ getcutecat(150)
 #> ![](http://placekitten.com/g/150/150)
 ```
 
-![some kittens](http://placekitten.com/g/150/150)
+![some kittens](https://placekitten.com/g/150/150)
 
 250 pixels
 
@@ -663,7 +663,7 @@ getcutecat(250)
 #> ![](http://placekitten.com/g/250/250)
 ```
 
-![some kittens](http://placekitten.com/g/250/250)
+![some kittens](https://placekitten.com/g/250/250)
 
 ## <a href="#doge" name="doge">#</a> ***Hey! R is not just for cats!*** - dogs
 
@@ -685,7 +685,7 @@ getdoge(c("wow", "suchhostility", "bemoreinclusive"))
 #> ![](http://dogr.io/wow/suchhostility/bemoreinclusive.png)
 ```
 
-<img src="http://dogr.io/wow/suchhostility/bemoreinclusive.png" width="400"/>
+<img src="/assets/img/bemoreinclusive.png" width="400"/>
 
 ***Now, back to your regular, cat-dominated tutorial.***
 
@@ -769,6 +769,6 @@ Contribute by following [these instructions](/Contribute).
 
 ## <a href="#catslover" name="catslover">#</a> Cat's love R
 
-<img src="assets/img/leo_giffed.gif" width="300">
+<img src="/assets/img/leo_giffed.gif" width="300">
 
 ## <a href="#license" name="license">#</a> License

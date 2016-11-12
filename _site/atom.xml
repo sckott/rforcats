@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>R for cats</title>
- <link href="http://rforcats.net//atom.xml" rel="self"/>
- <link href="http://rforcats.net//"/>
- <updated>2016-10-13T10:15:35-07:00</updated>
- <id>http://rforcats.net/</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2016-11-12T12:43:41-08:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Scott Chamberlain</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>no blog</title>
-   <link href="http://rforcats.net//2014/01/02/noposts/"/>
+   <link href="http://localhost:4000/2014/01/02/noposts/"/>
    <updated>2014-01-02T00:00:00-08:00</updated>
-   <id>http://rforcats.net//2014/01/02/noposts</id>
+   <id>http://localhost:4000/2014/01/02/noposts</id>
    <content type="html">&lt;h3 id=&quot;nothing-to-see-here-&quot;&gt;nothing to see here :)&lt;/h3&gt;
 </content>
  </entry>
