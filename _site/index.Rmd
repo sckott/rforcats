@@ -339,7 +339,7 @@ Or equivalently
 mylist["foo"]
 ```
 
-And get just the value by using two `[`
+And get just the value by using two `[ ]`
 
 ```{r, collapse=TRUE}
 mylist[[1]]
