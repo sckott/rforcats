@@ -13,6 +13,7 @@ Inspired by [jsforcats.com](http://jsforcats.com/) - __rforcats__ is aimed at te
 * Jeffrey Hollister [@jhollist](https://github.com/jhollist)
 * mustafaascha [@mustafaascha](https://github.com/mustafaascha)
 * Peter Desmet [@peterdesmet](https://github.com/peterdesmet)
+* StrayChild [@StrayChild01](https://github.com/StrayChild01)
 * You?
 
 ## cats
@@ -25,4 +26,4 @@ CC0
 
 ## Meta
 
-* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
