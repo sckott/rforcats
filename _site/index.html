@@ -83,7 +83,7 @@
 
   <!-- <div class="sidebar-item">
     <p>
-      &copy; 2017. All rights reserved.
+      &copy; 2018. All rights reserved.
     </p>
   </div> -->
 </div>
@@ -258,7 +258,7 @@ But we can happily make a vector of the same type of information, like</p>
 <div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"a"</span><span class="p">)</span><span class="w">
 </span><span class="c1">#&gt; [[1]]
 #&gt; [1] 1
-#&gt;
+#&gt; 
 #&gt; [[2]]
 #&gt; [1] "a"
 </span></code></pre>
@@ -270,14 +270,14 @@ But we can happily make a vector of the same type of information, like</p>
 </span><span class="n">mylist</span><span class="w">
 </span><span class="c1">#&gt; [[1]]
 #&gt; [1] 1
-#&gt;
+#&gt; 
 #&gt; [[2]]
 #&gt; [[2]][[1]]
 #&gt; [1] "a"
-#&gt;
+#&gt; 
 #&gt; [[2]][[2]]
 #&gt; [1] "b"
-#&gt;
+#&gt; 
 #&gt; [[2]][[3]]
 #&gt; [1] "c"
 </span></code></pre>
@@ -327,7 +327,7 @@ But we can happily make a vector of the same type of information, like</p>
 <div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">bb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span><span class="w">
 </span><span class="nf">names</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"hey"</span><span class="p">,</span><span class="s2">"hello"</span><span class="p">,</span><span class="s2">"wadup"</span><span class="p">)</span><span class="w">
 </span><span class="n">bb</span><span class="w">
-</span><span class="c1">#&gt;   hey hello wadup
+</span><span class="c1">#&gt;   hey hello wadup 
 #&gt;     5     6     7
 </span><span class="nf">names</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span><span class="w">
 </span><span class="c1">#&gt; [1] "hey"   "hello" "wadup"
@@ -337,7 +337,7 @@ But we can happily make a vector of the same type of information, like</p>
 <p>With a named vector we can get to each element in the vector using its name with a single set, or double set of brackets to get the value, or the value and name, respectively.</p>
 
 <div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">bb</span><span class="p">[</span><span class="s2">"hello"</span><span class="p">]</span><span class="w">
-</span><span class="c1">#&gt; hello
+</span><span class="c1">#&gt; hello 
 #&gt;     6
 </span></code></pre>
 </div>
@@ -395,10 +395,10 @@ But we can happily make a vector of the same type of information, like</p>
 #&gt; $bar
 #&gt; $bar[[1]]
 #&gt; [1] "a"
-#&gt;
+#&gt; 
 #&gt; $bar[[2]]
 #&gt; [1] "b"
-#&gt;
+#&gt; 
 #&gt; $bar[[3]]
 #&gt; [1] "c"
 </span></code></pre>
@@ -407,10 +407,10 @@ But we can happily make a vector of the same type of information, like</p>
 <div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">mylist</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span><span class="w"> </span><span class="c1"># or mylist[["bar"]]
 #&gt; [[1]]
 #&gt; [1] "a"
-#&gt;
+#&gt; 
 #&gt; [[2]]
 #&gt; [1] "b"
-#&gt;
+#&gt; 
 #&gt; [[3]]
 #&gt; [1] "c"
 </span></code></pre>
@@ -629,28 +629,14 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>Now let’s get a cat fact!</p>
 
-<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"cowsay"</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="s2">"cowsay"</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">warn.conflicts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span><span class="n">say</span><span class="p">(</span><span class="s2">"catfact"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cat"</span><span class="p">)</span><span class="w">
 </span></code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#&gt;
-#&gt; Attaching package: 'cowsay'
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>#&gt; The following object is masked _by_ '.GlobalEnv':
-#&gt;
-#&gt;     animals
-</code></pre>
-</div>
-
-<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">say</span><span class="p">(</span><span class="s2">"catfact"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cat"</span><span class="p">)</span><span class="w">
-</span></code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>#&gt;
-#&gt;  --------------
-#&gt; When your cats rubs up against you, she is actually marking you as "hers" with her scent. If your cat pushes his face against your head, it is a sign of acceptance and affection.
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt; 
+#&gt;  -------------- 
+#&gt; When a domestic cat goes after mice, about 1 pounce in 3 results in a catch. 
 #&gt;  --------------
 #&gt;     \
 #&gt;       \
@@ -665,7 +651,7 @@ But we can happily make a vector of the same type of information, like</p>
 #&gt;            \| | |_|/\
 #&gt;       jgs  //_// ___/
 #&gt;                \_)
-#&gt;
+#&gt; 
 </code></pre>
 </div>
 
@@ -707,7 +693,7 @@ But we can happily make a vector of the same type of information, like</p>
 </span></code></pre>
 </div>
 
-<p><img src="https://placekitten.com/g/150/150" alt="some kittens" /></p>
+<p><img src="/assets/img/150.jpeg" width="150" /></p>
 
 <p>250 pixels</p>
 
@@ -716,7 +702,7 @@ But we can happily make a vector of the same type of information, like</p>
 </span></code></pre>
 </div>
 
-<p><img src="https://placekitten.com/g/250/250" alt="some kittens" /></p>
+<p><img src="/assets/img/250.jpeg" width="250" /></p>
 
 <h2 id="a-hrefdoge-namedogea-hey-r-is-not-just-for-cats---dogs"><a href="#doge" name="doge">#</a> <strong><em>Hey! R is not just for cats!</em></strong> - dogs</h2>
 
@@ -779,18 +765,39 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>Let’s put the sixth item in <code class="highlighter-rouge">wikiCatNameTables</code> into an object and see what we get:</p>
 
-<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">famousCats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">wikiCatNameTables</span><span class="p">[[</span><span class="m">6</span><span class="p">]]</span><span class="w">
+<div class="language-r highlighter-rouge"><pre class="highlight"><code><span class="n">famousCats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">wikiCatNameTables</span><span class="p">[[</span><span class="m">5</span><span class="p">]]</span><span class="w">
 </span><span class="n">head</span><span class="p">(</span><span class="n">famousCats</span><span class="p">)</span><span class="w">
 </span></code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#&gt;        Cat Name Made Famous By
-#&gt; 1 Amelia Gabble The Aristocats
-#&gt; 2       Berlioz The Aristocats
-#&gt; 3        Carlos      Marmaduke
-#&gt; 4           Cat      Peg + Cat
-#&gt; 5   Chinese Cat The Aristocats
-#&gt; 6         Diana    Sailor Moon
+<div class="highlighter-rouge"><pre class="highlight"><code>#&gt;   Source VPI 2010[20] VPI 2009[26] VPI 2008[4] VPI 2006[27] YouPet.com[28]
+#&gt; 1      1          Max          Max         Max          Max          Tiger
+#&gt; 2      2        Chloe        Chloe       Chloe       Tigger         Smokey
+#&gt; 3      3        Bella       Tigger        Lucy       Smokey          Kitty
+#&gt; 4      4       Oliver        Tiger      Tigger        Tiger         Shadow
+#&gt; 5      5        Tiger         Lucy       Tiger        Chloe         Tigger
+#&gt; 6      6       Smokey       Smokey      Smokey       Shadow           Baby
+#&gt;   BabyNames.com (male)[29] BabyNames.com (female)[29] BowWow.com[30]
+#&gt; 1                      Max                      Chloe         Tigger
+#&gt; 2                   Tigger                       Lucy          Tiger
+#&gt; 3                    Tiger                      Molly            Max
+#&gt; 4                   Smokey                      Bella         Smokey
+#&gt; 5                   Oliver                     Sophie            Sam
+#&gt; 6                    Buddy                   Princess          Kitty
+#&gt;   Washington Post[31] PetFinder.com (Male)[32] PetFinder.com (Female)[32]
+#&gt; 1               Kitty                      Max                      Molly
+#&gt; 2               Tiger                  Charlie                      Angel
+#&gt; 3                 Max                    Simon                       Lucy
+#&gt; 4              Smokey                     Jack                   Princess
+#&gt; 5              Tigger                    Sammy                      Chloe
+#&gt; 6             Patches                                                    
+#&gt;   Gallup 1990[33] Cook County[34] Sun Times[35]
+#&gt; 1            Baby           Tiger         Kitty
+#&gt; 2         Blackie           Kitty         Tiger
+#&gt; 3        Samantha          Smokey        Smokey
+#&gt; 4             Tom             Max           Sam
+#&gt; 5           Tiger          Shadow         Misty
+#&gt; 6          Casper          Tigger      Samantha
 </code></pre>
 </div>
 

@@ -13,6 +13,7 @@ Inspired by [jsforcats.com](http://jsforcats.com/) - __rforcats__ is aimed at te
 * Jeffrey Hollister [@jhollist](https://github.com/jhollist)
 * mustafaascha [@mustafaascha](https://github.com/mustafaascha)
 * Peter Desmet [@peterdesmet](https://github.com/peterdesmet)
+* StrayChild [@StrayChild01](https://github.com/StrayChild01)
 * You?
 
 ## cats

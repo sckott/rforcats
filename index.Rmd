@@ -428,8 +428,8 @@ install.packages("cowsay")
 
 Now let's get a cat fact!
 
-```{r data2}
-library("cowsay")
+```{r data2, messages=FALSE, warnings=FALSE}
+library("cowsay", quietly = TRUE, warn.conflicts = FALSE)
 say("catfact", "cat")
 ```
 

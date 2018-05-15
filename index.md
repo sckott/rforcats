@@ -178,7 +178,7 @@ Lists are sorta crazy. They are kinda like vectors, but kinda not. Using our cat
 list(1, "a")
 #> [[1]]
 #> [1] 1
-#>
+#> 
 #> [[2]]
 #> [1] "a"
 ```
@@ -191,14 +191,14 @@ mylist <- list(1, list("a","b","c"))
 mylist
 #> [[1]]
 #> [1] 1
-#>
+#> 
 #> [[2]]
 #> [[2]][[1]]
 #> [1] "a"
-#>
+#> 
 #> [[2]][[2]]
 #> [1] "b"
-#>
+#> 
 #> [[2]][[3]]
 #> [1] "c"
 ```
@@ -253,7 +253,7 @@ You can also have a named vector. What's that?  A named vector is like `bb` abov
 bb <- c(5,6,7)
 names(bb) <- c("hey","hello","wadup")
 bb
-#>   hey hello wadup
+#>   hey hello wadup 
 #>     5     6     7
 names(bb)
 #> [1] "hey"   "hello" "wadup"
@@ -264,7 +264,7 @@ With a named vector we can get to each element in the vector using its name with
 
 ```r
 bb["hello"]
-#> hello
+#> hello 
 #>     6
 ```
 
@@ -329,10 +329,10 @@ mylist[2] # or mylist["bar"]
 #> $bar
 #> $bar[[1]]
 #> [1] "a"
-#>
+#> 
 #> $bar[[2]]
 #> [1] "b"
-#>
+#> 
 #> $bar[[3]]
 #> [1] "c"
 ```
@@ -342,10 +342,10 @@ mylist[2] # or mylist["bar"]
 mylist[[2]] # or mylist[["bar"]]
 #> [[1]]
 #> [1] "a"
-#>
+#> 
 #> [[2]]
 #> [1] "b"
-#>
+#> 
 #> [[3]]
 #> [1] "c"
 ```
@@ -576,28 +576,14 @@ Now let's get a cat fact!
 
 
 ```r
-library("cowsay")
-```
-
-```
-#>
-#> Attaching package: 'cowsay'
-```
-
-```
-#> The following object is masked _by_ '.GlobalEnv':
-#>
-#>     animals
-```
-
-```r
+library("cowsay", quietly = TRUE, warn.conflicts = FALSE)
 say("catfact", "cat")
 ```
 
 ```
-#>
-#>  --------------
-#> When your cats rubs up against you, she is actually marking you as "hers" with her scent. If your cat pushes his face against your head, it is a sign of acceptance and affection.
+#> 
+#>  -------------- 
+#> When a domestic cat goes after mice, about 1 pounce in 3 results in a catch. 
 #>  --------------
 #>     \
 #>       \
@@ -612,7 +598,7 @@ say("catfact", "cat")
 #>            \| | |_|/\
 #>       jgs  //_// ___/
 #>                \_)
-#>
+#> 
 ```
 
 A little explanation is in order me thinks. There are a few things going on in the last thing we just did. The `say` function looks like sorta like this:
@@ -653,7 +639,7 @@ getcutecat(150)
 #> ![](http://placekitten.com/g/150/150)
 ```
 
-![some kittens](https://placekitten.com/g/150/150)
+<img src="/assets/img/150.jpeg" width="150">
 
 250 pixels
 
@@ -663,7 +649,7 @@ getcutecat(250)
 #> ![](http://placekitten.com/g/250/250)
 ```
 
-![some kittens](https://placekitten.com/g/250/250)
+<img src="/assets/img/250.jpeg" width="250">
 
 ## <a href="#doge" name="doge">#</a> ***Hey! R is not just for cats!*** - dogs
 
@@ -735,18 +721,39 @@ Let's put the sixth item in `wikiCatNameTables` into an object and see what we g
 
 
 ```r
-famousCats <- wikiCatNameTables[[6]]
+famousCats <- wikiCatNameTables[[5]]
 head(famousCats)
 ```
 
 ```
-#>        Cat Name Made Famous By
-#> 1 Amelia Gabble The Aristocats
-#> 2       Berlioz The Aristocats
-#> 3        Carlos      Marmaduke
-#> 4           Cat      Peg + Cat
-#> 5   Chinese Cat The Aristocats
-#> 6         Diana    Sailor Moon
+#>   Source VPI 2010[20] VPI 2009[26] VPI 2008[4] VPI 2006[27] YouPet.com[28]
+#> 1      1          Max          Max         Max          Max          Tiger
+#> 2      2        Chloe        Chloe       Chloe       Tigger         Smokey
+#> 3      3        Bella       Tigger        Lucy       Smokey          Kitty
+#> 4      4       Oliver        Tiger      Tigger        Tiger         Shadow
+#> 5      5        Tiger         Lucy       Tiger        Chloe         Tigger
+#> 6      6       Smokey       Smokey      Smokey       Shadow           Baby
+#>   BabyNames.com (male)[29] BabyNames.com (female)[29] BowWow.com[30]
+#> 1                      Max                      Chloe         Tigger
+#> 2                   Tigger                       Lucy          Tiger
+#> 3                    Tiger                      Molly            Max
+#> 4                   Smokey                      Bella         Smokey
+#> 5                   Oliver                     Sophie            Sam
+#> 6                    Buddy                   Princess          Kitty
+#>   Washington Post[31] PetFinder.com (Male)[32] PetFinder.com (Female)[32]
+#> 1               Kitty                      Max                      Molly
+#> 2               Tiger                  Charlie                      Angel
+#> 3                 Max                    Simon                       Lucy
+#> 4              Smokey                     Jack                   Princess
+#> 5              Tigger                    Sammy                      Chloe
+#> 6             Patches                                                    
+#>   Gallup 1990[33] Cook County[34] Sun Times[35]
+#> 1            Baby           Tiger         Kitty
+#> 2         Blackie           Kitty         Tiger
+#> 3        Samantha          Smokey        Smokey
+#> 4             Tom             Max           Sam
+#> 5           Tiger          Shadow         Misty
+#> 6          Casper          Tigger      Samantha
 ```
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!
