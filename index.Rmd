@@ -540,7 +540,7 @@ If we use `str(wikiCatNameTables)`, we'll see that `wikiCatNameTables` is a list
 Let's put the sixth item in `wikiCatNameTables` into an object and see what we get:
 
 ```{r makeFamous}
-famousCats <- wikiCatNameTables[[6]]
+famousCats <- wikiCatNameTables[[5]]
 head(famousCats)
 ```
 
