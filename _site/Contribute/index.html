@@ -28,6 +28,9 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- plausible -->
+  <script async defer data-domain="rforcats.net" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 
@@ -83,7 +86,7 @@
 
   <!-- <div class="sidebar-item">
     <p>
-      &copy; 2018. All rights reserved.
+      &copy; 2020. All rights reserved.
     </p>
   </div> -->
 </div>
@@ -116,18 +119,18 @@
   <li><a href="#contributors">Contributors</a></li>
 </ul>
 
-<h2 id="a-hrefhowcontrib-namehowcontriba-how-to-contribute"><a href="#howcontrib" name="howcontrib">#</a> How to contribute</h2>
+<h2 id="-how-to-contribute"><a href="#howcontrib" name="howcontrib">#</a> How to contribute</h2>
 
 <p><a href="#git" name="git">#</a> <strong>If you like git</strong></p>
 
 <ol>
   <li>Fork <a href="https://github.com/sckott/rforcats">https://github.com/sckott/rforcats</a> to your account</li>
   <li>Clone down to your machine from your account</li>
-  <li>Add an upstream remote for the <code class="highlighter-rouge">sckott/rforcats</code> repo by doing <code class="highlighter-rouge">git remote add upstream git@github.com:sckott/rforcats.git</code></li>
+  <li>Add an upstream remote for the <code class="language-plaintext highlighter-rouge">sckott/rforcats</code> repo by doing <code class="language-plaintext highlighter-rouge">git remote add upstream git@github.com:sckott/rforcats.git</code></li>
   <li>Make a new feature branch</li>
-  <li>The only file to change is <code class="highlighter-rouge">index.Rmd</code>. It’s a R markdown document, which is essentially just Markdown, so should be easy to add to/change. After you make your changes, run <code class="highlighter-rouge">knit("index.Rmd")</code> in R, which will build a new <code class="highlighter-rouge">index.md</code>. If you have time/interest, also build the html page by doing <code class="highlighter-rouge">jekyll build</code>. This requires <code class="highlighter-rouge">jekyll</code> of course. You can also preview the site by doing <code class="highlighter-rouge">jeyll serve</code>, then navigate in your browser to <a href="http://localhost:4000">http://localhost:4000</a></li>
+  <li>The only file to change is <code class="language-plaintext highlighter-rouge">index.Rmd</code>. It’s a R markdown document, which is essentially just Markdown, so should be easy to add to/change. After you make your changes, run <code class="language-plaintext highlighter-rouge">knit("index.Rmd")</code> in R, which will build a new <code class="language-plaintext highlighter-rouge">index.md</code>. If you have time/interest, also build the html page by doing <code class="language-plaintext highlighter-rouge">jekyll build</code>. This requires <code class="language-plaintext highlighter-rouge">jekyll</code> of course. You can also preview the site by doing <code class="language-plaintext highlighter-rouge">jeyll serve</code>, then navigate in your browser to <a href="http://localhost:4000">http://localhost:4000</a></li>
   <li>Commit those changes and push to your account</li>
-  <li>Send a pull request to <code class="highlighter-rouge">sckott/rforcats</code></li>
+  <li>Send a pull request to <code class="language-plaintext highlighter-rouge">sckott/rforcats</code></li>
 </ol>
 
 <p><a href="#gitlessr" name="gitlessr">#</a> <strong>If you like git, but aren’t that familiar with R</strong></p>
@@ -135,17 +138,17 @@
 <ol>
   <li>Fork <a href="https://github.com/sckott/rforcats">https://github.com/sckott/rforcats</a> to your account</li>
   <li>Clone down to your machine from your account</li>
-  <li>Add an upstream remote for the <code class="highlighter-rouge">sckott/rforcats</code> repo by doing <code class="highlighter-rouge">git remote add upstream git@github.com:sckott/rforcats.git</code></li>
+  <li>Add an upstream remote for the <code class="language-plaintext highlighter-rouge">sckott/rforcats</code> repo by doing <code class="language-plaintext highlighter-rouge">git remote add upstream git@github.com:sckott/rforcats.git</code></li>
   <li>Make a new feature branch</li>
-  <li>The only file to change is <code class="highlighter-rouge">index.Rmd</code>. It’s a R markdown document, which is essentially just Markdown, so should be easy to add to/change.</li>
+  <li>The only file to change is <code class="language-plaintext highlighter-rouge">index.Rmd</code>. It’s a R markdown document, which is essentially just Markdown, so should be easy to add to/change.</li>
   <li>Commit changes and push to your account</li>
-  <li>Send a pull request to <code class="highlighter-rouge">sckott/rforcats</code></li>
+  <li>Send a pull request to <code class="language-plaintext highlighter-rouge">sckott/rforcats</code></li>
 </ol>
 
 <p><a href="#nogit" name="nogit">#</a> <strong>If you don’t like git (or, <em>I don’t know what git is</em>)</strong></p>
 
 <ol>
-  <li>Go to the <a href="https://github.com/sckott/rforcats/blob/gh-pages/index.Rmd">index.Rmd file</a> in the <code class="highlighter-rouge">rforcats</code> GitHub repository</li>
+  <li>Go to the <a href="https://github.com/sckott/rforcats/blob/gh-pages/index.Rmd">index.Rmd file</a> in the <code class="language-plaintext highlighter-rouge">rforcats</code> GitHub repository</li>
   <li>Edit whatever you want</li>
   <li>Then write a message in the box at the bottom, and press the green button <em>Propose file change</em>. This will make a fork of the repo to your github account. You then can write any other message you want and press another green button <em>Send pull request</em></li>
   <li>The end!</li>
@@ -157,7 +160,7 @@
 
 <p>Thanks for contributing whether you or your cat wrote the code!!!!!</p>
 
-<h2 id="a-hrefcontributors-namecontributorsa-contributors"><a href="#contributors" name="contributors">#</a> Contributors</h2>
+<h2 id="-contributors"><a href="#contributors" name="contributors">#</a> Contributors</h2>
 
 <h3 id="people">people</h3>
 
@@ -204,17 +207,6 @@
     </div>
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <!-- google analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-63230317-1', 'auto');
-      ga('send', 'pageview');
-    </script>
 
     <!--[if !(lt IE 8)]><!-->
     <script type="text/javascript">
