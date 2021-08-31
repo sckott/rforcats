@@ -483,7 +483,7 @@ _Note: Package creation is out of scope for this site, but Hadley has made it mu
 
 <img src="/assets/img/pipe_gif.gif" width="300">
 
-Pipes are not in base R, but are a concept you should know about as a cat.
+Pipes have only been recently introduced in base R, but are a concept you should know about as a cat.
 
 The R package [magrittr](https://cran.rstudio.com/web/packages/magrittr) introduced pipe operators. There are many, but we'll just focus on `%>%`. This allows you to pipe a value forward into an expression or function call, like `x %>% f`, rather than `f(x)`, if `f()` is a function.
 
@@ -503,6 +503,12 @@ Why should you care about this? This concept can make writing code and understan
 
 ```{r}
 mtcars %>% subset(cyl < 6) %>% head()
+```
+
+If you have a version of R recent enough you can use the base pipe `|>` like so:
+
+```{r}
+mtcars |> subset(cyl < 6) |> head()
 ```
 
 Alternatively, we could avoid pipes:

@@ -520,7 +520,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p><img src="/assets/img/pipe_gif.gif" width="300" /></p>
 
-<p>Pipes are not in base R, but are a concept you should know about as a cat.</p>
+<p>Pipes have only been recently introduced in base R, but are a concept you should know about as a cat.</p>
 
 <p>The R package <a href="https://cran.rstudio.com/web/packages/magrittr">magrittr</a> introduced pipe operators. There are many, but we’ll just focus on <code class="language-plaintext highlighter-rouge">%&gt;%</code>. This allows you to pipe a value forward into an expression or function call, like <code class="language-plaintext highlighter-rouge">x %&gt;% f</code>, rather than <code class="language-plaintext highlighter-rouge">f(x)</code>, if <code class="language-plaintext highlighter-rouge">f()</code> is a function.</p>
 
@@ -548,6 +548,20 @@ But we can happily make a vector of the same type of information, like</p>
 #&gt; Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
 </code></pre></div></div>
 
+<p>If you have a version of R recent enough you can use the base pipe <code class="language-plaintext highlighter-rouge">|&gt;</code> like so:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mtcars</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">subset</span><span class="p">(</span><span class="n">cyl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="n">head</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt;                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+#&gt; Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+#&gt; Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+#&gt; Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+#&gt; Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+#&gt; Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+#&gt; Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+</code></pre></div></div>
+
 <p>Alternatively, we could avoid pipes:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="w"> </span><span class="n">subset</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span><span class="w"> </span><span class="n">cyl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">
@@ -564,7 +578,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we’re going to manipulate (the <code class="language-plaintext highlighter-rouge">mtcars</code> data.frame), then subsets the data.frame to take rows with the <code class="language-plaintext highlighter-rouge">cyl</code> column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (<code class="language-plaintext highlighter-rouge">mtcars</code>), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.</p>
 
-<p>Pipe are increasingly being integrated into various R packages. One of the more popular ones is <a href="https://cran.rstudio.com/web/packages/dplyr">dplyr</a>, which allows you to manipulate data.frames.</p>
+<p>Pipe are increasingly being integrated into various R packages. One of the more popular ones is <a href="https://cran.rstudio.com/web/packages/dplyr">dplyr</a>, which allows you to manipulate data frames.</p>
 
 <h2 id="-no-nos-for-cats-using-r"><a href="#nonos" name="nonos">#</a> No no’s for cats using R</h2>
 
@@ -603,7 +617,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; 
 #&gt;  -------------- 
-#&gt; The average lifespan of an outdoor-only cat is about 3 to 5 years while an indoor-only cat can live 16 years or much longer. 
+#&gt; Cats and kittens should be acquired in pairs whenever possible as cat families interact best in pairs. 
 #&gt;  --------------
 #&gt;     \
 #&gt;       \
