@@ -192,7 +192,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>In addition, you can do something to each part of the vector. Let’s say you have a vector of three types of animals:</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"birds"</span><span class="p">,</span><span class="s2">"squirrels"</span><span class="p">,</span><span class="s2">"fish"</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"birds"</span><span class="p">,</span><span class="w"> </span><span class="s2">"squirrels"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fish"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
 <p>You can add something to each of them like</p>
@@ -205,9 +205,9 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>A <code class="language-plaintext highlighter-rouge">data.frame</code> is one of the most commonly used objects in R. Just think of a <code class="language-plaintext highlighter-rouge">data.frame</code> like a table, or a spreadsheet, with rows and columns and numbers, text, etc. in the cells. A very special thing about the <code class="language-plaintext highlighter-rouge">data.frame</code> in R is that it can handle multiple types of data - that is, each column can have a different type. Like in the below table the first column is of <code class="language-plaintext highlighter-rouge">numeric</code> type, the second a <code class="language-plaintext highlighter-rouge">factor</code>, and the third <code class="language-plaintext highlighter-rouge">character</code>.</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">hey</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">),</span><span class="w">
-           </span><span class="n">there</span><span class="o">=</span><span class="n">as.factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">)),</span><span class="w">
-           </span><span class="n">fella</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"blue"</span><span class="p">,</span><span class="s2">"brown"</span><span class="p">,</span><span class="s2">"green"</span><span class="p">))</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">hey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">),</span><span class="w">
+           </span><span class="n">there</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)),</span><span class="w">
+           </span><span class="n">fella</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"blue"</span><span class="p">,</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">,</span><span class="w"> </span><span class="s2">"green"</span><span class="p">))</span><span class="w">
 </span></code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w">
@@ -225,14 +225,14 @@ But we can happily make a vector of the same type of information, like</p>
 </span><span class="c1">#&gt; 'data.frame':	3 obs. of  3 variables:</span><span class="w">
 </span><span class="c1">#&gt;  $ hey  : num  5 6 7</span><span class="w">
 </span><span class="c1">#&gt;  $ there: Factor w/ 3 levels "a","b","c": 1 2 3</span><span class="w">
-</span><span class="c1">#&gt;  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3</span><span class="w">
+</span><span class="c1">#&gt;  $ fella: chr  "blue" "brown" "green"</span><span class="w">
 </span></code></pre></div></div>
 
 <p><strong>Matrices</strong></p>
 
 <p>Think of a matrix in R like a <code class="language-plaintext highlighter-rouge">data.frame</code> with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a two-dimensional array.</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">13</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">13</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mat</span><span class="w">
@@ -255,7 +255,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>A nested list</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mylist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">))</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mylist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">))</span><span class="w">
 </span><span class="n">mylist</span><span class="w">
 </span><span class="c1">#&gt; [[1]]</span><span class="w">
 </span><span class="c1">#&gt; [1] 1</span><span class="w">
@@ -281,7 +281,7 @@ But we can happily make a vector of the same type of information, like</p>
 </span><span class="c1">#&gt; [1] 1</span><span class="w">
 </span></code></pre></div></div>
 
-<p>This gives a length of 1 for each element of the list. But wait, aren’t there three things in the second slot of the list (“a”,”b”,”c”)?  Indeed there are</p>
+<p>This gives a length of 1 for each element of the list. But wait, aren’t there three things in the second slot of the list (“a”,”b”,”c”)? Indeed there are</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="m">2</span><span class="p">][[</span><span class="m">1</span><span class="p">]])</span><span class="w">
 </span><span class="c1">#&gt; [1] 3</span><span class="w">
@@ -291,13 +291,13 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>Okay, so let’s say you have made a <code class="language-plaintext highlighter-rouge">vector</code>, <code class="language-plaintext highlighter-rouge">list</code>, or <code class="language-plaintext highlighter-rouge">data.frame</code>. How do you get to the things in them? Its slightly different for each one.</p>
 
-<p>There is a general way to index objects in R that can be used across <code class="language-plaintext highlighter-rouge">vectors</code>, <code class="language-plaintext highlighter-rouge">lists</code>, and <code class="language-plaintext highlighter-rouge">data.frame</code>.  That is the square bracket: <code class="language-plaintext highlighter-rouge">[]</code>.  For some objects you can index by the sequence number (e.g., <code class="language-plaintext highlighter-rouge">5</code>) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., <code class="language-plaintext highlighter-rouge">kitty</code>).</p>
+<p>There is a general way to index objects in R that can be used across <code class="language-plaintext highlighter-rouge">vectors</code>, <code class="language-plaintext highlighter-rouge">lists</code>, and <code class="language-plaintext highlighter-rouge">data.frame</code>. That is the square bracket: <code class="language-plaintext highlighter-rouge">[]</code>. For some objects you can index by the sequence number (e.g., <code class="language-plaintext highlighter-rouge">5</code>) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., <code class="language-plaintext highlighter-rouge">kitty</code>).</p>
 
 <p><strong>vectors</strong></p>
 
 <p>Vectors only have one dimension, as we said above. So with <code class="language-plaintext highlighter-rouge">[]</code> there is only one number to give here. For example, let’s say we have the vector</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
 <p>We can index to each of those 3 numbers by the sequence of its place in the vector. Get the 6 by doing</p>
@@ -306,10 +306,10 @@ But we can happily make a vector of the same type of information, like</p>
 </span><span class="c1">#&gt; [1] 6</span><span class="w">
 </span></code></pre></div></div>
 
-<p>You can also have a named vector. What’s that?  A named vector is like <code class="language-plaintext highlighter-rouge">bb</code> above, but each of the three elements has a name.</p>
+<p>You can also have a named vector. What’s that? A named vector is like <code class="language-plaintext highlighter-rouge">bb</code> above, but each of the three elements has a name.</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span><span class="w">
-</span><span class="nf">names</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"hey"</span><span class="p">,</span><span class="s2">"hello"</span><span class="p">,</span><span class="s2">"wadup"</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">)</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"hey"</span><span class="p">,</span><span class="w"> </span><span class="s2">"hello"</span><span class="p">,</span><span class="w"> </span><span class="s2">"wadup"</span><span class="p">)</span><span class="w">
 </span><span class="n">bb</span><span class="w">
 </span><span class="c1">#&gt;   hey hello wadup </span><span class="w">
 </span><span class="c1">#&gt;     5     6     7</span><span class="w">
@@ -336,7 +336,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>For example, let’s say we have the nested list from above <code class="language-plaintext highlighter-rouge">mylist</code></p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mylist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">bar</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="s2">"b"</span><span class="p">,</span><span class="s2">"c"</span><span class="p">))</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mylist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="s2">"c"</span><span class="p">))</span><span class="w">
 </span></code></pre></div></div>
 
 <p>We can index to the first item in the list, including its name, by</p>
@@ -417,13 +417,13 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>You can index to the third row and second column by doing</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iris</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iris</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
 </span><span class="c1">#&gt; [1] 3.2</span><span class="w">
 </span></code></pre></div></div>
 
 <p>You can also use names to index if you have named rows or columns. For example,</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iris</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="s2">"Species"</span><span class="p">]</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iris</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"Species"</span><span class="p">]</span><span class="w">
 </span><span class="c1">#&gt; [1] setosa</span><span class="w">
 </span><span class="c1">#&gt; Levels: setosa versicolor virginica</span><span class="w">
 </span></code></pre></div></div>
@@ -431,9 +431,8 @@ But we can happily make a vector of the same type of information, like</p>
 <p>You can also use the <code class="language-plaintext highlighter-rouge">$</code> symbol to index to a column, like</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="w">
-</span><span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2</span><span class="w">
-</span><span class="c1">#&gt; [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span><span class="w">
-</span><span class="c1">#&gt; [29] 15.8 19.7 15.0 21.4</span><span class="w">
+</span><span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5</span><span class="w">
+</span><span class="c1">#&gt; [23] 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4</span><span class="w">
 </span></code></pre></div></div>
 
 <h2 id="-functions"><a href="#functions" name="functions">#</a> Functions</h2>
@@ -590,7 +589,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; 
 #&gt;  -------------- 
-#&gt; When a domestic cat goes after mice, about 1 pounce in 3 results in a catch. 
+#&gt; In Holland’s embassy in Moscow, Russia, the staff noticed that the two Siamese cats kept meowing and clawing at the walls of the building. Their owners finally investigated, thinking they would find mice. Instead, they discovered microphones hidden by Russian spies. The cats heard the microphones when they turned on. 
 #&gt;  --------------
 #&gt;     \
 #&gt;       \
@@ -709,37 +708,15 @@ But we can happily make a vector of the same type of information, like</p>
 <p>Let’s put the sixth item in <code class="language-plaintext highlighter-rouge">wikiCatNameTables</code> into an object and see what we get:</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">famousCats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">wikiCatNameTables</span><span class="p">[[</span><span class="m">5</span><span class="p">]]</span><span class="w">
-</span><span class="n">head</span><span class="p">(</span><span class="n">famousCats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt;   Source VPI 2010[20] VPI 2009[26] VPI 2008[4] VPI 2006[27] YouPet.com[28]
-#&gt; 1      1          Max          Max         Max          Max          Tiger
-#&gt; 2      2        Chloe        Chloe       Chloe       Tigger         Smokey
-#&gt; 3      3        Bella       Tigger        Lucy       Smokey          Kitty
-#&gt; 4      4       Oliver        Tiger      Tigger        Tiger         Shadow
-#&gt; 5      5        Tiger         Lucy       Tiger        Chloe         Tigger
-#&gt; 6      6       Smokey       Smokey      Smokey       Shadow           Baby
-#&gt;   BabyNames.com (male)[29] BabyNames.com (female)[29] BowWow.com[30]
-#&gt; 1                      Max                      Chloe         Tigger
-#&gt; 2                   Tigger                       Lucy          Tiger
-#&gt; 3                    Tiger                      Molly            Max
-#&gt; 4                   Smokey                      Bella         Smokey
-#&gt; 5                   Oliver                     Sophie            Sam
-#&gt; 6                    Buddy                   Princess          Kitty
-#&gt;   Washington Post[31] PetFinder.com (Male)[32] PetFinder.com (Female)[32]
-#&gt; 1               Kitty                      Max                      Molly
-#&gt; 2               Tiger                  Charlie                      Angel
-#&gt; 3                 Max                    Simon                       Lucy
-#&gt; 4              Smokey                     Jack                   Princess
-#&gt; 5              Tigger                    Sammy                      Chloe
-#&gt; 6             Patches                                                    
-#&gt;   Gallup 1990[33] Cook County[34] Sun Times[35]
-#&gt; 1            Baby           Tiger         Kitty
-#&gt; 2         Blackie           Kitty         Tiger
-#&gt; 3        Samantha          Smokey        Smokey
-#&gt; 4             Tom             Max           Sam
-#&gt; 5           Tiger          Shadow         Misty
-#&gt; 6          Casper          Tigger      Samantha
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; Error in wikiCatNameTables[[5]]: subscript out of bounds
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">famousCats</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; Error in head(famousCats): object 'famousCats' not found
 </code></pre></div></div>
 
 <p>Wow! We did it! And the data looks great! Give yourself a pat on the back!</p>

@@ -107,7 +107,7 @@ In addition, you can do something to each part of the vector. Let's say you have
 
 
 ```r
-animals <- c("birds","squirrels","fish")
+animals <- c("birds", "squirrels", "fish")
 ```
 
 You can add something to each of them like
@@ -125,9 +125,9 @@ A `data.frame` is one of the most commonly used objects in R. Just think of a `d
 
 
 ```r
-df <- data.frame(hey=c(5,6,7),
-           there=as.factor(c("a","b","c")),
-           fella=c("blue","brown","green"))
+df <- data.frame(hey = c(5, 6, 7),
+           there = as.factor(c("a", "b", "c")),
+           fella = c("blue", "brown", "green"))
 ```
 
 
@@ -149,7 +149,7 @@ str(df)
 #> 'data.frame':	3 obs. of  3 variables:
 #>  $ hey  : num  5 6 7
 #>  $ there: Factor w/ 3 levels "a","b","c": 1 2 3
-#>  $ fella: Factor w/ 3 levels "blue","brown",..: 1 2 3
+#>  $ fella: chr  "blue" "brown" "green"
 ```
 
 __Matrices__
@@ -158,7 +158,7 @@ Think of a matrix in R like a `data.frame` with all the same type of data, only 
 
 
 ```r
-mat <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3)
+mat <- matrix(c(1, 2, 3, 11, 12, 13), nrow = 2, ncol = 3)
 ```
 
 
@@ -187,7 +187,7 @@ A nested list
 
 
 ```r
-mylist <- list(1, list("a","b","c"))
+mylist <- list(1, list("a", "b", "c"))
 mylist
 #> [[1]]
 #> [1] 1
@@ -215,7 +215,7 @@ length(mylist[2])
 #> [1] 1
 ```
 
-This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Indeed there are
+This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")? Indeed there are
 
 
 ```r
@@ -227,7 +227,7 @@ length(mylist[2][[1]])
 
 Okay, so let's say you have made a `vector`, `list`, or `data.frame`. How do you get to the things in them? Its slightly different for each one.
 
-There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame`.  That is the square bracket: `[]`.  For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`).
+There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame`. That is the square bracket: `[]`. For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`).
 
 **vectors**
 
@@ -235,7 +235,7 @@ Vectors only have one dimension, as we said above. So with `[]` there is only on
 
 
 ```r
-bb <- c(5,6,7)
+bb <- c(5, 6, 7)
 ```
 
 We can index to each of those 3 numbers by the sequence of its place in the vector. Get the 6 by doing
@@ -246,12 +246,12 @@ bb[2]
 #> [1] 6
 ```
 
-You can also have a named vector. What's that?  A named vector is like `bb` above, but each of the three elements has a name.
+You can also have a named vector. What's that? A named vector is like `bb` above, but each of the three elements has a name.
 
 
 ```r
-bb <- c(5,6,7)
-names(bb) <- c("hey","hello","wadup")
+bb <- c(5, 6, 7)
+names(bb) <- c("hey", "hello", "wadup")
 bb
 #>   hey hello wadup 
 #>     5     6     7
@@ -284,7 +284,7 @@ For example, let's say we have the nested list from above `mylist`
 
 
 ```r
-mylist <- list(foo=1, bar=list("a","b","c"))
+mylist <- list(foo = 1, bar = list("a", "b", "c"))
 ```
 
 We can index to the first item in the list, including its name, by
@@ -383,7 +383,7 @@ You can index to the third row and second column by doing
 
 
 ```r
-iris[3,2]
+iris[3, 2]
 #> [1] 3.2
 ```
 
@@ -391,7 +391,7 @@ You can also use names to index if you have named rows or columns. For example,
 
 
 ```r
-iris[2,"Species"]
+iris[2, "Species"]
 #> [1] setosa
 #> Levels: setosa versicolor virginica
 ```
@@ -401,9 +401,8 @@ You can also use the `$` symbol to index to a column, like
 
 ```r
 mtcars$mpg
-#>  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
-#> [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
-#> [29] 15.8 19.7 15.0 21.4
+#>  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5
+#> [23] 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4
 ```
 
 ## <a href="#functions" name="functions">#</a> Functions
@@ -583,7 +582,7 @@ say("catfact", "cat")
 ```
 #> 
 #>  -------------- 
-#> When a domestic cat goes after mice, about 1 pounce in 3 results in a catch. 
+#> In Holland’s embassy in Moscow, Russia, the staff noticed that the two Siamese cats kept meowing and clawing at the walls of the building. Their owners finally investigated, thinking they would find mice. Instead, they discovered microphones hidden by Russian spies. The cats heard the microphones when they turned on. 
 #>  --------------
 #>     \
 #>       \
@@ -722,38 +721,18 @@ Let's put the sixth item in `wikiCatNameTables` into an object and see what we g
 
 ```r
 famousCats <- wikiCatNameTables[[5]]
+```
+
+```
+#> Error in wikiCatNameTables[[5]]: subscript out of bounds
+```
+
+```r
 head(famousCats)
 ```
 
 ```
-#>   Source VPI 2010[20] VPI 2009[26] VPI 2008[4] VPI 2006[27] YouPet.com[28]
-#> 1      1          Max          Max         Max          Max          Tiger
-#> 2      2        Chloe        Chloe       Chloe       Tigger         Smokey
-#> 3      3        Bella       Tigger        Lucy       Smokey          Kitty
-#> 4      4       Oliver        Tiger      Tigger        Tiger         Shadow
-#> 5      5        Tiger         Lucy       Tiger        Chloe         Tigger
-#> 6      6       Smokey       Smokey      Smokey       Shadow           Baby
-#>   BabyNames.com (male)[29] BabyNames.com (female)[29] BowWow.com[30]
-#> 1                      Max                      Chloe         Tigger
-#> 2                   Tigger                       Lucy          Tiger
-#> 3                    Tiger                      Molly            Max
-#> 4                   Smokey                      Bella         Smokey
-#> 5                   Oliver                     Sophie            Sam
-#> 6                    Buddy                   Princess          Kitty
-#>   Washington Post[31] PetFinder.com (Male)[32] PetFinder.com (Female)[32]
-#> 1               Kitty                      Max                      Molly
-#> 2               Tiger                  Charlie                      Angel
-#> 3                 Max                    Simon                       Lucy
-#> 4              Smokey                     Jack                   Princess
-#> 5              Tigger                    Sammy                      Chloe
-#> 6             Patches                                                    
-#>   Gallup 1990[33] Cook County[34] Sun Times[35]
-#> 1            Baby           Tiger         Kitty
-#> 2         Blackie           Kitty         Tiger
-#> 3        Samantha          Smokey        Smokey
-#> 4             Tom             Max           Sam
-#> 5           Tiger          Shadow         Misty
-#> 6          Casper          Tigger      Samantha
+#> Error in head(famousCats): object 'famousCats' not found
 ```
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!

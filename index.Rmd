@@ -103,7 +103,7 @@ Vectors are handy because they can be combined to make other R objects, such as 
 In addition, you can do something to each part of the vector. Let's say you have a vector of three types of animals:
 
 ```{r, collapse=TRUE}
-animals <- c("birds","squirrels","fish")
+animals <- c("birds", "squirrels", "fish")
 ```
 
 You can add something to each of them like
@@ -118,9 +118,9 @@ A `data.frame` is one of the most commonly used objects in R. Just think of a `d
 
 
 ```{r tidy=FALSE, collapse=TRUE}
-df <- data.frame(hey=c(5,6,7),
-           there=as.factor(c("a","b","c")),
-           fella=c("blue","brown","green"))
+df <- data.frame(hey = c(5, 6, 7),
+           there = as.factor(c("a", "b", "c")),
+           fella = c("blue", "brown", "green"))
 ```
 
 ```{r collapse=TRUE}
@@ -140,7 +140,7 @@ __Matrices__
 Think of a matrix in R like a `data.frame` with all the same type of data, only numeric, only character, etc. A matrix is technically a special case of a two-dimensional array.
 
 ```{r tidy=FALSE, collapse=TRUE}
-mat <- matrix(c(1,2,3, 11,12,13), nrow = 2, ncol = 3)
+mat <- matrix(c(1, 2, 3, 11, 12, 13), nrow = 2, ncol = 3)
 ```
 
 ```{r collapse=TRUE}
@@ -158,7 +158,7 @@ list(1, "a")
 A nested list
 
 ```{r list2, collapse=TRUE}
-mylist <- list(1, list("a","b","c"))
+mylist <- list(1, list("a", "b", "c"))
 mylist
 ```
 
@@ -171,7 +171,7 @@ length(mylist[1])
 length(mylist[2])
 ```
 
-This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")?  Indeed there are
+This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")? Indeed there are
 
 ```{r list4, collapse=TRUE}
 length(mylist[2][[1]])
@@ -181,14 +181,14 @@ length(mylist[2][[1]])
 
 Okay, so let's say you have made a `vector`, `list`, or `data.frame`. How do you get to the things in them? Its slightly different for each one.
 
-There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame`.  That is the square bracket: `[]`.  For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`).
+There is a general way to index objects in R that can be used across `vectors`, `lists`, and `data.frame`. That is the square bracket: `[]`. For some objects you can index by the sequence number (e.g., `5`) of the thing you want, while with others you can do that, but also index by the character name of the thing (e.g., `kitty`).
 
 **vectors**
 
 Vectors only have one dimension, as we said above. So with `[]` there is only one number to give here. For example, let's say we have the vector
 
 ```{r, collapse=TRUE}
-bb <- c(5,6,7)
+bb <- c(5, 6, 7)
 ```
 
 We can index to each of those 3 numbers by the sequence of its place in the vector. Get the 6 by doing
@@ -197,11 +197,11 @@ We can index to each of those 3 numbers by the sequence of its place in the vect
 bb[2]
 ```
 
-You can also have a named vector. What's that?  A named vector is like `bb` above, but each of the three elements has a name.
+You can also have a named vector. What's that? A named vector is like `bb` above, but each of the three elements has a name.
 
 ```{r, collapse=TRUE}
-bb <- c(5,6,7)
-names(bb) <- c("hey","hello","wadup")
+bb <- c(5, 6, 7)
+names(bb) <- c("hey", "hello", "wadup")
 bb
 names(bb)
 ```
@@ -225,7 +225,7 @@ Indexing on lists is similar to vectors. A huge difference though is that lists 
 For example, let's say we have the nested list from above `mylist`
 
 ```{r, collapse=TRUE}
-mylist <- list(foo=1, bar=list("a","b","c"))
+mylist <- list(foo = 1, bar = list("a", "b", "c"))
 ```
 
 We can index to the first item in the list, including its name, by
@@ -283,13 +283,13 @@ head(iris)
 You can index to the third row and second column by doing
 
 ```{r, collapse=TRUE}
-iris[3,2]
+iris[3, 2]
 ```
 
 You can also use names to index if you have named rows or columns. For example,
 
 ```{r, collapse=TRUE}
-iris[2,"Species"]
+iris[2, "Species"]
 ```
 
 You can also use the `$` symbol to index to a column, like
