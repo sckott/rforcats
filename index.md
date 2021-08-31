@@ -507,7 +507,7 @@ _Note: Package creation is out of scope for this site, but Hadley has made it mu
 
 <img src="/assets/img/pipe_gif.gif" width="300">
 
-Pipes are not in base R, but are a concept you should know about as a cat.
+Pipes have only been recently introduced in base R, but are a concept you should know about as a cat.
 
 The R package [magrittr](https://cran.rstudio.com/web/packages/magrittr) introduced pipe operators. There are many, but we'll just focus on `%>%`. This allows you to pipe a value forward into an expression or function call, like `x %>% f`, rather than `f(x)`, if `f()` is a function.
 
@@ -542,6 +542,23 @@ mtcars %>% subset(cyl < 6) %>% head()
 #> Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
 ```
 
+If you have a version of R recent enough you can use the base pipe `|>` like so:
+
+
+```r
+mtcars |> subset(cyl < 6) |> head()
+```
+
+```
+#>                 mpg cyl  disp hp drat    wt  qsec vs am gear carb
+#> Datsun 710     22.8   4 108.0 93 3.85 2.320 18.61  1  1    4    1
+#> Merc 240D      24.4   4 146.7 62 3.69 3.190 20.00  1  0    4    2
+#> Merc 230       22.8   4 140.8 95 3.92 3.150 22.90  1  0    4    2
+#> Fiat 128       32.4   4  78.7 66 4.08 2.200 19.47  1  1    4    1
+#> Honda Civic    30.4   4  75.7 52 4.93 1.615 18.52  1  1    4    2
+#> Toyota Corolla 33.9   4  71.1 65 4.22 1.835 19.90  1  1    4    1
+```
+
 Alternatively, we could avoid pipes:
 
 
@@ -561,7 +578,7 @@ head( subset(mtcars, cyl < 6) )
 
 Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we're going to manipulate (the `mtcars` data.frame), then subsets the data.frame to take rows with the `cyl` column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (`mtcars`), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.
 
-Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](https://cran.rstudio.com/web/packages/dplyr), which allows you to manipulate data.frames.
+Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](https://cran.rstudio.com/web/packages/dplyr), which allows you to manipulate data frames.
 
 
 ## <a href="#nonos" name="nonos">#</a> No no's for cats using R
@@ -602,7 +619,7 @@ say("catfact", "cat")
 ```
 #> 
 #>  -------------- 
-#> The average lifespan of an outdoor-only cat is about 3 to 5 years while an indoor-only cat can live 16 years or much longer. 
+#> Cats and kittens should be acquired in pairs whenever possible as cat families interact best in pairs. 
 #>  --------------
 #>     \
 #>       \
