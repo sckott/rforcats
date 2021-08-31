@@ -215,7 +215,7 @@ length(mylist[2])
 #> [1] 1
 ```
 
-This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")? Indeed there are
+This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a", "b", "c")? Indeed there are
 
 
 ```r
@@ -394,6 +394,26 @@ You can also use names to index if you have named rows or columns. For example,
 iris[2, "Species"]
 #> [1] setosa
 #> Levels: setosa versicolor virginica
+```
+
+You can select the entire second row like this
+
+
+```r
+iris[2, ]
+#>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#> 2          4.9           3          1.4         0.2  setosa
+```
+
+
+If now your data frame is `mtcars`, you can get its first column by doing 
+
+
+
+```r
+mtcars[, 1]
+#>  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5
+#> [23] 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4
 ```
 
 You can also use the `$` symbol to index to a column, like
@@ -582,7 +602,7 @@ say("catfact", "cat")
 ```
 #> 
 #>  -------------- 
-#> In Holland’s embassy in Moscow, Russia, the staff noticed that the two Siamese cats kept meowing and clawing at the walls of the building. Their owners finally investigated, thinking they would find mice. Instead, they discovered microphones hidden by Russian spies. The cats heard the microphones when they turned on. 
+#> The average lifespan of an outdoor-only cat is about 3 to 5 years while an indoor-only cat can live 16 years or much longer. 
 #>  --------------
 #>     \
 #>       \
