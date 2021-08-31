@@ -281,7 +281,7 @@ But we can happily make a vector of the same type of information, like</p>
 </span><span class="c1">#&gt; [1] 1</span><span class="w">
 </span></code></pre></div></div>
 
-<p>This gives a length of 1 for each element of the list. But wait, aren’t there three things in the second slot of the list (“a”,”b”,”c”)? Indeed there are</p>
+<p>This gives a length of 1 for each element of the list. But wait, aren’t there three things in the second slot of the list (“a”, “b”, “c”)? Indeed there are</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">length</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="m">2</span><span class="p">][[</span><span class="m">1</span><span class="p">]])</span><span class="w">
 </span><span class="c1">#&gt; [1] 3</span><span class="w">
@@ -426,6 +426,20 @@ But we can happily make a vector of the same type of information, like</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iris</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"Species"</span><span class="p">]</span><span class="w">
 </span><span class="c1">#&gt; [1] setosa</span><span class="w">
 </span><span class="c1">#&gt; Levels: setosa versicolor virginica</span><span class="w">
+</span></code></pre></div></div>
+
+<p>You can select the entire second row like this</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iris</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="c1">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span><span class="w">
+</span><span class="c1">#&gt; 2          4.9           3          1.4         0.2  setosa</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If now your data frame is <code class="language-plaintext highlighter-rouge">mtcars</code>, you can get its first column by doing</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mtcars</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
+</span><span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5</span><span class="w">
+</span><span class="c1">#&gt; [23] 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4</span><span class="w">
 </span></code></pre></div></div>
 
 <p>You can also use the <code class="language-plaintext highlighter-rouge">$</code> symbol to index to a column, like</p>
@@ -589,7 +603,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; 
 #&gt;  -------------- 
-#&gt; In Holland’s embassy in Moscow, Russia, the staff noticed that the two Siamese cats kept meowing and clawing at the walls of the building. Their owners finally investigated, thinking they would find mice. Instead, they discovered microphones hidden by Russian spies. The cats heard the microphones when they turned on. 
+#&gt; The average lifespan of an outdoor-only cat is about 3 to 5 years while an indoor-only cat can live 16 years or much longer. 
 #&gt;  --------------
 #&gt;     \
 #&gt;       \

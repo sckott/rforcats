@@ -171,7 +171,7 @@ length(mylist[1])
 length(mylist[2])
 ```
 
-This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a","b","c")? Indeed there are
+This gives a length of 1 for each element of the list. But wait, aren't there three things in the second slot of the list ("a", "b", "c")? Indeed there are
 
 ```{r list4, collapse=TRUE}
 length(mylist[2][[1]])
@@ -292,6 +292,20 @@ You can also use names to index if you have named rows or columns. For example,
 iris[2, "Species"]
 ```
 
+You can select the entire second row like this
+
+```{r, collapse=TRUE}
+iris[2, ]
+```
+
+
+If now your data frame is `mtcars`, you can get its first column by doing 
+
+
+```{r, collapse=TRUE}
+mtcars[, 1]
+```
+
 You can also use the `$` symbol to index to a column, like
 
 ```{r, collapse=TRUE}
@@ -397,7 +411,7 @@ head( subset(mtcars, cyl < 6) )
 
 Both solutions above give the same result, but the first with pipes is more intuitive. That is, it starts with the thing we're going to manipulate (the `mtcars` data.frame), then subsets the data.frame to take rows with the `cyl` column having values less than 6, then take the head, or first six rows. In the second solution, we have to read from the inside out to find the thing that we are manipulating (`mtcars`), which is then subsetted, then the first six rows are given. This is a simple example - as complexity grows, using pipes can make understanding and iterating on code much easier.
 
-Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](https://cran.rstudio.com/web/packages/dplyr), which allows you to manipulate data.frames.
+Pipe are increasingly being integrated into various R packages. One of the more popular ones is [dplyr](https://cran.rstudio.com/web/packages/dplyr), which allows you to manipulate data frames.
 
 
 ## <a href="#nonos" name="nonos">#</a> No no's for cats using R
