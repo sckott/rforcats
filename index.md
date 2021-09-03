@@ -412,8 +412,8 @@ If now your data frame is `mtcars`, you can get its first column by doing
 
 ```r
 mtcars[, 1]
-#>  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5
-#> [23] 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4
+#>  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+#> [29] 15.8 19.7 15.0 21.4
 ```
 
 You can also use the `$` symbol to index to a column, like
@@ -421,8 +421,8 @@ You can also use the `$` symbol to index to a column, like
 
 ```r
 mtcars$mpg
-#>  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5
-#> [23] 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4
+#>  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+#> [29] 15.8 19.7 15.0 21.4
 ```
 
 ## <a href="#functions" name="functions">#</a> Functions
@@ -619,7 +619,7 @@ say("catfact", "cat")
 ```
 #> 
 #>  -------------- 
-#> Cats and kittens should be acquired in pairs whenever possible as cat families interact best in pairs. 
+#> Cats can predict earthquakes. We humans are not 100% sure how they do it. There are several different theories. 
 #>  --------------
 #>     \
 #>       \
@@ -730,7 +730,7 @@ Here, we'll use the `GET()` function from the `httr` package to save the source 
 
 
 ```r
-wikiCatNamePage <- GET("https://en.wikipedia.org/wiki/Popular_cat_names")
+wikiCatNamePage <- GET("https://en.wikipedia.org/wiki/List_of_fictional_felines")
 ```
 
 Cool! We have the website in an object!
@@ -749,28 +749,36 @@ Alright! Now we've translated the website code so that a different function, `ht
 wikiCatNameTables <- html_table(parsedWikiCatNamePage, fill = TRUE)
 ```
 
-It looks like the function stored six different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called _Cultural references to the naming of cats_. My favorite is Tom, from Tom and Jerry!
+It looks like the function stored 13 different things in the object, `wikiCatNameTables`. Looking at the webpage, I like the table from the subsection called _In animation_ (there is even a full page about [fictional cats in animation](https://en.wikipedia.org/wiki/List_of_fictional_cats_in_animation)). My favorite is Tom, from Tom and Jerry!
 
 If we use `str(wikiCatNameTables)`, we'll see that `wikiCatNameTables` is a list with six items. It looks like the sixth item is the one with our data--we're almost done! The `str()` function shows too much information because of how `wikiCatNameTables` is organized, so the output isn't shown here. You should try it, though!
 
 Let's put the sixth item in `wikiCatNameTables` into an object and see what we get:
 
 
-```r
-famousCats <- wikiCatNameTables[[5]]
+```
+#>           Character                                        Origin
+#> 1       "Baby Puss"                               The Flintstones
+#> 2              Cake                                Adventure Time
+#> 3             Felix                                 Felix the Cat
+#> 4 Gumball Watterson                  The Amazing World of Gumball
+#> 5       MC Skat Kat                             Opposites Attract
+#> 6               Leo Blinky Bill’s Extraordinary Balloon Adventure
+#>                                                                                                                                                                                                                                                                                                       Notes
+#> 1 A saber tooth tiger housecat that is seen in the beginning of the episodes going with the Flintstones and Dino to the movies; a running gag is at the end of the episode Fred puts the cat out-who runs back inside and puts Fred out! Rarely seen outside this role in the series except three episodes.
+#> 2                                                                                                                                                                                                         A gender/species swapped version of "Jake the dog" from the Cartoon Network show "Adventure time"
+#> 3                                                                                                                                                                                                                       A black cat and "one of the most recognized cartoon characters in film history."[9]
+#> 4                                                                                                                                                                                                                                      A 12-year-old anthropomorphic blue cat, who is the titular character
+#> 5                                                                                                                                                                                                            Anthropomorphic cat rapper and leader of the Stray Mob that sings and dances with Paula Abdul.
+#> 6
 ```
 
-```
-#> Error in wikiCatNameTables[[5]]: subscript out of bounds
-```
-
 ```r
+famousCats <- wikiCatNameTables[[6]]
 head(famousCats)
 ```
 
-```
-#> Error in head(famousCats): object 'famousCats' not found
-```
+
 
 Wow! We did it! And the data looks great! Give yourself a pat on the back!
 
