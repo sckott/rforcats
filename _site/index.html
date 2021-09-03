@@ -438,15 +438,15 @@ But we can happily make a vector of the same type of information, like</p>
 <p>If now your data frame is <code class="language-plaintext highlighter-rouge">mtcars</code>, you can get its first column by doing</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mtcars</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w">
-</span><span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5</span><span class="w">
-</span><span class="c1">#&gt; [23] 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4</span><span class="w">
+</span><span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span><span class="w">
+</span><span class="c1">#&gt; [29] 15.8 19.7 15.0 21.4</span><span class="w">
 </span></code></pre></div></div>
 
 <p>You can also use the <code class="language-plaintext highlighter-rouge">$</code> symbol to index to a column, like</p>
 
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mtcars</span><span class="o">$</span><span class="n">mpg</span><span class="w">
-</span><span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5</span><span class="w">
-</span><span class="c1">#&gt; [23] 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7 15.0 21.4</span><span class="w">
+</span><span class="c1">#&gt;  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4</span><span class="w">
+</span><span class="c1">#&gt; [29] 15.8 19.7 15.0 21.4</span><span class="w">
 </span></code></pre></div></div>
 
 <h2 id="-functions"><a href="#functions" name="functions">#</a> Functions</h2>
@@ -617,7 +617,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; 
 #&gt;  -------------- 
-#&gt; Cats and kittens should be acquired in pairs whenever possible as cat families interact best in pairs. 
+#&gt; Cats can predict earthquakes. We humans are not 100% sure how they do it. There are several different theories. 
 #&gt;  --------------
 #&gt;     \
 #&gt;       \
@@ -714,7 +714,7 @@ But we can happily make a vector of the same type of information, like</p>
 
 <p>Here, we’ll use the <code class="language-plaintext highlighter-rouge">GET()</code> function from the <code class="language-plaintext highlighter-rouge">httr</code> package to save the source code of the page in an object.</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">wikiCatNamePage</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GET</span><span class="p">(</span><span class="s2">"https://en.wikipedia.org/wiki/Popular_cat_names"</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">wikiCatNamePage</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">GET</span><span class="p">(</span><span class="s2">"https://en.wikipedia.org/wiki/List_of_fictional_felines"</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
 <p>Cool! We have the website in an object!</p>
@@ -729,23 +729,31 @@ But we can happily make a vector of the same type of information, like</p>
 <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">wikiCatNameTables</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">html_table</span><span class="p">(</span><span class="n">parsedWikiCatNamePage</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p>It looks like the function stored six different things in the object, <code class="language-plaintext highlighter-rouge">wikiCatNameTables</code>. Looking at the webpage, I like the table from the subsection called <em>Cultural references to the naming of cats</em>. My favorite is Tom, from Tom and Jerry!</p>
+<p>It looks like the function stored 13 different things in the object, <code class="language-plaintext highlighter-rouge">wikiCatNameTables</code>. Looking at the webpage, I like the table from the subsection called <em>In animation</em> (there is even a full page about <a href="https://en.wikipedia.org/wiki/List_of_fictional_cats_in_animation">fictional cats in animation</a>). My favorite is Tom, from Tom and Jerry!</p>
 
 <p>If we use <code class="language-plaintext highlighter-rouge">str(wikiCatNameTables)</code>, we’ll see that <code class="language-plaintext highlighter-rouge">wikiCatNameTables</code> is a list with six items. It looks like the sixth item is the one with our data–we’re almost done! The <code class="language-plaintext highlighter-rouge">str()</code> function shows too much information because of how <code class="language-plaintext highlighter-rouge">wikiCatNameTables</code> is organized, so the output isn’t shown here. You should try it, though!</p>
 
 <p>Let’s put the sixth item in <code class="language-plaintext highlighter-rouge">wikiCatNameTables</code> into an object and see what we get:</p>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">famousCats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">wikiCatNameTables</span><span class="p">[[</span><span class="m">5</span><span class="p">]]</span><span class="w">
-</span></code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; Error in wikiCatNameTables[[5]]: subscript out of bounds
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt;           Character                                        Origin
+#&gt; 1       "Baby Puss"                               The Flintstones
+#&gt; 2              Cake                                Adventure Time
+#&gt; 3             Felix                                 Felix the Cat
+#&gt; 4 Gumball Watterson                  The Amazing World of Gumball
+#&gt; 5       MC Skat Kat                             Opposites Attract
+#&gt; 6               Leo Blinky Bill’s Extraordinary Balloon Adventure
+#&gt;                                                                                                                                                                                                                                                                                                       Notes
+#&gt; 1 A saber tooth tiger housecat that is seen in the beginning of the episodes going with the Flintstones and Dino to the movies; a running gag is at the end of the episode Fred puts the cat out-who runs back inside and puts Fred out! Rarely seen outside this role in the series except three episodes.
+#&gt; 2                                                                                                                                                                                                         A gender/species swapped version of "Jake the dog" from the Cartoon Network show "Adventure time"
+#&gt; 3                                                                                                                                                                                                                       A black cat and "one of the most recognized cartoon characters in film history."[9]
+#&gt; 4                                                                                                                                                                                                                                      A 12-year-old anthropomorphic blue cat, who is the titular character
+#&gt; 5                                                                                                                                                                                                            Anthropomorphic cat rapper and leader of the Stray Mob that sings and dances with Paula Abdul.
+#&gt; 6
 </code></pre></div></div>
 
-<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">famousCats</span><span class="p">)</span><span class="w">
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">famousCats</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">wikiCatNameTables</span><span class="p">[[</span><span class="m">6</span><span class="p">]]</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">famousCats</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; Error in head(famousCats): object 'famousCats' not found
-</code></pre></div></div>
 
 <p>Wow! We did it! And the data looks great! Give yourself a pat on the back!</p>
 
